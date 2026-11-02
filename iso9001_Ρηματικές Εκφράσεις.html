@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=index">
+    <title>Cheat Sheet: Ρηματικές Εκφράσεις ISO 9001:2015</title>
+    <style>
+        @import url('https://googleapis.com');
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background-color: #f8fafc;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .page {
+            max-width: 842px; /* A4 Πλάτος */
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        header {
+            border-bottom: 3px solid #0284c7;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-area h1 {
+            font-size: 24px;
+            color: #0f172a;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .title-area p {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        .badge {
+            background-color: #0284c7;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .intro-alert {
+            background-color: #f0f9ff;
+            border-left: 4px solid #0284c7;
+            padding: 15px;
+            border-radius: 0 4px 4px 0;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .intro-alert strong {
+            color: #0369a1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th {
+    background-color: #0f172a;
+    color: #ffffff;
+    text-align: right;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+th:first-child, td:first-child { text-align: right; }
+
+        td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+
+        tr:hover { background-color: #f8fafc; }
+
+        .term-shall { font-weight: 700; color: #dc2626; }
+        .term-should { font-weight: 700; color: #d97706; }
+        .term-may { font-weight: 700; color: #2563eb; }
+        .term-can { font-weight: 700; color: #16a34a; }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status-shall { background-color: #fee2e2; color: #991b1b; }
+        .status-should { background-color: #fef3c7; color: #92400e; }
+        .status-may { background-color: #dbeafe; color: #1e40af; }
+        .status-can { background-color: #dcfce7; color: #166534; }
+
+        .sections-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 10px;
+    direction: rtl; /* Επαναφέρει τη σειρά: ο Χρυσός Κανόνας αριστερά */
+}
+
+
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .card h3 {
+    font-size: 15px;
+    color: #0f172a;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 6px;
+    font-weight: 600;
+    text-align: left; /* Στοίχιση του τίτλου του card αριστερά */
+}
+
+        .card ul {
+            list-style-type: none;
+        }
+
+        .card li {
+    font-size: 13px;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px; /* Χώρος για το bullet στα αριστερά */
+    text-align: left;   /* Στοίχιση κειμένου αριστερά */
+    direction: ltr;     /* Εξασφαλίζει τη ροή από αριστερά προς τα δεξιά */
+}
+
+.card li::before {
+    content: "•";
+    color: #0284c7;
+    font-weight: bold;
+    position: absolute;
+    left: 0;            /* Το bullet κλειδώνει αριστερά */
+    top: 0;
+}
+
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        /* Ρυθμίσεις Εκτύπωσης για καθαρό PDF/Χαρτί */
+        @media print {
+            body { background-color: #ffffff; padding: 0; }
+            .page { box-shadow: none; padding: 0; max-width: 100%; }
+            header { margin-bottom: 20px; }
+            .card { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body dir="ltr" style="text-align: right;">
+
+    <div class="page">
+        <header>
+            <div class="title-area">
+                <h1>ISO 9001:2015 Ρηματικές Εκφράσεις</h1>
+                <p>Οδηγός Ορθής Ερμηνείας & Επιθεώρησης</p>
+            </div>
+            <div class="badge">Εκπαιδευτικό Υλικό</div>
+        </header>
+
+        <div class="intro-alert">
+            <strong>Προσοχή στην παγίδα του ΕΛΟΤ:</strong> Στην ελληνική μετάφραση, το υποχρεωτικό <em>«πρέπει»</em> και το προαιρετικό <em>«θα πρέπει»</em> συγχέονται εύκολα. Κατά την επιθεώρηση, η ισχύς καθορίζεται <strong>πάντα</strong> από το αγγλικό πρωτότυπο κείμενο!
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Αγγλικός Όρος</th>
+                    <th style="width: 20%;">Μετάφραση ΕΛΟΤ</th>
+                    <th style="width: 20%;">Καθεστώς</th>
+                    <th style="width: 25%;">Τι σημαίνει για τον Επιθεωρητή</th>
+                    <th style="width: 20%;">Εύρημα (NCR);</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="term-shall">Shall</span></td>
+                    <td>Πρέπει να</td>
+                    <td><span class="status-badge status-shall">Απαίτηση</span></td>
+                    <td>Υποχρεωτική συμμόρφωση. Ελέγχεται για αποδείξεις.</td>
+                    <td><strong>ΝΑΙ</strong> (Μη Συμμόρφωση)</td>
+                </tr>
+                <tr>
+                    <td><span class="term-should">Should</span></td>
+                    <td>Θα πρέπει να</td>
+                    <td><span class="status-badge status-should">Σύσταση</span></td>
+                    <td>Ορθή πρακτική / Συμβουλή. Δεν είναι υποχρεωτικό.</td>
+                    <td><strong>ΟΧΙ</strong> (Μόνο OFI / Παρατήρηση)</td>
+                </tr>
+                <tr>
+                    <td><span class="term-may">May</span></td>
+                    <td>Επιτρέπεται να </td>
+                    <td><span class="status-badge status-may">Άδεια / Επιλογή</span></td>
+                    <td>Παρέχεται ελευθερία επιλογής ή εναλλακτικής.</td>
+                    <td><strong>ΟΧΙ</strong></td>
+                </tr>
+                <tr>
+                    <td><span class="term-can">Can</span></td>
+                    <td>Μπορεί να / Είναι σε θέση να</td>
+                    <td><span class="status-badge status-can">Δυνατότητα</span></td>
+                    <td>Φυσική/τεχνική ικανότητα ή αντικειμενική πιθανότητα.</td>
+                    <td><strong>ΟΧΙ</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="sections-grid">
+            <div class="card">
+                <h3>Πού θα βρείτε τα "Should" & "May" (Όχι για NCR)</h3>
+                <ul>
+                    <li><strong>Εισαγωγή (0.1, 0.3.3):</strong> Καθοδηγητικές κατευθύνσεις και ανάλυση της φιλοσοφίας του Risk-based thinking.</li>
+                    <li><strong>Σημειώσεις (Notes):</strong> Μέσα στα Κεφάλαια (π.χ. 4.3, 7.1.5, 8.5.1). Οι Σημειώσεις χρησιμεύουν μόνο ως επεξηγήσεις και δεν γεννούν απαιτήσεις.</li>
+                    <li><strong>Παράρτημα Α (Annex A):</strong> Πληροφοριακό υλικό (π.χ. Α.3 για ενδιαφερόμενα μέρη, Α.1 για ορολογία).</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Χρυσός Κανόνας</h3>
+                <ul>
+                    <li>Στα κύρια <strong>Κεφάλαια 4 έως 10</strong>, ο ISO χρησιμοποιεί <strong>αποκλειστικά τη λέξη "Shall"</strong> για τις απαιτήσεις (130+ φορές).</li>
+                    <li>Αν μια εταιρεία δεν τηρεί ένα σημείο στα Κεφάλαια 4-10, η Μη Συμμόρφωση τεκμηριώνεται πάντα με βάση το "Shall" του αγγλικού κειμένου.</li>
+                    <li>Αν έχετε οποιονδήποτε ενδοιασμό ανατρέξτε στο αγγλικό κείμενο!</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας ISO 9001:2015
+        </footer>
+    </div>
+
+</body>
+</html>

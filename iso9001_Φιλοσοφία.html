@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Η Φιλοσοφία του ISO 9001 - Εκπαιδευτικό Υλικό</title>
+    <style>
+        @import url('https://googleapis.com');
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background-color: #f8fafc;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .page {
+            max-width: 842px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        header {
+            border-bottom: 3px solid #0284c7;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-area h1 {
+            font-size: 24px;
+            color: #0f172a;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        .title-area p {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 5px;
+            text-align: left;
+        }
+
+        .badge {
+            background-color: #0284c7;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        section h2 {
+            font-size: 18px;
+            color: #0f172a;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            text-align: left;
+        }
+
+        .is-section h2 {
+            border-bottom: 2px solid #16a34a;
+        }
+
+        .is-not-section h2 {
+            border-bottom: 2px solid #dc2626;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px;
+            background-color: #ffffff;
+            text-align: left;
+        }
+
+        .card-is {
+            border-left: 4px solid #16a34a;
+        }
+
+        .card-is-not {
+            border-left: 4px solid #dc2626;
+        }
+
+        .card p {
+            font-size: 14.5px;
+            color: #334155;
+        }
+
+        .card strong {
+            color: #0f172a;
+        }
+
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        @media print {
+            body { background-color: #ffffff; padding: 0; }
+            .page { box-shadow: none; padding: 0; max-width: 100%; }
+            .card { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <header>
+            <div class="title-area">
+                <h1>ISO 9001: Η Φιλοσοφία του Προτύπου</h1>
+                <p>Εκπαιδευτικό Υλικό για το Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης ISO 9001</p>
+            </div>
+            <div class="badge">Εισαγωγική Ενότητα</div>
+        </header>
+
+        <!-- ΤΙ ΕΙΝΑΙ -->
+        <section class="is-section">
+            <h2>Τι ΕΙΝΑΙ το ISO 9001</h2>
+            <div class="grid">
+                <div class="card card-is">
+                    <p>Είναι ένας παγκόσμιος οδηγός για να <strong>μην στηρίζεται μια επιχείρηση στην τύχη</strong>, στην καλή μέρα του υπαλλήλου ή στη μνήμη του αφεντικού.</p>
+                </div>
+                <div class="card card-is">
+                    <p>Aναγκάζει την επιχείρηση να φτιάξει ένα <strong>σταθερό λειτουργικό σύστημα</strong>. Της επιβάλλει να ξέρει ποιος κάνει τι, πότε και με ποιον τρόπο· να προβλέπει τα στραβά πριν συμβούν αντί να τρέχει να σβήνει φωτιές· και να μαθαίνει από τα λάθη της ώστε να μην τα επαναλαμβάνει.</p>
+                </div>
+                <div class="card card-is">
+                    <p>Με απλά λόγια: Είναι η μέθοδος για να μετατραπεί ένα "χαοτικό" μαγαζί σε μια <strong>καλοκουρδισμένη μηχανή</strong> που παράγει προβλέψιμα και σταθερά αποτελέσματα, όποιος κι αν εργάζεται σε αυτήν.</p>
+                </div>
+        </section>
+
+        <!-- ΤΙ ΔΕΝ ΕΙΝΑΙ -->
+        <section class="is-not-section">
+            <h2>Τι ΔΕΝ είναι το ISO 9001</h2>
+            <div class="grid">
+                <div class="card card-is-not">
+                    <p><strong>ΔΕΝ υποκαθιστά τις νομοθετικές και κανονιστικές διατάξεις.</strong> Το ISO 9001 δεν είναι υπεράνω του νόμου ούτε αποτελεί συγχωροχάρτι για τις νομικές υποχρεώσεις μιας επιχείρησης (π.χ. άδειες λειτουργίας, πρότυπα ασφαλείας, περιβαλλοντικοί νόμοι). Αντίθετα, το πρότυπο προϋποθέτει ότι ο οργανισμός συμμορφώνεται πλήρως με τη νομοθεσία που διέπει τα προϊόντα ή τις υπηρεσίες του και ο βαθμός συμμόρφωσης είναι από τα κρισιμότερα σημεία ελέγχου κατά την επιθεώρηση.</p>
+                </div>
+		<div class="card card-is-not">
+		<p><strong>ΔΕΝ είναι ένα χαρτί κρεμασμένο στον τοίχο</strong> του γραφείου του Γενικού Διευθυντή ή στον πίνακα ανακοινώσεων του προσωπικού. Αν η εταιρεία θυμάται το ISO μόνο όταν είναι να στείλει φωτοτυπία του πιστοποιητικού σε κάποιον πελάτη, τότε το σύστημα είναι νεκρό. Η πιστοποίηση έχει αξία μόνο όταν αποδεικνύει τον τρόπο που δουλεύει και εξελίσσεται η επιχείρηση κάθε μέρα – όχι όταν λειτουργεί ως άλλοθι οργάνωσης.</p>
+                </div>
+                <div class="card card-is-not">
+                    <p><strong>ΔΕΝ σου μαθαίνει τη "δουλειά σου".</strong> Το ISO 9001 δεν θα μπει ποτέ στα χωράφια της τεχνογνωσίας σου. Έρχεται όμως για να <strong>θωρακίσει</strong> αυτή τη γνώση σου απέναντι στον εσωτερικό «ανταγωνισμό» και στις αλλαγές του επιχειρηματικού σου περιβάλλοντος. Δεν σε διδάσκει το επάγγελμά σου· σε σπρώχνει να οργανώσεις τη δομή σου και να καταλάβεις τι πραγματικά σημαίνει «αξία» και «ποιότητα» για τα μάτια των δικών σου πελατών.</p>
+                </div>
+                <div class="card card-is-not">
+                    <p><strong>ΔΕΝ είναι εργοστάσιο παραγωγής εγγράφων και εντύπων.</strong> Αν το σύστημα γεμίζει την εταιρεία με άσκοπη γραφειοκρατία, περιττές υπογραφές και ψηφιακά σκουπίδια που κανένας δεν διαβάζει στην καθημερινότητά του, αλλά τηρούνται για να τα "θαυμάσει" ο επιθεωρητής, τότε δεν είναι απλά χάσιμο χρόνου.Αντιστρατεύεται τη δημιουργία "κουλτούρας ποιότητας" μέσα στην εταιρεία και μπορεί ακόμα να οδηγήσει σε χειρότερες επιδόσεις συγκριτικά με την "προ-ISO" εποχή!</p>
+                </div>
+                <div class="card card-is-not">
+                    <p><strong>ΔΕΝ είναι οδηγός για το πώς να φτιάξεις το "τέλειο" ή πανάκριβο προϊόν.</strong> Δεν σε υποχρεώνει να γίνεις η Apple. Σε υποχρεώνει, όμως, αν υποσχεθείς στον πελάτη μια απλή και οικονομική λύση, αυτή να λειτουργεί ακριβώς όπως υποσχέθηκες, κάθε φορά.</p>
+                </div>
+                <div class="card card-is-not">
+                    <p><strong>ΔΕΝ είναι το "αστυνομικό τμήμα" της επιχείρησης.</strong> Δεν σχεδιάστηκε για να βρίσκει ο μάνατζερ ποιος υπάλληλος έκανε το λάθος για να τον τιμωρήσει. Σχεδιάστηκε για να δείχνει ποιο σημείο της <em>μηχανής</em> κόλλησε, ώστε να διορθωθεί η μηχανή. Και ενδεχομένως να επανεκπαιδευτεί και ο χειριστής.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας
+        </footer>
+    </div>
+
+</body>
+</html>

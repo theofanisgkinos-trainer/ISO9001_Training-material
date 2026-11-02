@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Αποκωδικοποίηση της Πολιτικής Ποιότητας</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #1e293b;
+        background: #f8fafc;
+        line-height: 1.55;
+        padding: 20px;
+    }
+    .page {
+        max-width: 842px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%);
+    }
+    header { border-bottom: 3px solid #0284c7; padding-bottom: 18px; margin-bottom: 24px; }
+    .title-area h1 {
+        font-size: 24px; line-height: 1.25; color: #0f172a; font-weight: 700;
+        text-transform: uppercase; text-align: left; letter-spacing: .2px;
+    }
+    .title-area p { font-size: 13px; color: #64748b; margin-top: 7px; text-align: left; }
+    .intro {
+        background: #f0f9ff; border-left: 4px solid #0284c7; border-radius: 6px;
+        padding: 15px 18px; margin-bottom: 24px; font-size: 14px; color: #334155;
+    }
+    .intro strong { color: #0f172a; }
+    section { margin-bottom: 23px; }
+    section h2 {
+        font-size: 17px; color: #0f172a; margin-bottom: 12px; padding-bottom: 6px;
+        text-align: left; border-bottom: 2px solid #16a34a;
+    }
+    .card {
+        border: 1px solid #e2e8f0; border-left: 4px solid #16a34a; border-radius: 6px;
+        padding: 15px 17px; background: #fff; margin-bottom: 10px; break-inside: avoid;
+    }
+    .card p, .card li { font-size: 13.5px; color: #334155; }
+    .card p + p { margin-top: 7px; }
+    .card strong { color: #0f172a; }
+    .plain-meaning { background: #f8fafc; border-radius: 4px; padding: 9px 12px; margin: 9px 0; }
+    .example {
+        border-left: 3px solid #0284c7; padding: 8px 12px; margin-top: 9px;
+        background: #f0f9ff; border-radius: 0 4px 4px 0;
+    }
+    .auditor {
+        background: #fff7ed; border-left: 4px solid #ea580c; border-radius: 6px;
+        padding: 12px 15px; margin-top: 10px; break-inside: avoid;
+    }
+    .auditor p { font-size: 13px; color: #7c2d12; }
+    .auditor strong { color: #7c2d12; }
+    ul { margin: 7px 0 0 19px; }
+    li { margin: 3px 0; }
+    .summary {
+        border: 1px solid #cbd5e1; border-radius: 7px; overflow: hidden;
+        margin-top: 6px; break-inside: avoid;
+    }
+    .summary-row { display: grid; grid-template-columns: 34% 66%; border-bottom: 1px solid #e2e8f0; }
+    .summary-row:last-child { border-bottom: 0; }
+    .summary-row div { padding: 10px 12px; font-size: 12.5px; }
+    .summary-row div:first-child { background: #f1f5f9; color: #0f172a; font-weight: 700; }
+    .summary-row div:last-child { color: #334155; }
+    .closing {
+        background: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 6px;
+        padding: 15px 18px; margin-top: 18px; font-size: 14px; color: #14532d; break-inside: avoid;
+    }
+    .closing strong { color: #14532d; }
+    footer {
+        margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 13px;
+        text-align: center; font-size: 12px; color: #94a3b8; font-weight: 500;
+    }
+    @media print {
+        @page { size: A4; margin: 14mm; }
+        body { background: #fff; padding: 0; }
+        .page { box-shadow: none; padding: 0; max-width: 100%; border-radius: 0; }
+        .card, .auditor, .summary, .closing, .intro { break-inside: avoid; }
+        header { margin-bottom: 18px; }
+        section { margin-bottom: 17px; }
+    }
+    @media (max-width: 600px) {
+        body { padding: 8px; }
+        .page { padding: 22px 17px; }
+        .title-area h1 { font-size: 20px; }
+        .summary-row { grid-template-columns: 1fr; }
+        .summary-row div:first-child { padding-bottom: 4px; }
+        .summary-row div:last-child { padding-top: 5px; }
+    }
+</style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <div class="title-area">
+            <h1>Αποκωδικοποίηση της Πολιτικής Ποιότητας</h1>
+            <p>Εκπαιδευτικό Υλικό για το Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης ISO 9001</p>
+        </div>
+    </header>
+
+    <div class="intro">
+        <strong>Τι θέλει να εξασφαλίσει ο ISO 9001;</strong><br>
+        Ότι η Πολιτική Ποιότητας δεν είναι ένα γενικόλογο κείμενο ή μια διακήρυξη καλών προθέσεων, αλλά εκφράζει τον προσανατολισμό του Οργανισμού και συνδέεται με την πραγματική λειτουργία του.
+    </div>
+
+    <section>
+        <h2>1. Να είναι κατάλληλη για τον σκοπό και το πλαίσιο του Οργανισμού</h2>
+        <div class="card">
+            <p><strong>Με απλά λόγια:</strong></p>
+            <div class="plain-meaning">
+                Η Πολιτική Ποιότητας πρέπει να ταιριάζει σε αυτό που κάνει ο Οργανισμός, στο μέγεθός του, στις δραστηριότητές του και στις συνθήκες μέσα στις οποίες λειτουργεί.
+            </div>
+            <p>Δεν μπορεί να έχει την ίδια φιλοσοφία και το ίδιο περιεχόμενο η Πολιτική Ποιότητας ενός νοσοκομείου, μιας βιομηχανίας τροφίμων και ενός εκπαιδευτικού οργανισμού.</p>
+            <div class="example">
+                <p><strong>Παράδειγμα:</strong> Μια βιομηχανία γαλακτοκομικών προϊόντων θα πρέπει να δίνει έμφαση, μεταξύ άλλων, στην ασφάλεια και στην ποιότητα των προϊόντων της, στην ικανοποίηση των πελατών και στη συμμόρφωση με τις εφαρμοστέες απαιτήσεις.</p>
+                <p>Αντίθετα, ένα Κέντρο Επαγγελματικής Κατάρτισης θα πρέπει να δίνει έμφαση στην ποιότητα της εκπαίδευσης, στην επάρκεια των εκπαιδευτών και στην ικανοποίηση των εκπαιδευομένων.</p>
+            </div>
+        </div>
+        <div class="auditor">
+    <p><strong>Τι εξετάζει ο επιθεωρητής;</strong> Εάν ο Οργανισμός έχει προσδιορίσει τις εφαρμοστέες απαιτήσεις, εάν η Πολιτική Ποιότητας περιλαμβάνει σαφή δέσμευση για την ικανοποίησή τους και εάν η δέσμευση αυτή υποστηρίζεται στην πράξη από τις διεργασίες, τις λειτουργικές πρακτικές και τα σχετικά τεκμήρια.</p>
+</div>
+    </section>
+
+    <section>
+        <h2>2. Να παρέχει πλαίσιο για τον καθορισμό στόχων ποιότητας</h2>
+        <div class="card">
+            <p><strong>Με απλά λόγια:</strong></p>
+            <div class="plain-meaning">
+                Η Πολιτική Ποιότητας πρέπει να δίνει την κατεύθυνση προς την οποία θα κινηθεί ο Οργανισμός, ώστε να μπορεί στη συνέχεια να καθορίσει συγκεκριμένους και μετρήσιμους στόχους ποιότητας.
+            </div>
+            <p><strong>Η Πολιτική λέει γενικά «πού θέλουμε να πάμε», ενώ οι στόχοι προσδιορίζουν «τι ακριβώς θέλουμε να πετύχουμε».</strong></p>
+            <div class="example">
+                <p><strong>Παράδειγμα:</strong> Έστω ότι η Πολιτική Ποιότητας ενός ΚΕΚ περιλαμβάνει τη δέσμευση για παροχή εκπαιδευτικών υπηρεσιών υψηλής ποιότητας και για την ικανοποίηση των εκπαιδευομένων.</p>
+                <p>Από αυτή την κατεύθυνση μπορούν να προκύψουν στόχοι όπως:</p>
+                <ul>
+                    <li>Επίτευξη μέσης βαθμολογίας ικανοποίησης εκπαιδευομένων τουλάχιστον 4,5/5.</li>
+                    <li>Διατήρηση ποσοστού ολοκλήρωσης εκπαιδευτικών προγραμμάτων άνω του 95%.</li>
+                    <li>Αξιολόγηση του 100% των εκπαιδευτών κάθε έτος.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="auditor">
+            <p><strong>Τι εξετάζει ο επιθεωρητής;</strong> Εάν οι στόχοι ποιότητας που έχει θέσει ο Οργανισμός συνδέονται λογικά με τις δεσμεύσεις και τις κατευθύνσεις της Πολιτικής Ποιότητας.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Να περιλαμβάνει δέσμευση για την ικανοποίηση των εφαρμοστέων απαιτήσεων</h2>
+        <div class="card">
+            <p><strong>Με απλά λόγια:</strong></p>
+            <div class="plain-meaning">
+                Ο Οργανισμός δεσμεύεται να γνωρίζει και να ικανοποιεί τις απαιτήσεις που εφαρμόζονται στις δραστηριότητές του και στα προϊόντα ή τις υπηρεσίες του.
+            </div>
+            <p>Οι απαιτήσεις αυτές δεν προέρχονται μόνο από τους πελάτες. Μπορεί να απορρέουν από τη νομοθεσία και τις κανονιστικές διατάξεις, από πρότυπα ή άλλα κανονιστικά/συμβατικά πλαίσια που ο Οργανισμός έχει επιλέξει να εφαρμόζει, καθώς και από άλλες δεσμεύσεις που έχει αναλάβει.</p>
+            <div class="example">
+                <p><strong>Παράδειγμα:</strong> Ένα Κέντρο Επαγγελματικής Κατάρτισης δεσμεύεται:</p>
+                <ul>
+                    <li>Να υλοποιεί τα εκπαιδευτικά προγράμματα σύμφωνα με τις συμφωνημένες απαιτήσεις των πελατών.</li>
+                    <li>Να τηρεί το εφαρμοστέο νομοθετικό και κανονιστικό πλαίσιο που διέπει τη λειτουργία του.</li>
+                    <li>Να ικανοποιεί τις απαιτήσεις που αφορούν τα προσόντα των εκπαιδευτών και την υλοποίηση των προγραμμάτων.</li>
+                    <li>Να εφαρμόζει τις απαιτήσεις προτύπων ή σχημάτων πιστοποίησης που έχει επιλέξει να υιοθετήσει.</li>
+                </ul>
+            </div>
+            <p>Η Πολιτική δεν χρειάζεται να απαριθμεί μία προς μία όλες τις εφαρμοστέες απαιτήσεις. Πρέπει, όμως, να περιλαμβάνει σαφή δέσμευση για την ικανοποίησή τους.</p>
+        </div>
+        <div class="auditor">
+            <p><strong>Τι εξετάζει ο επιθεωρητής;</strong></p>
+            <ul style="font-size: 0.8em; margin-top: 5px; color: #7c2d12;">
+                <li>Εάν ο Οργανισμός έχει προσδιορίσει τις απαιτήσεις που εφαρμόζονται στις δραστηριότητές του.</li>
+                <li>Εάν η Πολιτική Ποιότητας περιλαμβάνει σαφή δέσμευση για την ικανοποίησή τους.</li>
+                <li>Εάν η δέσμευση αυτή υποστηρίζεται στην πράξη από τις διεργασίες, τις λειτουργικές πρακτικές και τα σχετικά τεκμήρια.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Να περιλαμβάνει δέσμευση για συνεχή βελτίωση του Συστήματος Διαχείρισης Ποιότητας</h2>
+        <div class="card">
+            <p><strong>Με απλά λόγια:</strong></p>
+            <div class="plain-meaning">
+                Ο Οργανισμός δεν πρέπει να αρκείται στο ότι το Σύστημα Διαχείρισης Ποιότητας λειτουργεί σήμερα ικανοποιητικά. Πρέπει να δεσμεύεται ότι θα αναζητά ευκαιρίες για να το κάνει καλύτερο.
+            </div>
+            <p>Αυτό σημαίνει ότι θα αξιολογεί την αποτελεσματικότητα των διεργασιών του, θα εντοπίζει προβλήματα και αδυναμίες και θα λαμβάνει μέτρα για τη βελτίωσή τους.</p>
+            <div class="example">
+                <p><strong>Παράδειγμα:</strong> Ένα ΚΕΚ διαπιστώνει από τις αξιολογήσεις των εκπαιδευομένων ότι υπάρχει δυσαρέσκεια σχετικά με το εκπαιδευτικό υλικό.</p>
+                <p>Αντί να περιοριστεί στην καταγραφή των παραπόνων, αποφασίζει να αναθεωρήσει το εκπαιδευτικό υλικό, να εκπαιδεύσει τους εισηγητές στη χρήση του και να αξιολογήσει εκ νέου την ικανοποίηση των εκπαιδευομένων.</p>
+                <p><strong>Αυτό αποτελεί μια πρακτική εφαρμογή της συνεχούς βελτίωσης.</strong></p>
+            </div>
+        </div>
+        <div class="auditor">
+            <p><strong>Τι εξετάζει ο επιθεωρητής;</strong> Εάν η Πολιτική περιλαμβάνει ρητή δέσμευση για συνεχή βελτίωση του Συστήματος Διαχείρισης Ποιότητας και εάν αυτή η δέσμευση υποστηρίζεται στην πράξη από τη λειτουργία του Οργανισμού.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Τι πρέπει να συγκρατήσετε:</h2>
+        <div class="summary">
+            <div class="summary-row">
+                <div>Κατάλληλη για τον σκοπό και το πλαίσιο</div>
+                <div>Να ταιριάζει σε αυτό που πραγματικά κάνει ο Οργανισμός.</div>
+            </div>
+            <div class="summary-row">
+                <div>Πλαίσιο για τον καθορισμό στόχων</div>
+                <div>Να δείχνει προς ποια κατεύθυνση πρέπει να κινηθεί ο Οργανισμός.</div>
+            </div>
+            <div class="summary-row">
+                <div>Ικανοποίηση εφαρμοστέων απαιτήσεων</div>
+                <div>Να δεσμεύεται ότι θα ικανοποιεί τις απαιτήσεις που τον αφορούν.</div>
+            </div>
+            <div class="summary-row">
+                <div>Συνεχής βελτίωση</div>
+                <div>Να αξιολογεί και να βελτιώνει διαρκώς το Σύστημα Διαχείρισης Ποιότητας.</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="closing">
+        <strong>Σημαντική επισήμανση για τον επιθεωρητή</strong><br>
+        Δεν αρκεί να διαπιστώσει ότι η Πολιτική Ποιότητας περιλαμβάνει τις τέσσερις παραπάνω δεσμεύσεις. Πρέπει να εξετάσει εάν αυτές έχουν ουσιαστικό περιεχόμενο και εάν αντανακλώνται στη λειτουργία του Οργανισμού.
+        <p style="margin-top:9px;"><strong>Η Πολιτική Ποιότητας δεν είναι αυτό που ο Οργανισμός γράφει ότι θέλει να κάνει. Είναι η κατεύθυνση που δηλώνει ότι δεσμεύεται να ακολουθεί και την οποία πρέπει να μπορεί να υποστηρίξει με αποδείξεις.</strong></p>
+    </div>
+
+    <footer>
+        Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας
+    </footer>
+</div>
+</body>
+</html>
