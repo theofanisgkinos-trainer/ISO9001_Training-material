@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+ <meta charset="UTF-8">
+ <title>Workshop 1 – Ερωτήσεις</title>
+ <style>
+ body { font-family: 'Segoe UI', Arial, sans-serif; color: #333; 
+background: #f0f2f5; margin: 0; padding: 20px; }
+ .container { max-width: 800px; margin: 0 auto; background: #fff; 
+padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+ 
+ /* Σταθερή Κεφαλίδα */
+ h1 { color: #000000; margin: 0 0 5px 0; font-size: 28px; font-weight: 
+bold; }
+ .workshop-sub { font-size: 16px; font-weight: bold; color: #333; 
+margin-bottom: 15px; }
+ 
+ .header-meta-row { 
+ display: flex; 
+ justify-content: space-between; 
+ align-items: center; 
+ font-size: 14px; 
+ color: #333;
+ margin-bottom: 15px;
+ }
+ 
+ .edu-badge {
+ background-color: #000000;
+ color: #ffffff;
+ padding: 4px 12px;
+ font-weight: bold;
+ font-size: 12px;
+ text-transform: uppercase;
+ border-radius: 3px;
+ }
+ 
+ .black-line { border: none; border-top: 3px solid #000000; margin-top: 
+0; margin-bottom: 25px; }
+ 
+ /* Δομή Άσκησης */
+ .box { background: #f8f9fa; border-left: 5px solid #2980b9; padding: 
+15px; margin-bottom: 25px; border-radius: 0 6px 6px 0; }
+ .box p { margin: 5px 0; font-size: 15px; line-height: 1.5; }
+ .instruction-text { font-size: 16px; font-weight: bold; color: #000000; 
+margin-bottom: 25px; }
+ .item { background: #fff; border: 1px solid #e2e8f0; padding: 20px; 
+margin-bottom: 25px; border-radius: 6px; }
+ .title { font-weight: bold; margin-bottom: 12px; color: #2c3e50; 
+font-size: 16px; line-height: 1.5; }
+ 
+ /* Κουτιά Απαντήσεων */
+ .justification-label { font-size: 14px; font-weight: bold; color: 
+#4a5568; display: block; margin-top: 15px; }
+ .justification-box {
+ width: 100%;
+ height: 80px;
+ margin-top: 8px;
+ padding: 10px;
+ border: 1px solid #cbd5e1;
+ border-radius: 6px;
+ font-family: inherit;
+ resize: vertical;
+ box-sizing: border-box;
+ background-color: #f8fafc;
+ }
+ .justification-box:focus {
+ outline: none;
+ border-color: #3182ce;
+ background-color: #fff;
+ }
+ 
+ /* Κουμπί Αποθήκευσης */
+ .btn-container { text-align: center; margin-top: 35px; margin-bottom: 
+25px; }
+ .save-btn { background-color: #27ae60; color: white; border: none; 
+padding: 15px 30px; font-size: 16px; font-weight: bold; border-radius: 6px; 
+cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.2s 
+ease; }
+ .save-btn:hover { background-color: #219653; transform: 
+translateY(-2px); box-shadow: 0 6px 8px rgba(0,0,0,0.15); }
+ /* Σταθερό Υποσέλιδο */
+ .footer { text-align: center; margin-top: 30px; padding-top: 20px; 
+border-top: 1px solid #e2e8f0; font-size: 14px; color: #7f8c8d; font-weight: 
+500; }
+ @media print {
+ body { background: #fff; padding: 0; }
+ .container { box-shadow: none; padding: 0; max-width: 100%; }
+ .btn-container { display: none; }
+ .justification-box { background: #fafafa; border: 1px solid #94a3b8;
+min-height: 80px; }
+ .edu-badge { background-color: #000 !important; color: #fff 
+!important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+ }
+ </style>
+</head>
+<body>
+<div class="container">
+ 
+ <!-- ΚΕΦΑΛΙΔΑ WORKSHOP 1 -->
+ <h1>ISO 9001: Πλαίσιο λειτουργίας του Οργανισμού</h1>
+ <div class="workshop-sub">Workshop 1</div>
+ 
+ <div class="header-meta-row">
+ <div>Μελέτη Περιστατικού — Delta College</div>
+ <div class="edu-badge">Εκπαιδευτικό Υλικό</div>
+ </div>
+ <!-- ΜΑΥΡΗ ΓΡΑΜΜΗ ΚΕΦΑΛΙΔΑΣ -->
+ <hr class="black-line">
+ 
+ <!-- ΠΛΑΙΣΙΟ ΟΜΑΔΑΣ -->
+ <div style="margin-bottom: 25px; background: #fff; padding: 15px; border: 
+1px solid #cbd5e1; border-radius: 6px; display: flex; align-items: center; gap: 
+10px;">
+ <span style="font-weight: bold; color: #2c3e50; white-space: nowrap;">👥
+ΟΜΑΔΑ:</span>
+ <input type="text" id="group_field" placeholder="Γράψτε το όνομα ή τον αριθμό της ομάδας 
+σας..." style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; 
+border-radius: 4px; font-family: inherit; font-size: 15px;">
+ </div>
+ <!-- ΣΕΝΑΡΙΟ ΠΕΡΙΣΤΑΤΙΚΟΥ -->
+ <div class="box">
+ <h3> 🏢 Δεδομένα Περιστατικού ("Delta College")</h3> 
+ <p>Το Ιδιωτικό Κολλέγιο προσφέρει προγράμματα Higher Education και 
+Επαγγελματικής Κατάρτισης. Αντιμετωπίζει ραγδαία αύξηση της ζήτησης για Online /
+Υβριδικά προγράμματα, ενώ η νέα εθνική νομοθεσία αυστηροποιεί τα κριτήρια 
+αδειοδότησης των αιθουσών (εξωτερικοί παράγοντες).</p>
+ <p>Εσωτερικά, το ακαδημαϊκό προσωπικό (καθηγητές μεγαλύτερης ηλικίας) 
+δυσκολεύεται να χρησιμοποιήσει τη νέα πλατφόρμα e-learning, ενώ οι υποδομές 
+server παρουσιάζουν συχνές πτώσεις (crashes) λόγω υπερφόρτωσης. Επιπλέον, λόγω 
+πρόσφατων ακραίων καυσώνων το καλοκαίρι, οι κεντρικές εγκαταστάσεις 
+αντιμετωπίζουν προβλήματα με το δίκτυο κλιματισμού (Κλιματική Αλλαγή).</p>
+ </div>
+ <div class="instruction-text">
+ Απαντήστε στα παρακάτω ζητούμενα της εργασίας, λαμβάνοντας υπόψη τα 
+δεδομένα του περιστατικού:
+ </div>
+ 
+ <!-- Ζητούμενο 1 -->
+ <div class="item">
+ <div class="title">Ζητούμενο 1: Διατυπώστε το «Πεδίο Εφαρμογής» (Scope) 
+του Κολλεγίου σύμφωνα με την παράγραφο 4.3 του ISO 9001:2015.</div>
+ <span class="justification-label"> ✍️ Η απάντηση της ομάδας:</span>
+ <textarea class="justification-box" id="ans1" placeholder="Γράψτε το προτεινόμενο πεδίο εφαρμογής..."></textarea>
+ </div>
+ 
+ <!-- Ζητούμενο 2 -->
+ <div class="item">
+ <div class="title">Ζητούμενο 2: Επιτρέπεται η εξαίρεση των απαιτήσεων 
+του Σχεδιασμού (8.3) για το Κολλέγιο; Αιτιολογήστε την απάντησή σας.</div>
+ <span class="justification-label"> ✍️ Η απάντηση της ομάδας:</span>
+ <textarea class="justification-box" id="ans2" placeholder="Γράψτε την αιτιολόγηση σχετικά με τον σχεδιασμό..."></textarea>
+ </div>
+ 
+ <!-- Ζητούμενο 3 -->
+ <div class="item">
+ <div class="title">Ζητούμενο 3: Προσδιορίστε 2 κρίσιμα Ενδιαφερόμενα 
+Μέρη και τις αντίστοιχες Απαιτήσεις τους σύμφωνα με την παράγραφο 4.2.</div>
+ <span class="justification-label"> ✍️ Η απάντηση της ομάδας:</span>
+ <textarea class="justification-box" id="ans3" style="height: 100px;" 
+placeholder="Γράψτε τα ενδιαφερόμενα μέρη και τις απαιτήσεις τους..."></textarea>
+ </div>
+ 
+ <!-- Ζητούμενο 4 -->
+ <div class="item">
+ <div class="title">Ζητούμενο 4: Προσδιορίστε 2 Εξωτερικές Ευκαιρίες / 
+Απειλές και 2 Εσωτερικές Αδυναμίες (4.1) – Συμπεριλάβετε υποχρεωτικά τον 
+παράγοντα Κλιματική Αλλαγή / Ανθεκτικότητα.</div>
+ <span class="justification-label"> ✍️ Η απάντηση της ομάδας:</span>
+ <textarea class="justification-box" id="ans4" style="height: 120px;" 
+placeholder="Εξωτερικά (Ευκαιρίες/Απειλές) &amp; Εσωτερικά (Αδυναμίες)..."></textarea>
+ </div>
+ <!-- ΚΟΥΜΠΙ ΑΠΟΘΗΚΕΥΣΗΣ -->
+ <div class="btn-container">
+ <button class="save-btn" onclick="validateAndPrint()"> Αποθήκευση &amp; 💾
+Λήψη Workshop (PDF)</button>
+ </div>
+ <!-- ΥΠΟΣΕΛΙΔΟ -->
+ <div class="footer">
+ Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας ISO 9001
+ </div>
+</div>
+
+<script>
+function validateAndPrint() {
+    const group = document.getElementById('group_field').value.trim();
+    const ans1 = document.getElementById('ans1').value.trim();
+    const ans2 = document.getElementById('ans2').value.trim();
+    const ans3 = document.getElementById('ans3').value.trim();
+    const ans4 = document.getElementById('ans4').value.trim();
+
+    let missingFields = [];
+
+    if (group === "") missingFields.push("Ομάδα");
+    if (ans1 === "") missingFields.push("Ζητούμενο 1");
+    if (ans2 === "") missingFields.push("Ζητούμενο 2");
+    if (ans3 === "") missingFields.push("Ζητούμενο 3");
+    if (ans4 === "") missingFields.push("Ζητούμενο 4");
+
+    if (missingFields.length > 0) {
+        alert("⚠️ Παρακαλώ συμπληρώστε όλα τα πεδία πριν την εκτύπωση!\n\nΛείπουν οι απαντήσεις στα:\n• " + missingFields.join("\n• "));
+    } else {
+        window.print();
+    }
+}
+</script>
+</body>
+</html>
