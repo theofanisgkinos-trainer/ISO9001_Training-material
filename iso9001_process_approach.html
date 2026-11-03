@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet: Process Approach</title>
+    <style>
+        @import url('https://googleapis.com');
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --accent: #0284c7;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #cbd5e1;
+            --bg-card: #f8fafc;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f1f5f9;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            position: relative;
+            box-sizing: border-box;
+            padding-bottom: 80px;
+        }
+        .header {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-title h1 {
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--primary);
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .badge {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid var(--border);
+        }
+        .section-title {
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--primary);
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        .analogy-box {
+            background: var(--primary-light);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .reasons-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .reason-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .reason-card strong {
+            color: var(--primary);
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .tip-box {
+            background: #fff5f5;
+            border-left: 4px solid #b91c1c;
+            padding: 15px;
+            border-radius: 0 6px 6px 0;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 14px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+        }
+        @media print {
+            body { background-color: #ffffff; padding: 0; }
+            .container { box-shadow: none; padding: 0; }
+            .reason-card { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Κεφαλίδα -->
+    <div class="header">
+        <div class="header-title">
+            <h1>Γιατί, τελικά, Process Approach;</h1>
+        </div>
+        <div class="badge">Εκπαιδευτικό Υλικό</div>
+    </div>
+
+    <!-- Η Αναλογία -->
+    <div class="analogy-box">
+        Σκεφτείτε ένα ρολόι. Αν αποσυναρμολογήσουμε το ρολόι και βάλουμε πάνω στο γραφείο όλα τα γρανάζια, τις βίδες και τους δείκτες ξεχωριστά, έχουμε μια συλλογή από "δραστηριότητες" ή εξαρτήματα. Αν κοιτάμε κάθε γρανάζι μόνο του, μπορούμε να καταλάβουμε αν δουλεύει το ρολόι και αν λέει τη σωστή ώρα; Όχι. Το ρολόι λέει σωστά την ώρα μόνο όταν αυτά τα εξαρτήματα συνδέονται, αλληλεπιδρούν και λειτουργούν ως ένα ενιαίο σύστημα (διεργασία).
+    </div>
+
+    <h2 class="section-title">Οι 3 Κύριοι Λόγοι (Το "Γιατί" πίσω από την ομαδοποίηση)</h2>
+
+    <!-- Οι 3 Λόγοι -->
+    <div class="reasons-list">
+        <div class="reason-card">
+            <strong>Απώλεια της "Μεγάλης Εικόνας" (The Big Picture)</strong>
+            Αν εξετάζουμε κάθε δραστηριότητα ξεχωριστά, χάνουμε τον τελικό σκοπό. Η διεργασία ομαδοποιεί αυτές τις δραστηριότητες για να βλέπουμε το συνολικό αποτέλεσμα που παραδίδεται στον πελάτη (π.χ. η Διεργασία Υλοποίησης Κατάρτισης σε ένα ΚΕΚ). Στον πελάτη δεν προσφέρουμε μεμονωμένες δραστηριότητες, του προσφέρουμε το τελικό αποτέλεσμα.
+        </div>
+
+        <div class="reason-card">
+            <strong>Διαχείριση των "Νεκρών Ζωνών" (Interfaces)</strong>
+            Τα περισσότερα προβλήματα και οι αστοχίες σε έναν Οργανισμό δεν συμβαίνουν μέσα σε μια δραστηριότητα, αλλά ανάμεσα στις δραστηριότητες (π.χ. καθυστερήσεις, ελλιπή επικοινωνία, ασάφεια αρμοδιοτήτων ή ανεπαρκή μεταφορά πληροφοριών μεταξύ διαφορετικών τμημάτων). Ομαδοποιώντας τις σε μια διεργασία, ορίζουμε ξεκάθαρα τις εισροές (Inputs), τις εκροές (Outputs) και, το κυριότερο, ποιος έχει την ευθύνη (Process Owner) για την επίτευξη του επιθυμητού αποτελέσματος.
+        </div>
+
+        <div class="reason-card">
+            <strong>Διοικητική αποτελεσματικότητα (KPIs & Έλεγχος)</strong>
+            Είναι πρακτικά αδύνατο για τη Διοίκηση να ελέγχει, να μετράει και να βελτιώνει 500 μεμονωμένες δραστηριότητες κάθε μέρα. Είναι όμως πολύ εύκολο και ουσιαστικό να ελέγχει 3 ή 4 βασικές διεργασίες θέτοντας συγκεκριμένους Στόχους Ποιότητας (KPIs) για την καθεμία. Αν η διεργασία συνολικά πιάνει τον στόχο της, τότε και οι επιμέρους δραστηριότητες λειτουργούν σωστά.
+        </div>
+    </div>
+
+    <!-- Εκπαιδευτικό Tip -->
+    <div class="tip-box">
+        <strong>💡 Tip:</strong> Το ISO 9001 δεν θέλει να γίνουμε μικροσκοπικοί ελεγκτές (micromanagers) κάθε μικρής κίνησης. Θέλει να βλέπουμε τον Οργανισμό σαν ένα ζωντανό σύστημα όπου το σύνολο είναι πάντα μεγαλύτερο από το άθροισμα των μερών του.
+    </div>
+
+    <!-- Υποσέλιδο Υποδείγματος -->
+    <div class="footer">
+        Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας
+    </div>
+</div>
+
+</body>
+</html>
