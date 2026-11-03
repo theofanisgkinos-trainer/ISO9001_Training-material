@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet: Κατηγοριοποίηση Διεργασιών ISO 9001</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Ubuntu:wght@400;700&display=swap');
+
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --accent: #0284c7;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #cbd5e1;
+            --bg-card: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f1f5f9;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            position: relative;
+            min-height: 950px;
+            box-sizing: border-box;
+            padding-bottom: 80px;
+        }
+
+        .header {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title h1 {
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--primary);
+            margin: 0;
+            font-size: 26px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-title p {
+            margin: 5px 0 0 0;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .badge {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid var(--border);
+        }
+
+        .intro {
+            font-size: 15px;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            background: var(--primary-light);
+            padding: 15px;
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .grid-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .card-number {
+            background: var(--primary);
+            color: #ffffff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .card-title {
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .card-definition {
+            background: #ffffff;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary);
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+
+        .card-simplified {
+            font-style: italic;
+            color: #0f172a;
+            margin-bottom: 15px;
+            font-size: 14px;
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px dashed var(--border);
+        }
+
+        .card-simplified strong {
+            color: var(--accent);
+        }
+
+        .card-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+
+        .card-list li {
+            margin-bottom: 6px;
+        }
+
+        .examples-box {
+            margin-top: 15px;
+            background: #ffffff;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .examples-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .notes-section {
+            border-top: 2px solid var(--border);
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .notes-title {
+            font-family: 'Ubuntu', sans-serif;
+            color: #b91c1c;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .note-item {
+            font-size: 14px;
+            margin-bottom: 12px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .note-item::before {
+            content: "•";
+            color: #b91c1c;
+            font-weight: bold;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 14px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+        }
+
+        @media print {
+            body { background-color: #ffffff; padding: 0; }
+            .container { box-shadow: none; padding: 0; min-height: 100%; }
+            .card { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="header-title">
+            <h1>Κατηγοριοποίηση Διεργασιών</h1>
+            <p>Σύστημα Διαχείρισης Ποιότητας ISO 9001</p>
+        </div>
+        <div class="badge">Εκπαιδευτικό υλικό</div>
+    </div>
+
+    <div class="intro">
+        Οι διεργασίες ενός Οργανισμού κατηγοριοποιούνται με βάση τον ρόλο τους στην παραγωγή αξίας, στη λήψη αποφάσεων και στην υποστήριξη των υποδομών.
+    </div>
+
+    <div class="grid-section">
+        
+        <!-- 1. Κύριες Διεργασίες -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">1</div>
+                <h2 class="card-title">Κύριες ή Επιχειρησιακές Διεργασίες (Core / Business Processes)</h2>
+            </div>
+            <div class="card-definition">
+                <strong>Ορισμός:</strong> Είναι οι διεργασίες που συνδέονται άμεσα με τον βασικό σκοπό λειτουργίας ενός Οργανισμού και μέσω των οποίων δημιουργείται και παρέχεται η αξία στον πελάτη.
+            </div>
+            <div class="card-simplified">
+                <strong>Με απλά λόγια:</strong> Είναι οι διεργασίες μέσω των οποίων ο Οργανισμός κάνει αυτό για το οποίο υπάρχει.
+            </div>
+            <ul class="card-list">
+                <li>Συνδέονται άμεσα με την παραγωγή προϊόντων ή την παροχή υπηρεσιών.</li>
+                <li>Συμβάλλουν άμεσα στην ικανοποίηση των απαιτήσεων των πελατών.</li>
+                <li>Μετατρέπουν απαιτήσεις, υλικά, πληροφορίες και άλλες εισροές σε προϊόντα ή υπηρεσίες.</li>
+                <li>Η αποτελεσματικότητά τους επηρεάζει άμεσα την ικανότητα του Οργανισμού να εκπληρώνει τον σκοπό του.</li>
+            </ul>
+            <div class="examples-box">
+                <div class="examples-title">💡 Παραδείγματα:</div>
+                <div class="card-list" style="font-size: 13.5px; color: #334155;">
+                    • Παραγωγή τροφίμων σε μια βιομηχανία τροφίμων.<br>
+                    • Παροχή νοσηλευτικών και ιατρικών υπηρεσιών σε ένα νοσοκομείο.<br>
+                    • Παροχή εκπαιδευτικών υπηρεσιών σε ένα εκπαιδευτικό ίδρυμα.
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Διεργασίες Διοίκησης -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">2</div>
+                <h2 class="card-title">Διεργασίες Διοίκησης (Management Processes)</h2>
+            </div>
+            <div class="card-definition">
+                <strong>Ορισμός:</strong> Είναι οι διεργασίες μέσω των οποίων η διοίκηση καθορίζει την κατεύθυνση του Οργανισμού, θέτει στόχους, λαμβάνει αποφάσεις και διασφαλίζει ότι οι υπόλοιπες διεργασίες λειτουργούν αποτελεσματικά.
+            </div>
+            <div class="card-simplified">
+                <strong>Με απλά λόγια:</strong> Είναι οι διεργασίες μέσω των οποίων ο Οργανισμός αποφασίζει πού θέλει να πάει, πώς θα φτάσει εκεί και πώς θα ελέγχει την πορεία του.
+            </div>
+            <ul class="card-list">
+                <li>Καθορίζουν τη στρατηγική και τους στόχους του Οργανισμού.</li>
+                <li>Διασφαλίζουν τον συντονισμό και την αποτελεσματικότητα των διεργασιών.</li>
+                <li>Περιλαμβάνουν την αξιολόγηση της συνολικής επίδοσης.</li>
+                <li>Καθοδηγούν τη λήψη αποφάσεων και τη βελτίωση.</li>
+            </ul>
+            <div class="examples-box">
+                <div class="examples-title">💡 Παραδείγματα:</div>
+                <div class="card-list" style="font-size: 13.5px; color: #334155;">
+                    • Στρατηγικός και επιχειρησιακός σχεδιασμός.<br>
+                    • Καθορισμός πολιτικής και στόχων ποιότητας.<br>
+                    • Ανασκόπηση από τη διοίκηση.
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Υποστηρικτικές Διεργασίες -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">3</div>
+                <h2 class="card-title">Υποστηρικτικές Διεργασίες (Support Processes)</h2>
+            </div>
+            <div class="card-definition">
+                <strong>Ορισμός:</strong> Είναι οι διεργασίες που παρέχουν τους απαραίτητους πόρους ώστε οι κύριες διεργασίες και οι διεργασίες διοίκησης να μπορούν να λειτουργούν αποτελεσματικά.
+            </div>
+            <div class="card-simplified">
+                <strong>Με απλά λόγια:</strong> Είναι οι διεργασίες που εξασφαλίζουν ότι ο Οργανισμός διαθέτει όλα όσα χρειάζεται για να κάνει σωστά τη δουλειά του.
+            </div>
+            <ul class="card-list">
+                <li>Παρέχουν υποστήριξη στις κύριες διεργασίες και στη διοίκηση.</li>
+                <li>Εξασφαλίζουν τη διαθεσιμότητα κατάλληλου προσωπικού, εξοπλισμού, εγκαταστάσεων και πληροφοριών.</li>
+                <li>Δεν δημιουργούν άμεσα το προϊόν ή την υπηρεσία που παραδίδεται στον εξωτερικό πελάτη.</li>
+                <li>Επηρεάζουν, όμως, σημαντικά την ποιότητα του τελικού αποτελέσματος.</li>
+            </ul>
+            <div class="examples-box">
+                <div class="examples-title">💡 Παραδείγματα:</div>
+                <div class="card-list" style="font-size: 13.5px; color: #334155;">
+                    • Διαχείριση ανθρώπινου δυναμικού και εκπαίδευση προσωπικού.<br>
+                    • Συντήρηση εγκαταστάσεων και διακρίβωση εξοπλισμού.<br>
+                    • Διαχείριση πληροφοριακών συστημάτων και τεκμηριωμένων πληροφοριών.<br>
+                    • Προμήθειες και αξιολόγηση προμηθευτών.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="notes-section">
+        <div class="notes-title">⚠️ Δύο σημαντικές επισημάνσεις</div>
+        <div class="note-item">
+            <strong>Η κατηγοριοποίηση δεν είναι απόλυτη:</strong> Η ίδια διεργασία μπορεί να εντάσσεται σε διαφορετική κατηγορία, ανάλογα με τη φύση και τον σκοπό του Οργανισμού. Για παράδειγμα, η εκπαίδευση σε μια βιομηχανία τροφίμων αποτελεί συνήθως υποστηρικτική διεργασία, ενώ σε ένα εκπαιδευτικό ίδρυμα αποτελεί μέρος της κύριας επιχειρησιακής δραστηριότητας.
+        </div>
+        <div class="note-item">
+            <strong>Οι υποστηρικτικές διεργασίες δεν είναι λιγότερο σημαντικές:</strong> Το γεγονός ότι δεν παράγουν άμεσα το προϊόν ή την υπηρεσία δεν σημαίνει ότι έχουν μικρότερη σημασία. Μια αστοχία σε μια υποστηρικτική διεργασία, όπως η συντήρηση εξοπλισμού ή η διαχείριση του ανθρώπινου δυναμικού, μπορεί να επηρεάσει άμεσα τη συμμόρφωση του τελικού προϊόντος.
+        </div>
+    </div>
+
+    <div class="footer">
+        Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας
+    </div>
+</div>
+
+</body>
+</html>
