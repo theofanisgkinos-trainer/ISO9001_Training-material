@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO 9001 Homework 2 - Διάγραμμα Χελώνας</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 24px;
+        }
+        .process-title {
+            background: #e1f5fe;
+            color: #0288d1;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+	display: inline-block; /* Προσθήκη για να πιάσει το margin */
+            margin-top: 8px;       /* Προσθήκη για να κατέβει η γραμμή */
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .user-info label {
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .user-info input {
+            padding: 8px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            width: 250px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .user-info input:focus {
+            border-color: #3b82f6;
+        }
+        
+        /* Diagram Area */
+        .diagram-wrapper {
+            position: relative;
+            width: 1100px;
+            height: 550px;
+            margin: 0 auto;
+        }
+        
+        .box {
+            position: absolute;
+            background: #eef2f7;
+            border: 1px solid #b0c4de;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .box-title {
+            background: #ffffff;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #475569;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .box textarea {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: none;
+            font-size: 13px;
+            background: transparent;
+            outline: none;
+            font-family: inherit;
+        }
+        /* Box Positions matching the layout image */
+        #box-human { top: 120px; left: 50px; width: 220px; height: 100px; }
+        #box-inputs { top: 260px; left: 10px; width: 240px; height: 110px; }
+        #box-material { top: 410px; left: 30px; width: 260px; height: 110px; }
+        
+        #box-steps { top: 0px; right: 80px; width: 350px; height: 150px; }
+        #box-outputs { top: 210px; right: 30px; width: 260px; height: 120px; }
+        #box-indicators { top: 370px; right: 50px; width: 330px; height: 140px; }
+        
+        /* Central Manager Box Inside Turtle */
+        .manager-box {
+            position: absolute;
+            top: 290px;
+            left: 450px;
+            width: 160px;
+            text-align: center;
+            z-index: 12;
+            background: rgba(211, 84, 0, 0.9);
+            padding: 6px;
+            border-radius: 8px;
+            border: 1px solid #e67e22;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .manager-box label {
+            display: block;
+            color: #fff;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        .manager-box input {
+            width: 90%;
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            color: #fff;
+            text-align: center;
+            font-size: 13px;
+            outline: none;
+        }
+
+        /* ΑΛΛΑΓΗ ΧΡΩΜΑΤΟΣ PLACEHOLDER */
+        .manager-box input::placeholder { color: rgba(255, 255, 255, 0.85) !important; }
+        .manager-box input::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.85) !important; }
+        .manager-box input::-moz-placeholder { color: rgba(255, 255, 255, 0.85) !important; }
+        .manager-box input:-ms-input-placeholder { color: rgba(255, 255, 255, 0.85) !important; }
+
+        /* SVG Arrow Overlay */
+        .arrows-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1100px;
+            height: 550px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        /* Footer & Actions */
+        footer {
+            margin-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #64748b;
+        }
+        .btn-print {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+        .btn-print:hover {
+            background-color: #1d4ed8;
+        }
+        /* Error Message Alert */
+        .alert {
+            display: none;
+            background-color: #fee2e2;
+            border: 1px solid #fca5a5;
+            color: #991b1b;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        /* Print Media Styles */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 10mm;
+            }
+            body {
+                background: white;
+                padding: 0;
+                width: 100%;
+            }
+            .container {
+                box-shadow: none;
+                padding: 10px;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .btn-print, .alert {
+                display: none !important;
+            }
+            textarea {
+                background: transparent !important;
+                border: none !important;
+                resize: none;
+            }
+            .box {
+                border: 1px solid #000 !important;
+                background: #fff !important;
+            }
+            .box-title {
+                background: #f1f5f9 !important;
+                border-bottom: 1px solid #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="validation-alert" class="alert">⚠️ Παρακαλούμε συμπληρώστε το Ονοματεπώνυμό σας πριν από την εκτύπωση / αποθήκευση σε PDF.</div>
+    
+    <header>
+        <div>
+            <h1>ISO 9001 Homework 2: Διάγραμμα Χελώνας</h1>
+            <span class="process-title">Διεργασία: Υλοποίηση κατάρτισης (ΚΕΚ)</span>
+        </div>
+        <div class="user-info">
+            <label for="student-name">👤 Ονοματεπώνυμο Εκπαιδευόμενου:</label>
+            <input type="text" id="student-name" placeholder="#ΥΠΟΔΕΙΓΜΑ ΑΠΑΝΤΗΣΗΣ#" required>
+        </div>
+    </header>
+    <div class="diagram-wrapper">
+        <!-- SVG Connections and Turtle Shape -->
+        <svg class="arrows-svg">
+            <!-- Turtle Drawing in center -->
+            <g transform="translate(420, 200)">
+                <!-- Shell/Body -->
+                <ellipse cx="110" cy="110" rx="75" ry="60" fill="#a0522d" stroke="#5c2e16" stroke-width="4"/>
+                <ellipse cx="110" cy="110" rx="65" ry="50" fill="#cd853f" stroke="#5c2e16" stroke-width="2"/>
+                <!-- Shell details -->
+                <path d="M 65,110 Q 110,80 155,110" fill="none" stroke="#5c2e16" stroke-width="2"/>
+                <path d="M 65,110 Q 110,140 155,110" fill="none" stroke="#5c2e16" stroke-width="2"/>
+                <path d="M 110,50 L 110,170" fill="none" stroke="#5c2e16" stroke-width="2"/>
+                <path d="M 75,75 L 145,145" fill="none" stroke="#5c2e16" stroke-width="2"/>
+                <path d="M 75,145 L 145,75" fill="none" stroke="#5c2e16" stroke-width="2"/>
+                
+                <!-- Flippers/Legs -->
+                <path d="M 55,75 C 30,50 10,60 25,85 C 35,95 50,100 55,100 Z" fill="#2e8b57" stroke="#1e5631" stroke-width="2"/>
+                <path d="M 60,140 C 35,165 20,185 40,200 C 55,210 70,180 70,160 Z" fill="#2e8b57" stroke="#1e5631" stroke-width="2"/>
+                <path d="M 165,75 C 190,40 210,50 195,75 C 185,90 170,95 165,97 Z" fill="#2e8b57" stroke="#1e5631" stroke-width="2"/>
+                <path d="M 160,145 C 180,175 195,190 210,175 C 215,160 185,145 175,140 Z" fill="#2e8b57" stroke="#1e5631" stroke-width="2"/>
+                
+                <ellipse cx="200" cy="110" rx="20" ry="14" fill="#2e8b57" stroke="#1e5631" stroke-width="2"/>
+                <circle cx="208" cy="105" r="3" fill="black"/>
+                <path d="M 35,110 L 10,115 L 35,120 Z" fill="#2e8b57" stroke="#1e5631" stroke-width="2"/>
+            </g>
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#4a90e2" />
+                </marker>
+            </defs>
+            <path d="M 270,170 Q 360,170 445,265" fill="none" stroke="#4a90e2" stroke-width="2" marker-end="url(#arrow)" />
+            <path d="M 250,315 Q 350,315 470,315" fill="none" stroke="#4a90e2" stroke-width="2" marker-end="url(#arrow)" />
+            <path d="M 290,465 Q 400,465 470,390" fill="none" stroke="#4a90e2" stroke-width="2" marker-end="url(#arrow)" />
+            <path d="M 680,150 Q 610,180 600,250" fill="none" stroke="#4a90e2" stroke-width="2" marker-end="url(#arrow)" />
+            <path d="M 625,310 Q 720,270 790,270" fill="none" stroke="#4a90e2" stroke-width="2" marker-end="url(#arrow)" />
+            <path d="M 690,440 Q 660,440 635,410" fill="none" stroke="#4a90e2" stroke-width="2" marker-end="url(#arrow)" />
+        </svg>
+        
+        <div class="box" id="box-human">
+            <div class="box-title">Ανθρώπινοι Πόροι (Με ποιους;)</div>
+            <textarea placeholder="- Καθηγητές / Εισηγητές.
+- Ακαδημαϊκοί Σύμβουλοι.
+- Γραμματεία Σπουδών.
+- Τεχνική Υποστήριξη (IT).
+"></textarea>
+        </div>
+        <div class="box" id="box-inputs">
+            <div class="box-title">Εισερχόμενα (Inputs)</div>
+            <textarea placeholder="- Απαιτήσεις αγοράς (π.χ. σπουδαστές, Υπουργείο, φορείς πιστοποίησης).
+- Αποφάσεις Διοίκησης για ανάπτυξη εκπαιδευτικών προγραμμάτων.
+"></textarea>
+        </div>
+        <div class="box" id="box-material">
+            <div class="box-title">Υλικοί Πόροι (Με τι;)</div>
+            <textarea placeholder="- Αίθουσες διδασκαλίας και εργαστήρια.
+- Πλατφόρμα e-learning (π.χ. Moodle, Teams).
+- Εκπαιδευτικό υλικό (βιβλία, σημειώσεις).
+- Υπολογιστές και projectors.
+"></textarea>
+        </div>
+        
+        <!-- Διορθωμένο κουτί Υπευθύνου -->
+        <div class="manager-box">
+            <label>👑 Υπεύθυνος Διεργασίας</label>
+            <input type="text" placeholder="Διευθυντής Σπουδών">
+        </div>
+        
+        <div class="box" id="box-steps">
+            <div class="box-title">Δραστηριότητες / Βήματα (Πώς γίνεται;)</div>
+            <textarea placeholder="- Ανάπτυξη: Σύνταξη οδηγού σπουδών και ύλης και επιλογή εισηγητών.
+- Προγραμματισμός: Κατάρτιση ωρολογίου προγράμματος και ανάθεση σε εισηγητές.
+- Παράδοση: Διεξαγωγή μαθημάτων (διά ζώσης ή online) και εργαστηρίων.
+- Αξιολόγηση: Διενέργεια εξετάσεων και βαθμολόγηση φοιτητών.
+"></textarea>
+        </div>
+        <div class="box" id="box-outputs">
+            <div class="box-title">Εξερχόμενα (Outputs)</div>
+            <textarea placeholder="- Εκπαιδευμένοι σπουδαστές.
+- Πτυχία, βεβαιώσεις σπουδών.
+- Αποτελέσματα εξετάσεων (βαθμολογίες).
+"></textarea>
+        </div>
+        <div class="box" id="box-indicators">
+            <div class="box-title">Δείκτες Αποτελεσματικότητας (Πόσο καλά;)</div>
+            <textarea placeholder="- Ποσοστό αποφοίτησης: % σπουδαστών που ολοκληρώνουν επιτυχώς το πρόγραμμα.
+- Ικανοποίηση σπουδαστών: Σκορ από τα ερωτηματολόγια αξιολόγησης (π.χ. >85%).
+- Ποσοστό επιτυχίας εξετάσεων: % σπουδαστών που περνούν τα μαθήματα στην πρώτη εξεταστική.
+"></textarea>
+        </div>
+    </div>
+    <footer>
+        <div>Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης ISO 9001</div>
+        <button class="btn-print" onclick="handlePrint()">🖨️ Εκτύπωση σε PDF</button>
+    </footer>
+</div>
+<script>
+    function handlePrint() {
+        const nameInput = document.getElementById('student-name');
+        const alertBox = document.getElementById('validation-alert');
+        
+        if (!nameInput.value.trim()) {
+            alertBox.style.display = 'block';
+            nameInput.style.borderColor = '#ef4444';
+            nameInput.focus();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            alertBox.style.display = 'none';
+            nameInput.style.borderColor = '#cbd5e1';
+            window.print();
+        }
+    }
+</script>
+</body>
+</html>
