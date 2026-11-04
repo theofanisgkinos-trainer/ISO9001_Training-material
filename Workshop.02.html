@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>ISO 9001 Workshop 2 - Εκτύπωση</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 20px; background-color: #f9f9f9; color: #333; }
+        .header { text-align: center; margin-bottom: 25px; }
+        h1 { color: #2c3e50; font-size: 24px; }
+        
+        /* Κουτί Ομάδας με Εικονίδιο */
+        .group-container { display: flex; align-items: center; justify-content: center; margin: 15px auto; max-width: 400px; background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 5px 10px; }
+        .group-icon { font-size: 20px; margin-right: 10px; color: #7f8c8d; }
+        .group-input { border: none; outline: none; width: 100%; font-size: 16px; padding: 5px; }
+        
+        .scenario { font-size: 16px; margin-bottom: 20px; text-align: center; }
+        .bold-text { font-weight: bold; }
+        
+        /* Πίνακας / Στήλες */
+        .workshop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
+        .column { background: #fff; border: 2px dashed #bdc3c7; border-radius: 8px; min-height: 250px; padding: 15px; }
+        .column h2 { text-align: center; font-size: 18px; margin-top: 0; padding-bottom: 10px; border-bottom: 2px solid #34495e; }
+        .column.process h2 { color: #2980b9; border-bottom-color: #2980b9; }
+        .column.procedure h2 { color: #d35400; border-bottom-color: #d35400; }
+        .column.activity h2 { color: #27ae60; border-bottom-color: #27ae60; }
+        
+        /* Χαρτάκια / Στοιχεία */
+        .items-container { background: #eaedf1; padding: 15px; border-radius: 8px; min-height: 100px; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .item { background: #ffeaa7; border: 1px solid #f1c40f; padding: 10px 15px; border-radius: 4px; cursor: move; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); font-size: 14px; font-weight: 500; }
+        
+        /* Κουμπιά */
+        .btn-container { text-align: center; margin-top: 20px; }
+        .btn { background-color: #2c3e50; color: white; border: none; padding: 12px 25px; font-size: 16px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn:hover { background-color: #34495e; }
+        
+        @media print {
+            .btn-container, .items-container { display: none; }
+            body { background: #fff; }
+            .column { border-style: solid; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>ISO 9001 Workshop 2: Διεργασία, Διαδικασία ή Δραστηριότητα;</h1>
+        
+        <!-- Κουτί Ομάδας -->
+        <div class="group-container">
+            <span class="group-icon">👥</span>
+            <input type="text" id="groupName" class="group-input" placeholder="Γράψτε το όνομα ή τον αριθμό της ομάδας σας...">
+        </div>
+        
+        <p class="scenario class bold-text">Σενάριο: Λειτουργία Εστιατορίου. Σύρετε τα στοιχεία στα σωστά κουτιά.</p>
+    </div>
+
+    <!-- Αρχικό Container για τα χαρτάκια -->
+    <div class="items-container" id="sourceContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="item" draggable="true" ondragstart="drag(event)" id="item1">Εξυπηρέτηση Πελατών & Εστίαση</div>
+        <div class="item" draggable="true" ondragstart="drag(event)" id="item2">Παρασκευή Γευμάτων (Κουζίνα)</div>
+        <div class="item" draggable="true" ondragstart="drag(event)" id="item3">Διαχείριση Προμηθειών & Α' Υλών</div>
+        <div class="item" draggable="true" ondragstart="drag(event)" id="item4">Οδηγία Υποδοχής & Λήψης Παραγγελίας</div>
+        <div class="item" draggable="true" ondragstart="drag(event)" id="item5">Πρωτόκολλο Υγιεινής & Καθαρισμού (HACCP)</div>
+        <div class="item" draggable="true" ondragstart="drag(event)" id="item6">Εγχειρίδιο Αντιμετώπισης Παραπόνων</div>
+        <div class="item" draggable="true" ondragstart="drag(event)" id="item7">Υποδοχή και συνοδεία του πελάτη στο τραπέζι</div>
+        <div class="item" draggable="true" ondragstart="drag(event)" id="item8">Καταγραφή των πιάτων στο POS</div>
+        <div class="item" draggable="true" ondragstart="drag(event)" id="item9">Πλύσιμο των χεριών του μάγειρα</div>
+        <div class="item" draggable="true" ondragstart="drag(event)" id="item10">Έλεγχος θερμοκρασίας παραλαβής κρεάτων</div>
+    </div>
+
+    <!-- Οι 3 Στήλες (Κουτιά) -->
+    <div class="workshop-grid">
+        <div class="column process" id="box-process" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>ΔΙΕΡΓΑΣΙΑ (Process)</h2>
+        </div>
+        <div class="column procedure" id="box-procedure" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>ΔΙΑΔΙΚΑΣΙΑ (Procedure)</h2>
+        </div>
+        <div class="column activity" id="box-activity" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>ΔΡΑΣΤΗΡΙΟΤΗΤΑ (Activity)</h2>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button class="btn" onclick="printToPDF()">Εκτύπωση σε PDF</button>
+    </div>
+
+    <script>
+        // Drag and Drop Λειτουργίες
+        function allowDrop(ev) { ev.preventDefault(); }
+        function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.setData ? ev.dataTransfer.getData("text") : null;
+            if(!data) return;
+            var target = ev.target;
+            while(target && !target.classList.contains('column') && !target.classList.contains('items-container')) {
+                target = target.parentNode;
+            }
+            if(target) target.appendChild(document.getElementById(data));
+        }
+
+        // Έλεγχος Ομάδας και Εκτύπωση
+        function printToPDF() {
+            var groupInput = document.getElementById('groupName').value.trim();
+            if (groupInput === "") {
+                alert("Παρακαλώ συμπληρώστε το όνομα ή τον αριθμό της ομάδας σας πριν την εκτύπωση!");
+            } else {
+                window.print();
+            }
+        }
+
+        // ΑΥΤΟΜΑΤΟ ΑΝΑΚΑΤΕΜΑ ΚΑΤΑ ΤΟ ΦΟΡΤΩΜΑ
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('sourceContainer');
+            const items = Array.from(container.children);
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                container.appendChild(items[j]);
+            }
+        });
+    </script>
+</body>
+</html>
