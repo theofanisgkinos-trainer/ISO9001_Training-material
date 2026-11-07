@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet ISO 9001:2026 - Παράγραφος 7.5</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --text-light: #475569;
+            --success: #10b981;
+            --success-bg: #f0fdf4;
+            --danger: #ef4444;
+            --danger-bg: #fef2f2;
+            --accent: #3b82f6;
+            --accent-bg: #f0f7ff;
+            --border: #e2e8f0;
+        }
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 40px 20px; 
+            background-color: var(--bg); 
+            color: var(--text); 
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: auto; 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05); 
+        }
+        .header-area {
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        h1 { 
+            color: var(--primary); 
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+        h1 small {
+            display: block;
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-top: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        h2 { 
+            color: var(--primary); 
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background: var(--accent);
+            margin-right: 12px;
+            border-radius: 4px;
+        }
+        h3 { 
+            color: var(--text); 
+            font-size: 1.2rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        h4 {
+            color: var(--primary);
+            font-size: 1.05rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        .factor-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        .factor-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+        .factor-item:last-child { margin-bottom: 0; }
+        .msg { 
+            background: var(--success-bg); 
+            padding: 12px 16px; 
+            border-left: 4px solid var(--success); 
+            margin-top: 10px; 
+            font-size: 0.95rem;
+            color: #065f46;
+            border-radius: 0 8px 8px 0;
+        }
+        .logic-block {
+            background: var(--accent-bg);
+            padding: 12px 16px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #1e40af;
+            border-radius: 0 8px 8px 0;
+        }
+        .grid-blocks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            .grid-blocks { grid-template-columns: 1fr; }
+        }
+        .example-card { 
+            padding: 20px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+        }
+        .example-card.danger-card { 
+            background-color: var(--danger-bg); 
+            border-color: #fee2e2;
+        }
+        .example-card.success-card { 
+            background-color: var(--success-bg); 
+            border-color: #dcfce7;
+        }
+        .badge { 
+            display: inline-block; 
+            padding: 4px 10px; 
+            border-radius: 6px; 
+            font-weight: 700; 
+            color: white; 
+            font-size: 0.75rem; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px; 
+        }
+        .badge-danger { background-color: var(--danger); }
+        .badge-success { background-color: var(--success); }
+        .example-card p { margin: 0; color: var(--text); font-size: 0.95rem; }
+        .iso-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .iso-list li {
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+        .iso-list strong {
+            color: var(--text);
+        }
+        footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 2px solid var(--border); 
+            text-align: center; 
+            color: var(--text-light); 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+       <div class="header-area">
+       <span style="font-size: 1.2rem; font-weight: normal; color: #475569; display: block; margin-bottom: 5px;">ΟΔΗΓΟΣ ΕΠΙΘΕΩΡΗΤΩΝ ISO 9001:2026</span>
+       <h1 style="font-size: 2rem; font-weight: 800; color: #1e3a8a; margin: 0;">ΘΕΜΑ: <span style="font-size: 1.7rem;">ΠΑΡΑΓΡΑΦΟΣ 7.5 - ΤΕΚΜΗΡΙΩΜΕΝΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</span></h1>
+   </div>
+
+    <h2>ΠΑΡΑΓΡΑΦΟΣ 7.5.1 - ΓΕΝΙΚΑ</h2>
+    <p>Το Σύστημα Διαχείρισης Ποιότητας του Οργανισμού πρέπει να περιλαμβάνει:</p>
+    
+    <ul class="iso-list">
+        <li><strong>7.5.1 (α):</strong> Τις τεκμηριωμένες πληροφορίες που απαιτούνται από το παρόν Διεθνές Πρότυπο.</li>
+        <li><strong>7.5.1 (β):</strong> Τις τεκμηριωμένες πληροφορίες που ο Οργανισμός καθορίζει ως απαραίτητες για την αποτελεσματικότητα του Συστήματος Διαχείρισης Ποιότητας.</li>
+    </ul>
+
+    <p>Στη <strong>ΣΗΜΕΙΩΣΗ</strong> της παραγράφου, αναφέρονται <strong>3 συγκεκριμένοι παράγοντες</strong> που επηρεάζουν την έκταση (όγκο και μορφή) της τεκμηριωμένης πληροφορίας ενός Οργανισμού:</p>
+    
+    <div class="factor-card">
+        <div class="factor-item">
+            <strong>1. Το μέγεθος του Οργανισμού</strong> και το είδος των δραστηριοτήτων, διεργασιών, προϊόντων και υπηρεσιών του.
+            <div class="msg"><strong>Εκπαιδευτικό Μήνυμα:</strong> Μια μικρή εταιρεία παροχής υπηρεσιών δεν χρειάζεται και δεν επιβάλλεται να διατηρεί τον ίδιο όγκο τεκμηρίωσης με μια πολυεθνική βιομηχανία.</div>
+        </div>
+        
+        <div class="factor-item">
+            <strong>2. Η πολυπλοκότητα των διεργασιών</strong> και των αλληλεπιδράσεών τους.
+            <div class="msg"><strong>Εκπαιδευτικό Μήνυμα:</strong> Όταν οι διεργασίες είναι απλές, γραμμικές και χαμηλής διακινδύνευσης, η ανάγκη για έγγραφες οδηγίες ελαχιστοποιείται. Σε σύνθετες αλληλεπιδράσεις ή υψηλό ρίσκο, η τεκμηρίωση καθίσταται απαραίτητη.</div>
+        </div>
+        
+        <div class="factor-item">
+            <strong>3. Η επάρκεια και ικανότητα (competence)</strong> των προσώπων.
+            <div class="msg"><strong>Εκπαιδευτικό Μήνυμα:</strong> Όσο πιο εξειδικευμένο και αποδεδειγμένα ικανό είναι το προσωπικό που εκτελεί μια εργασία, τόσο λιγότερο απαραίτητη είναι η ύπαρξη αναλυτικών, βήμα-προς-βήμα γραπτών οδηγιών εργασίας.</div>
+        </div>
+    </div>
+    <h2>ΠΑΡΑΓΡΑΦΟΣ 7.5.2 - ΔΗΜΙΟΥΡΓΙΑ ΚΑΙ ΕΠΙΚΑΙΡΟΠΟΙΗΣΗ</h2>
+    <p>Κατά τη δημιουργία και επικαιροποίηση τεκμηριωμένων πληροφοριών, ο Οργανισμός πρέπει να διασφαλίζει την κατάλληλη:</p>
+
+    <h3>7.5.2(α) Ταυτοποίηση και περιγραφή (π.χ. τίτλος, ημερομηνία, συντάκτης ή κωδικός)</h3>
+    <div class="logic-block"><strong>Η Λογική:</strong> Οι τεκμηριωμένες πληροφορίες πρέπει να μπορούν να αναγνωρίζονται με σαφήνεια και να διακρίνονται από άλλες πληροφορίες. Η ταυτοποίηση επιτρέπει στους χρήστες να γνωρίζουν ποιο έγγραφο ή αρχείο χρησιμοποιούν, σε ποιο αντικείμενο αναφέρεται και, όπου απαιτείται, ποιος είναι υπεύθυνος για τη δημιουργία του.</div>
+    
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Στη γραμμή παραγωγής βιομηχανίας τροφίμων, εντοπίζεται αναρτημένος πίνακας ορίων θερμοκρασίας παστερίωσης ο οποίος στερείται κωδικοποίησης, ημερομηνίας έκδοσης ή αναφοράς στον συντάκτη του.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Στο ERP της εταιρείας, οι τεχνικές προδιαγραφές φέρουν μοναδικό αναγνωριστικό (ID: PROD-SPEC-04), αυτόματη ημερομηνία τελευταίας τροποποίησης και ψηφιακή ταυτότητα του συντάκτη.</p>
+        </div>
+    </div>
+
+    <h3>7.5.2(β) Μορφή και μέσα ενημέρωσης (π.χ. γλώσσα, έκδοση λογισμικού, γραφικά, χαρτί ή ηλεκτρονική μορφή)</h3>
+    <div class="logic-block"><strong>Η Λογική:</strong> Οι τεκμηριωμένες πληροφορίες πρέπει να δημιουργούνται σε μορφή και μέσο που εξυπηρετούν τον σκοπό για τον οποίο προορίζονται και τις ανάγκες των χρηστών τους. Πρέπει να λαμβάνονται υπόψη παράγοντες όπως η γλώσσα, η ευκολία κατανόησης, η συμβατότητα με τα διαθέσιμα τεχνολογικά μέσα και οι συνθήκες χρήσης.</div>
+
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Οι οδηγίες λειτουργίας ενός μηχανήματος είναι διαθέσιμες μόνο στην αγγλική γλώσσα, ενώ οι χειριστές που πρέπει να τις εφαρμόζουν δεν κατανοούν επαρκώς την αγγλική.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Αντικατάσταση των κειμένων με οπτικοποιημένες οδηγίες (infographics) ή εκπαιδευτικά βίντεο προσβάσιμα μέσω QR codes πάνω στα μηχανήματα, μεταφρασμένα στις γλώσσες των εργαζομένων.</p>
+        </div>
+    </div>
+
+    <h3>7.5.2(γ) Ανασκόπηση και έγκριση ως προς την καταλληλότητα και την επάρκεια</h3>
+    <div class="logic-block"><strong>Η Λογική:</strong> Πριν από τη χρήση ή τη διάθεση τεκμηριωμένων πληροφοριών, πρέπει να διασφαλίζεται ότι το περιεχόμενό τους είναι κατάλληλο για τον προβλεπόμενο σκοπό και επαρκές ως προς τις πληροφορίες που παρέχει. Η έγκριση πρέπει να πραγματοποιείται από πρόσωπο με την κατάλληλη αρμοδιότητα.</div>
+
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Η Πολιτική Ποιότητας βρίσκεται αποθηκευμένη σε κοινόχρηστο δίκτυο σε μορφή επεξεργάσιμου αρχείου Word, έχοντας τροποποιηθεί πρόσφατα χωρίς καμία καταγεγραμμένη απόδειξη έγκρισης από την Ανώτατη Διοίκηση.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Η έγκριση εκτελείται μέσω ψηφιακής ροής εργασίας (workflow) σε Document Management System (DMS), όπου το έγγραφο «κλειδώνει» και εκδίδεται μόνο κατόπιν ηλεκτρονικής έγκρισης του Process Owner.</p>
+        </div>
+    </div>
+
+    <h2>ΠΑΡΑΓΡΑΦΟΣ 7.5.3 - ΕΛΕΓΧΟΣ ΤΩΝ ΤΕΚΜΗΡΙΩΜΕΝΩΝ ΠΛΗΡΟΦΟΡΙΩΝ</h2>
+    
+    <h3>7.5.3.1 Οι τεκμηριωμένες πληροφορίες που απαιτούνται από το σύστημα διαχείρισης ποιότητας και από το παρόν έγγραφο πρέπει να ελέγχονται προκειμένου να διασφαλίζονται:</h3>
+    
+    <h4>(α) Η διαθεσιμότητα και καταλληλότητα για χρήση</h4>
+    <div class="logic-block"><strong>Η Λογική:</strong> Η ύπαρξη τεκμηριωμένων πληροφοριών δεν αρκεί. Πρέπει να είναι διαθέσιμες στα κατάλληλα πρόσωπα, στον κατάλληλο τόπο και χρόνο, ώστε να μπορούν να χρησιμοποιηθούν αποτελεσματικά. Επιπλέον, πρέπει να είναι κατάλληλες για την εκάστοτε χρήση.</div>
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Χειριστής καλείται να ρυθμίσει παραμέτρους θερμοκόλλησης. Η οδηγία εργασίας υπάρχει μόνο στο Intranet, αλλά ο σταθμός εργασίας δεν διαθέτει υπολογιστή ή έντυπο αντίγραφο, με αποτέλεσμα ο χειριστής να ενεργεί εμπειρικά.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Οι σταθμοί εργασίας είναι εξοπλισμένοι με βιομηχανικά tablets που παρέχουν offline πρόσβαση στις τρέχουσες οδηγίες εργασίας στο σημείο και τη στιγμή της ρύθμισης.</p>
+        </div>
+    </div>
+
+    <h4>(β) Η επαρκής προστασία</h4>
+    <div class="logic-block"><strong>Η Λογική:</strong> Οι τεκμηριωμένες πληροφορίες πρέπει να προστατεύονται από καταστάσεις που θα μπορούσαν να επηρεάσουν την εμπιστευτικότητα, την ορθή χρήση ή την ακεραιότητά τους.
+Αυτό σημαίνει ότι πρέπει να αποφεύγονται:
+(α) Η πρόσβαση σε εμπιστευτικές πληροφορίες από μη εξουσιοδοτημένα πρόσωπα,
+(β) Η χρήση πληροφοριών για σκοπούς διαφορετικούς από τους προβλεπόμενους και
+(γ) Η απώλεια ή αλλοίωση πληροφοριών που είναι απαραίτητες για τη λειτουργία του Συστήματος Διαχείρισης Ποιότητας.</div>
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Τα αρχεία αποτελεσμάτων ποιοτικού ελέγχου τηρούνται σε αρχείο Excel σε κοινόχρηστο φάκελο, όπου όλο το προσωπικό της εταιρείας έχει δικαιώματα "Read/Write", επιτρέποντας ανεξέλεγκτες αλλοιώσεις.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Το αρχείο Excel είναι "Read-Only" για το μη εξουσιοδοτημένο προσωπικό και "Write" αποκλειστικά για το εργαστήριο, με καθημερινό κρυπτογραφημένο backup σε cloud server.</p>
+        </div>
+    </div>
+
+    <h3>7.5.3.2 Για τον έλεγχο των τεκμηριωμένων πληροφοριών, ο οργανισμός πρέπει να αναλάβει τις ακόλουθες δραστηριότητες, όπου ισχύει:</h3>
+
+    <h4>(α) Διανομή, πρόσβαση, ανάκτηση και χρήση</h4>
+    <div class="logic-block"><strong>Η Λογική:</strong> Να εξασφαλίζεται ότι οι πληροφορίες φθάνουν στους κατάλληλους χρήστες, ότι η πρόσβαση σε αυτές ελέγχεται όπου απαιτείται και ότι οι εργαζόμενοι χρησιμοποιούν τις σωστές πληροφορίες κατά την εκτέλεση των δραστηριοτήτων τους.</div>
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Οι προδιαγραφές προϊόντων είναι αποθηκευμένες αποκλειστικά στον τοπικό υπολογιστή του Διευθυντή Ποιότητας. Σε περίπτωση απουσίας του, είναι αδύνατη η ανάκτηση και η χρήση τους από την παραγωγή.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Εφαρμογή διαβαθμισμένης πρόσβασης βάσει ρόλου (Role-Based Access Control) σε κεντρικό DMS, με άμεση ανάκτηση εγγράφων από τους χρήστες μέσω κωδικοποιημένων tags (indexing).</p>
+        </div>
+    </div>
+
+    <h4>(β) Αποθήκευση και διατήρηση, συμπεριλαμβανομένης της διατήρησης της αναγνωσιμότητας</h4>
+    <div class="logic-block"><strong>Η Λογική:</strong> Οι τεκμηριωμένες πληροφορίες πρέπει να αποθηκεύονται και να διατηρούνται κατά τρόπο που εξασφαλίζει ότι παραμένουν διαθέσιμες, αναγνώσιμες και αξιοποιήσιμες για όσο χρονικό διάστημα απαιτείται. Αυτό περιλαμβάνει την προστασία από φθορά, απώλεια, καταστροφή ή τεχνολογική απαξίωση των μέσων αποθήκευσης. Η απαίτηση αφορά τόσο τα έντυπα όσο και τα ηλεκτρονικά αρχεία.</div>
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Έντυπα αρχεία μετρήσεων έχουν αποθηκευτεί σε υπόγειο χώρο με υψηλή υγρασία, με αποτέλεσμα μέρος των εγγράφων να έχει καταστραφεί και να μην είναι πλέον αναγνώσιμο.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Φύλαξη φυσικών αρχείων σε ελεγχόμενο περιβάλλον. Ψηφιακά αρχεία μετατρέπονται αυτόματα σε standard μορφότυπα μακροχρόνιας διατήρησης (π.χ. PDF) για διασφάλιση της αναγνωσιμότητας.</p>
+        </div>
+    </div>
+    <h4>(γ) Έλεγχος αλλαγών (π.χ. έλεγχος εκδόσεων)</h4>
+    <div class="logic-block"><strong>Η Λογική:</strong> Οι αλλαγές στις τεκμηριωμένες πληροφορίες πρέπει να ελέγχονται, ώστε να διασφαλίζεται ότι οι χρήστες εφαρμόζουν τις ισχύουσες πληροφορίες και ότι είναι δυνατή η αναγνώριση των τροποποιήσεων που έχουν πραγματοποιηθεί.</div>
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Το τμήμα προμηθειών απέστειλε σε εξωτερικό συνεργάτη την Έκδοση 2 τεχνικών σχεδίων, ενώ το τεχνικό τμήμα είχε εκδώσει την Έκδοση 3. Ο συνεργάτης παρήγαγε ελαττωματικά προϊόντα λόγω έλλειψης αποτελεσματικού ελέγχου εκδόσεων.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Καταγραφή τροποποιήσεων σε πίνακα ιστορικού αλλαγών (ή στα metadata του συστήματος). Οι παλαιότερες εκδόσεις μεταφέρονται αυτόματα σε φάκελο «Ακυρωμένα» με ένδειξη SUPERSEDED.</p>
+        </div>
+    </div>
+
+    <h4>(δ) Διατήρηση και τελική διάθεση</h4>
+    <div class="logic-block"><strong>Η Λογική:</strong> Ο Οργανισμός πρέπει να καθορίζει για πόσο χρονικό διάστημα διατηρούνται οι τεκμηριωμένες πληροφορίες και τι συμβαίνει σε αυτές όταν παρέλθει το προβλεπόμενο χρονικό διάστημα. Η διάρκεια διατήρησης μπορεί να εξαρτάται από νομοθετικές απαιτήσεις, συμβατικές υποχρεώσεις, επιχειρησιακές ανάγκες ή την ανάγκη διατήρησης αποδεικτικών στοιχείων. Η τελική διάθεση πρέπει να πραγματοποιείται με κατάλληλο τρόπο, λαμβάνοντας υπόψη και την ανάγκη προστασίας εμπιστευτικών πληροφοριών.</div>
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Παλαιά ιατρικά δεδομένα και αξιολογήσεις εργαζομένων που έχουν αποχωρήσει προ δεκαετίας παραμένουν σε ανοιχτά χαρτοκιβώτια χωρίς να έχει οριστεί χρόνος τήρησης ή διαδικασία ασφαλούς διάθεσης.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Εφαρμογή «Πίνακα Χρόνου Τήρησης Αρχείων» (Retention Matrix). Μετά το πέρας, τα φυσικά έγγραφα καταστρέφονται σε shredder με έκδοση πιστοποιητικού και τα ψηφιακά διαγράφονται οριστικά (purging).</p>
+        </div>
+    </div>
+
+    <h3>Συμπληρωματικές Απαιτήσεις Ελέγχου</h3>
+    
+    <h4>Αναγνώριση και έλεγχος τεκμηριωμένων πληροφοριών εξωτερικής προέλευσης</h4>
+    <div class="logic-block"><strong>Η Λογική:</strong> Ο Οργανισμός πρέπει να διασφαλίζει ότι οι πληροφορίες που προέρχονται από εξωτερικές πηγές, όπως νομοθεσία, πρότυπα, τεχνικές προδιαγραφές πελατών, εγχειρίδια κατασκευαστών ή άλλες εξωτερικές οδηγίες, και είναι απαραίτητες για τη λειτουργία του ΣΔΠ του Οργανισμού, αναγνωρίζονται και ελέγχονται κατάλληλα, ώστε να αποφεύγεται η χρήση λανθασμένων, παρωχημένων ή μη εγκεκριμένων πληροφοριών.</div>
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Το τεχνικό εργαστήριο εκτελεί βαθμονομήσεις οργάνων εμπειρικά, καθώς το επίσημο εγχειρίδιο του εξωτερικού κατασκευαστή (manual) έχει χαθεί και δεν ελέγχεται.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Τήρηση «Μητρώο Εξωτερικών Εγγράφων» όπου καταγράφονται τα manuals και οι σχετικές νομοθεσίες, με ορισμένο υπεύθυνο για τον ετήσιο έλεγχο της ισχύος τους.</p>
+        </div>
+    </div>
+
+    <h4>Προστασία τεκμηριωμένων πληροφοριών που αποτελούν αποδεικτικά στοιχεία συμμόρφωσης</h4>
+    <div class="logic-block"><strong>Η Λογική:</strong> Οι τεκμηριωμένες πληροφορίες που αποδεικνύουν ότι μια απαίτηση έχει ικανοποιηθεί πρέπει να διατηρούν την αξιοπιστία και την ακεραιότητά τους. Είναι ιδιαίτερα σημαντικό να αποφεύγεται η ακούσια αλλοίωση αποτελεσμάτων, καταγραφών ή άλλων αποδεικτικών στοιχείων, η οποία θα μπορούσε να οδηγήσει σε εσφαλμένα συμπεράσματα σχετικά με τη συμμόρφωση του Οργανισμού.</div>
+    <div class="grid-blocks">
+        <div class="example-card danger-card">
+            <span class="badge badge-danger">Μη Συμμόρφωση</span>
+            <p>Ψηφιακά αρχεία εγκεκριμένων τελικών ελέγχων αποθηκεύονται σε επεξεργάσιμη μορφή (.docx) σε κοινόχρηστο δίκτυο, επιτρέποντας αλλαγές τιμών χωρίς ιχνηλασιμότητα.</p>
+        </div>
+        <div class="example-card success-card">
+            <span class="badge badge-success">Ορθή Πρακτική</span>
+            <p>Με την οριστικοποίηση, το σύστημα κλειδώνει αυτόματα την εγγραφή (π.χ. ψηφιακά υπογεγραμμένο PDF ή κλειδωμένη εγγραφή στο ERP).</p>
+        </div>
+    </div>
+    <!-- ΝΕΑ ΕΝΟΤΗΤΑ: ΣΥΝΟΛΙΚΗ ΑΠΟΤΙΜΗΣΗ & ΣΗΜΑΝΤΙΚΗ ΔΙΕΥΚΡΙΝΙΣΗ -->
+    <h2 style="margin-top: 50px;">💡ΣΥΝΟΛΙΚΗ ΑΠΟΤΙΜΗΣΗ ΤΗΣ ΠΑΡΑΓΡΑΦΟΥ 7.5</h2>
+    
+    <div style="overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; background-color: var(--card-bg); font-size: 0.95rem;">
+            <thead>
+                <tr style="background-color: var(--primary); color: white;">
+                    <th style="padding: 14px 16px; font-weight: 700; border-bottom: 2px solid var(--border); width: 25%;">Παράγραφος</th>
+                    <th style="padding: 14px 16px; font-weight: 700; border-bottom: 2px solid var(--border);">Βασικό ερώτημα του επιθεωρητή</th>
+                </tr>
+            </thead>
+            <tbody style="color: var(--text);">
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--primary-light); color: var(--primary);">7.5.1</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Έχει ο Οργανισμός όλες τις τεκμηριωμένες πληροφορίες που απαιτούνται ή χρειάζονται για την αποτελεσματικότητα του ΣΔΠ;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: var(--bg);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--primary-light); color: var(--primary);">7.5.2 (α)</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Αναγνωρίζονται και διακρίνονται εύκολα οι τεκμηριωμένες πληροφορίες;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--primary-light); color: var(--primary);">7.5.2 (β)</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Είναι κατάλληλη η μορφή και το μέσο των πληροφοριών για τον σκοπό και τους χρήστες τους;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: var(--bg);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--primary-light); color: var(--primary);">7.5.2 (γ)</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Ανασκοπούνται και εγκρίνονται πριν από τη χρήση τους;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--primary-light); color: var(--primary);">7.5.3.1 (α)</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Είναι διαθέσιμες και κατάλληλες για χρήση όπου και όταν χρειάζονται;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: var(--bg);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--primary-light); color: var(--primary);">7.5.3.1 (β)</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Προστατεύονται επαρκώς από απώλεια, ακατάλληλη χρήση ή αλλοίωση;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--primary-light); color: var(--primary);">7.5.3.2 (α)</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Ελέγχονται η διανομή, η πρόσβαση, η ανάκτηση και η χρήση τους;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: var(--bg);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--primary-light); color: var(--primary);">7.5.3.2 (β)</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Αποθηκεύονται και διατηρούνται κατάλληλα, ώστε να παραμένουν αναγνώσιμες;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--primary-light); color: var(--primary);">7.5.3.2 (γ)</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Ελέγχονται οι αλλαγές και οι διαφορετικές εκδόσεις;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: var(--bg);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--primary-light); color: var(--primary);">7.5.3.2 (δ)</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Έχουν καθοριστεί χρόνοι διατήρησης και τρόποι τελικής διάθεσης;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--accent-bg); color: var(--accent);">Εξωτερική προέλευση</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Αναγνωρίζονται και ελέγχονται οι εξωτερικές πληροφορίες που είναι απαραίτητες για το ΣΔΠ;</td>
+                </tr>
+                <tr style="background-color: var(--bg);">
+                    <td style="padding: 12px 16px; font-weight: 600; background-color: var(--accent-bg); color: var(--accent);">Αποδεικτικά συμμόρφωσης</td>
+                    <td style="padding: 12px 16px; color: var(--text-light);">Προστατεύονται τα αποδεικτικά στοιχεία από ακούσιες τροποποιήσεις;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 style="margin-top: 40px; color: var(--primary);">Σημαντική διευκρίνιση</h3>
+    <p>Η απαίτηση για τεκμηριωμένες πληροφορίες δεν σημαίνει ότι κάθε έλλειψη ενός εγγράφου ή μιας καταγραφής αποτελεί αυτομάτως Μη Συμμόρφωση.</p>
+    
+    <div class="logic-block" style="background-color: var(--primary-light); color: var(--primary); border-left-color: var(--primary); padding: 20px; border-radius: 8px;">
+        <strong style="display: block; margin-bottom: 10px; font-size: 1.05rem;">Ο επιθεωρητής πρέπει πρώτα να εξετάζει:</strong>
+        <ul style="margin: 0; padding-left: 20px; color: var(--text-light);">
+            <li style="margin-bottom: 8px;">Εάν η συγκεκριμένη τεκμηριωμένη πληροφορία απαιτείται ρητά από το πρότυπο.</li>
+            <li style="margin-bottom: 8px;">Εάν ο ίδιος ο Οργανισμός έχει κρίνει ότι είναι απαραίτητη για την αποτελεσματικότητα του ΣΔΠ.</li>
+            <li style="margin-bottom: 0;">Εάν η απουσία ή η ανεπαρκής διαχείρισή της επηρεάζει την ικανοποίηση κάποιας απαίτησης του προτύπου ή την αποτελεσματικότητα του ΣΔΠ.</li>
+        </ul>
+    </div>
+
+    <p style="margin-top: 20px;">Για παράδειγμα, η απουσία μιας γραπτής διαδικασίας για μια δραστηριότητα δεν αποτελεί από μόνη της Μη Συμμόρφωση, εφόσον δεν απαιτείται ρητά από το πρότυπο και ο Οργανισμός μπορεί να διασφαλίζει αποτελεσματικά την εκτέλεση και τον έλεγχό της με άλλον τρόπο.</p>
+
+        <div style="overflow-x: auto; margin: 30px 0 20px 0; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; background-color: var(--card-bg); font-size: 0.95rem;">
+            <thead>
+                <tr style="background-color: var(--primary); color: white;">
+                    <th style="padding: 14px 16px; font-weight: 700; border-bottom: 2px solid var(--border); width: 8%;">Α/Α</th>
+                    <th style="padding: 14px 16px; font-weight: 700; border-bottom: 2px solid var(--border);">Κατευθυντήρια Γραμμή Επιθεώρησης</th>
+                </tr>
+            </thead>
+            <tbody style="color: var(--text);">
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 16px; font-weight: 700; background-color: var(--primary-light); color: var(--primary); text-align: center; vertical-align: top;">1</td>
+                    <td style="padding: 16px; color: var(--text-light); line-height: 1.6;">
+                        <strong>Δεν επιθεωρούμε την ύπαρξη εγγράφων για χάρη των εγγράφων.</strong> Εξετάζουμε εάν οι τεκμηριωμένες πληροφορίες που απαιτούνται ή είναι αναγκαίες υπάρχουν και εξυπηρετούν αποτελεσματικά τον σκοπό τους.
+                    </td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border); background-color: var(--bg);">
+                    <td style="padding: 16px; font-weight: 700; background-color: var(--primary-light); color: var(--primary); text-align: center; vertical-align: top;">2</td>
+                    <td style="padding: 16px; color: var(--text-light); line-height: 1.6;">
+                        <strong>Δεν επιβάλλουμε στον Οργανισμό δικές μας προτιμήσεις ή καλές πρακτικές που εφαρμόζει ένας άλλος Οργανισμός.</strong> Το πρότυπο δεν επιβάλλει συγκεκριμένο λογισμικό, μορφή αρχείων, σύστημα κωδικοποίησης ή μητρώο εγγράφων, εκτός εάν κάτι τέτοιο απαιτείται από (α) εφαρμοστέα νομοθετική ή κανονιστική απαίτηση, (β) συμβατική υποχρέωση ή (γ) από τον ίδιο τον Οργανισμό, στο πλαίσιο των αναγκών που έχει προσδιορίσει για την αποτελεσματικότητα του ΣΔΠ.
+                    </td>
+                </tr>
+                <tr style="background-color: var(--card-bg);">
+                    <td style="padding: 16px; font-weight: 700; background-color: var(--primary-light); color: var(--primary); text-align: center; vertical-align: top;">3</td>
+                    <td style="padding: 16px; color: var(--text-light); line-height: 1.6;">
+                        <strong>Κάθε Μη Συμμόρφωση πρέπει να στηρίζεται σε αντικειμενικά στοιχεία και συγκεκριμένη απαίτηση.</strong> Δεν αρκεί η διαπίστωση μιας αδυναμίας ή μιας πρακτικής που μας φαίνεται υπερβολική ή "μπερδεμένη".
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        Σεμινάριο Εκπαίδευσης Επιθεωρητών ISO 9001
+    </footer>
+</div>
+
+</body>
+</html>
