@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO 9001_2026_Case Study01_Απαντήσεις</title>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --border-color: #cbd5e1;
+            --accent-ms: #dc2626;
+            --accent-no-ms: #16a34a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 { margin: 0; font-size: 24px; }
+        header p { margin: 10px 0 0 0; opacity: 0.9; }
+
+        .answers-title-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .answers-title-box h2 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 22px;
+        }
+
+        .case-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
+        }
+
+        .case-title {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .status-ms {
+            background-color: #fee2e2;
+            color: var(--accent-ms);
+            border: 1px solid #fca5a5;
+        }
+
+        .status-no-ms {
+            background-color: #dcfce7;
+            color: var(--accent-no-ms);
+            border: 1px solid #86efac;
+        }
+
+        .section-subtitle {
+            font-weight: bold;
+            color: #1e293b;
+            margin-top: 12px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .content-block {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .content-block ul {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-left: 20px;
+        }
+
+        .attention-box {
+            background-color: #fff7ed;
+            border-left: 4px solid #ea580c;
+            padding: 12px 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+        }
+
+        .attention-title {
+            font-weight: bold;
+            color: #c2410c;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 35px 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
+        }
+
+        .results-table th, .results-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .results-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .print-btn {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            transition: background-color 0.2s;
+        }
+
+        .print-btn:hover { background-color: #059669; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        @media print {
+            body { background-color: white; color: black; }
+            .container { max-width: 100%; margin: 0; padding: 0; }
+            .print-btn, .btn-container { display: none; }
+            .case-card { page-break-inside: avoid; border: 1px solid #000; margin-bottom: 20px; }
+            header { background: none; color: black; box-shadow: none; padding: 0; margin-bottom: 20px; }
+            header h1, header p { color: black; }
+            .answers-title-box { border: 1px solid #000; background: none; }
+            .results-table { border: 1px solid #000; box-shadow: none; }
+            .results-table th { background-color: #f1f5f9; color: black; border-bottom: 2px solid #000; }
+            .results-table td { border-bottom: 1px solid #000; }
+            .attention-box { border: 1px solid #000; background: none; }
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C' || e.key === 'x' || e.key === 'X')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Cheat Sheet Επιθεώρησης</h1>
+        <p>Case Study 1 (ISO 9001:2026 — Παράγραφος 7.5)</p>
+    </header>
+
+    <div class="answers-title-box">
+        <h2>Απαντήσεις και αιτιολόγηση</h2>
+    </div>
+
+    <!-- Case 1 -->
+    <div class="case-card">
+        <h4 class="case-title">Περίπτωση 1 – Η οδηγία που δεν υπάρχει πουθενά</h4>
+        <div class="status-badge status-ms">Μη Συμμόρφωση</div>
+        
+        <span class="section-subtitle">Σχετική απαίτηση:</span>
+        <div class="content-block">7.5.1 (β).</div>
+        
+        <span class="section-subtitle">Αιτιολόγηση:</span>
+        <div class="content-block">
+            Η εταιρεία έχει ήδη αναγνωρίσει ότι οι οδηγίες ρύθμισης της θερμοκρασίας είναι απαραίτητες για την αποτελεσματική λειτουργία της παραγωγικής διεργασίας, αλλά δεν έχει προχωρήσει στην τεκμηρίωσή τους. Η απουσία τους συνδέεται, μάλιστα, με διαφορετικές πρακτικές μεταξύ των χειριστών και αποκλίσεις στα χαρακτηριστικά του προϊόντος. Επομένως, πρόκειται για περίπτωση μη ικανοποίησης μιας ανάγκης τεκμηρίωσης που ο ίδιος ο Οργανισμός έχει αναγνωρίσει ως απαραίτητη.
+        </div>
+        
+        <div class="attention-box">
+            <span class="attention-title">ΠΡΟΣΟΧΗ:</span>
+            Εάν δεν υπήρχε η αναγνώριση της ανάγκης από τον Οργανισμό, θα έπρεπε να εξεταστεί εάν η απουσία τεκμηρίωσης επηρεάζει την αποτελεσματικότητα του ΣΔΠ. Η απουσία γραπτής οδηγίας προκύπτει ότι επηρεάζει την αποτελεσματικότητα του ΣΔΠ (αποκλίσεις στα χαρακτηριστικά του προϊόντος).
+        </div>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="case-card">
+        <h4 class="case-title">Περίπτωση 2 – Η διαδικασία με τις δύο εκδόσεις</h4>
+        <div class="status-badge status-ms">Μη Συμμόρφωση</div>
+        
+        <span class="section-subtitle">Σχετικές απαιτήσεις:</span>
+        <div class="content-block">
+            <ul>
+                <li>7.5.3.2 (α): Διανομή, πρόσβαση και χρήση.</li>
+                <li>7.5.3.2 (γ): Έλεγχος αλλαγών.</li>
+            </ul>
+        </div>
+        
+        <span class="section-subtitle">Αιτιολόγηση:</span>
+        <div class="content-block">
+            Η εταιρεία δεν έχει διασφαλίσει ότι οι εργαζόμενοι χρησιμοποιούν την ισχύουσα έκδοση της διαδικασίας. Παρά το γεγονός ότι η νέα έκδοση είναι διαθέσιμη στο ηλεκτρονικό σύστημα, η παλαιά εξακολουθεί να χρησιμοποιείται στο σημείο εκτέλεσης της δραστηριότητας. Η κατάσταση αυτή δημιουργεί πραγματικό κίνδυνο εφαρμογής διαφορετικών πρακτικών και παράλειψης απαιτούμενων ελέγχων. Η ύπαρξη της νέας έκδοσης στο ηλεκτρονικό σύστημα δεν αρκεί, εφόσον δεν έχει εξασφαλιστεί η αποτελεσματική διανομή και χρήση της.
+        </div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="case-card">
+        <h4 class="case-title">Περίπτωση 3 – Το αρχείο που αλλάζει μόνο του</h4>
+        <div class="status-badge status-ms">Μη Συμμόρφωση</div>
+        
+        <span class="section-subtitle">Σχετικές απαιτήσεις:</span>
+        <div class="content-block">
+            <ul>
+                <li>7.5.3.1 (β): Προστασία τεκμηριωμένων πληροφοριών.</li>
+                <li>Τελική απαίτηση της 7.5.3.2: Προστασία αποδεικτικών στοιχείων συμμόρφωσης από ακούσιες τροποποιήσεις.</li>
+            </ul>
+        </div>
+        
+        <span class="section-subtitle">Αιτιολόγηση:</span>
+        <div class="content-block">
+            Οι καταγραφές των ελέγχων ποιότητας αποτελούν αποδεικτικά στοιχεία συμμόρφωσης. Η εταιρεία δεν έχει εφαρμόσει κατάλληλους μηχανισμούς προστασίας τους, καθώς οι εργαζόμενοι μπορούν να τροποποιήσουν ή να διαγράψουν αρχικά αποτελέσματα χωρίς να είναι δυνατή η αναγνώριση της αλλαγής. Η απουσία ιστορικού αλλαγών και η δυνατότητα ανεξέλεγκτης τροποποίησης επηρεάζουν άμεσα την αξιοπιστία και την ακεραιότητα των αρχείων.
+        </div>
+    </div>
+
+    <!-- Case 4 -->
+    <div class="case-card">
+        <h4 class="case-title">Περίπτωση 4 – Η προδιαγραφή του πελάτη</h4>
+        <div class="status-badge status-ms">Μη Συμμόρφωση</div>
+        
+        <span class="section-subtitle">Σχετικές απαιτήσεις:</span>
+        <div class="content-block">
+            <ul>
+                <li>7.5.3.1 (α): Διαθεσιμότητα και καταλληλότητα για χρήση.</li>
+                <li>7.5.3.2 (α): Διανομή, πρόσβαση και χρήση.</li>
+                <li>7.5.3.2 (γ): Έλεγχος αλλαγών.</li>
+                <li>Απαίτηση για τεκμηριωμένες πληροφορίες εξωτερικής προέλευσης.</li>
+            </ul>
+        </div>
+        
+        <span class="section-subtitle">Αιτιολόγηση:</span>
+        <div class="content-block">
+            Η εταιρεία δεν έχει διασφαλίσει ότι οι αναθεωρημένες προδιαγραφές του πελάτη αναγνωρίζονται, ελέγχονται και διατίθενται στους αρμόδιους χρήστες. Το γεγονός ότι το τμήμα πωλήσεων έχει λάβει τη νέα έκδοση δεν εξασφαλίζει ότι αυτή χρησιμοποιείται από τα τμήματα που είναι υπεύθυνα για την παραγωγή. Η χρήση παρωχημένων προδιαγραφών έχει ως αποτέλεσμα η παραγωγή να πραγματοποιείται βάσει απαιτήσεων που δεν ανταποκρίνονται πλέον στις ισχύουσες απαιτήσεις του πελάτη.
+        </div>
+    </div>
+    <!-- Case 5 -->
+    <div class="case-card">
+        <h4 class="case-title">Περίπτωση 5 – Το αρχείο που δεν διαβάζεται</h4>
+        <div class="status-badge status-ms">Μη Συμμόρφωση</div>
+        
+        <span class="section-subtitle">Σχετική απαίτηση:</span>
+        <div class="content-block">7.5.3.2 (β): Αποθήκευση και διατήρηση, συμπεριλαμβανομένης της αναγνωσιμότητας.</div>
+        
+        <span class="section-subtitle">Αιτιολόγηση:</span>
+        <div class="content-block">
+            Η εταιρεία δεν έχει διασφαλίσει την κατάλληλη διατήρηση των τεκμηριωμένων πληροφοριών. Παρότι τα αρχεία εξακολουθούν να υπάρχουν φυσικά, η αλλοίωσή τους έχει ως αποτέλεσμα να μην είναι πλέον αναγνώσιμα και αξιοποιήσιμα.
+        </div>
+    </div>
+
+    <!-- Case 6 -->
+    <div class="case-card">
+        <h4 class="case-title">Περίπτωση 6 – Η έγκριση που παραλείφθηκε</h4>
+        <div class="status-badge status-ms">Μη Συμμόρφωση</div>
+        
+        <span class="section-subtitle">Σχετική απαίτηση:</span>
+        <div class="content-block">7.5.2 (γ).</div>
+        
+        <span class="section-subtitle">Αιτιολόγηση:</span>
+        <div class="content-block">
+            Η εταιρεία δεν έχει διασφαλίσει την ανασκόπηση και έγκριση της νέας οδηγίας πριν από τη χρήση της. Η απαίτηση του προτύπου αποσκοπεί στη διασφάλιση ότι οι τεκμηριωμένες πληροφορίες είναι κατάλληλες και επαρκείς για τον σκοπό τους. Η προσωπική εμπειρία του συντάκτη δεν υποκαθιστά την απαιτούμενη ανασκόπηση και έγκριση.
+        </div>
+        
+        <div class="attention-box">
+            <span class="attention-title">ΠΡΟΣΟΧΗ:</span>
+            Το ISO 9001 δεν επιβάλλει συγκεκριμένη ιεραρχική θέση για τον εγκρίνοντα. Ο Οργανισμός καθορίζει ποιος έχει την κατάλληλη αρμοδιότητα. Αυτό που απαιτείται είναι να πραγματοποιείται η ανασκόπηση και η έγκριση.
+        </div>
+    </div>
+
+    <!-- Case 7 -->
+    <div class="case-card">
+        <h4 class="case-title">Περίπτωση 7 – Το έγγραφο χωρίς κωδικό</h4>
+        <div class="status-badge status-no-ms">Δεν υπάρχει Μη Συμμόρφωση</div>
+        
+        <span class="section-subtitle">Σχετική απαίτηση:</span>
+        <div class="content-block">7.5.2 (α).</div>
+        
+        <span class="section-subtitle">Αιτιολόγηση:</span>
+        <div class="content-block">
+            Η απαίτηση του προτύπου αφορά την κατάλληλη ταυτοποίηση και περιγραφή των τεκμηριωμένων πληροφοριών. Ο κωδικός εγγράφου αποτελεί ένα πιθανό μέσο ταυτοποίησης, όχι υποχρεωτική απαίτηση του προτύπου. Στη συγκεκριμένη περίπτωση, ο τίτλος, η ημερομηνία, ο συντάκτης και η ένδειξη έκδοσης εξασφαλίζουν επαρκή ταυτοποίηση. Επιπλέον, η πληροφορία είναι εύκολα αναζητήσιμη και δεν δημιουργείται σύγχυση ως προς την ταυτότητα ή την ισχύ της. Επομένως, η απουσία κωδικού δεν συνιστά Μη Συμμόρφωση.
+        </div>
+    </div>
+
+    <!-- Case 8 -->
+    <div class="case-card">
+        <h4 class="case-title">Περίπτωση 8 – Η προφορική διαδικασία</h4>
+        <div class="status-badge status-no-ms">Δεν υπάρχει Μη Συμμόρφωση</div>
+        
+        <span class="section-subtitle">Σχετική απαίτηση:</span>
+        <div class="content-block">7.5.1, σε συνδυασμό με την 7.5.1 (β).</div>
+        
+        <span class="section-subtitle">Αιτιολόγηση:</span>
+        <div class="content-block">
+            Το πρότυπο δεν απαιτεί να τεκμηριώνεται κάθε δραστηριότητα ή κάθε τρόπος εκτέλεσης μιας εργασίας. Στη συγκεκριμένη περίπτωση:
+            <ul>
+                <li>Δεν υπάρχει ρητή απαίτηση του προτύπου για γραπτή διαδικασία.</li>
+                <li>Ο Οργανισμός δεν έχει προσδιορίσει ότι η συγκεκριμένη πληροφορία είναι απαραίτητη για την αποτελεσματικότητα του ΣΔΠ.</li>
+                <li>Η δραστηριότητα εκτελείται με συνεπή τρόπο.</li>
+                <li>Υπάρχουν κατάλληλοι λειτουργικοί έλεγχοι και τηρούνται τα σχετικά αρχεία.</li>
+            </ul>
+            Συνεπώς, δεν προκύπτει απόκλιση από τις απαιτήσεις της παραγράφου 7.5.
+        </div>
+    </div>
+
+    <!-- Case 9 -->
+    <div class="case-card">
+        <h4 class="case-title">Περίπτωση 9 – Το αρχείο που διατηρείται για πάντα</h4>
+        <div class="status-badge status-ms">Μη Συμμόρφωση</div>
+        
+        <span class="section-subtitle">Σχετική απαίτηση:</span>
+        <div class="content-block">7.5.3.2 (δ).</div>
+        
+        <span class="section-subtitle">Αιτιολόγηση:</span>
+        <div class="content-block">
+            Ο Οργανισμός δεν έχει καθορίσει κατάλληλους χρόνους διατήρησης και τρόπους τελικής διάθεσης των τεκμηριωμένων πληροφοριών. Η απαίτηση δεν σημαίνει ότι όλα τα αρχεία πρέπει να έχουν συγκεκριμένη, τυποποιημένη διάρκεια διατήρησης ή ότι πρέπει να καταστρέφονται υποχρεωτικά μετά από κάποιο χρονικό διάστημα. Απαιτεί όμως να υπάρχει κατάλληλος έλεγχος της διατήρησης και της τελικής διάθεσής τους. Η απουσία κριτηρίων, σε συνδυασμό με την αυθαίρετη καταστροφή αρχείων χωρίς αξιολόγηση των σχετικών αναγκών, αποτελεί σαφή απόκλιση.
+        </div>
+    </div>
+
+    <!-- Case 10 -->
+    <div class="case-card">
+        <h4 class="case-title">Περίπτωση 10 – Το εγχειρίδιο του κατασκευαστή</h4>
+        <div class="status-badge status-no-ms">Δεν υπάρχει Μη Συμμόρφωση</div>
+        
+        <span class="section-subtitle">Σχετική απαίτηση:</span>
+        <div class="content-block">Τελευταίο εδάφιο της 7.5.3.2 – Τεκμηριωμένες πληροφορίες εξωτερικής προέλευσης.</div>
+        
+        <span class="section-subtitle">Αιτιολόγηση:</span>
+        <div class="content-block">
+            Το πρότυπο απαιτεί οι τεκμηριωμένες πληροφορίες εξωτερικής προέλευσης που είναι απαραίτητες για τον σχεδιασμό και τη λειτουργία του ΣΔΠ να αναγνωρίζονται, κατά περίπτωση, και να ελέγχονται. Δεν επιβάλλει συγκεκριμένο τρόπο ταυτοποίησης ούτε απαιτεί υποχρεωτικά την ύπαρξη μητρώου εξωτερικών εγγράφων. Στη συγκεκριμένη περίπτωση:
+            <ul>
+                <li>Το εγχειρίδιο είναι αναγνωρίσιμο.</li>
+                <li>Είναι διαθέσιμο στους κατάλληλους χρήστες.</li>
+                <li>Ο υπεύθυνος παρακολουθεί τις ενημερώσεις του κατασκευαστή.</li>
+                <li>Χρησιμοποιείται η ισχύουσα έκδοση.</li>
+            </ul>
+            Επομένως, παρά την απουσία καταχώρισης σε μητρώο, η εταιρεία html έχει διασφαλίσει τον απαιτούμενο έλεγχο.
+        </div>
+    </div>
+    <h3 style="margin-top: 40px; color: var(--primary-color);">Συγκεντρωτικός πίνακας αποτελεσμάτων</h3>
+    <table class="results-table">
+        <thead>
+            <tr>
+                <th>Περίπτωση</th>
+                <th>Αποτελέσμα</th>
+                <th>Κύρια απαίτηση</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1. Απουσία οδηγίας</td>
+                <td>ΜΣ</td>
+                <td>7.5.1 (β)</td>
+            </tr>
+            <tr>
+                <td>2. Δύο εκδόσεις</td>
+                <td>ΜΣ</td>
+                <td>7.5.3.2 (α), (γ)</td>
+            </tr>
+            <tr>
+                <td>3. Αλλοίωση αρχείων</td>
+                <td>ΜΣ</td>
+                <td>7.5.3.1 (β)</td>
+            </tr>
+            <tr>
+                <td>4. Παρωχημένη προδιαγραφή</td>
+                <td>ΜΣ</td>
+                <td>7.5.3.2 – Εξωτερικές πληροφορίες</td>
+            </tr>
+            <tr>
+                <td>5. Μη αναγνώσιμα αρχεία</td>
+                <td>ΜΣ</td>
+                <td>7.5.3.2 (β)</td>
+            </tr>
+            <tr>
+                <td>6. Μη εγκεκριμένη οδηγία</td>
+                <td>ΜΣ</td>
+                <td>7.5.2 (γ)</td>
+            </tr>
+            <tr>
+                <td>7. Έγγραφο χωρίς κωδικό</td>
+                <td>Χωρίς ΜΣ</td>
+                <td>7.5.2 (α)</td>
+            </tr>
+            <tr>
+                <td>8. Προφορική διαδικασία</td>
+                <td>Χωρίς ΜΣ</td>
+                <td>7.5.1</td>
+            </tr>
+            <tr>
+                <td>9. Χωρίς χρόνους διατήρησης</td>
+                <td>ΜΣ</td>
+                <td>7.5.3.2 (δ)</td>
+            </tr>
+            <tr>
+                <td>10. Μητρώο εξωτερικών εγγράφων</td>
+                <td>Χωρίς ΜΣ</td>
+                <td>Εξωτερικές πληροφορίες</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Bonus Question -->
+    <div class="case-card" style="border: 2px dashed #1d4ed8; background-color: #f0fdf4;">
+        <h4 class="case-title" style="color: #15803d; border-bottom: 2px solid #bbf7d0;">Απάντηση στην ερώτηση BONUS – Η κρίση του επιθεωρητή</h4>
+        <div class="content-block" style="font-weight: bold; color: #16a34a; margin-bottom: 10px;">
+            Δεν συμφωνούμε με την απόφασή του επιθεωρητή.
+        </div>
+        <div class="content-block">
+            Η παράγραφος 7.5 δεν απαιτεί την ύπαρξη συγκεκριμένης γραπτής διαδικασίας για τον έλεγχο των τεκμηριωμένων πληροφοριών, ούτε και την τήρηση οποιουδήποτε «Καταλόγου». Απαιτεί να διασφαλίζεται η αποτελεσματική διαχείρισή τους σύμφωνα με τις επιμέρους απαιτήσεις. Εφόσον ο Οργανισμός αποδεικνύει ότι εφαρμόζει αποτελεσματικά όλες τις απαιτούμενες δραστηριότητες ελέγχου, η απουσία μιας αυτοτελούς γραπτής διαδικασίας δεν αποτελεί από μόνη της Μη Συμμόρφωση.
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button type="button" class="print-btn" onclick="window.print()">🖨️ Εκτύπωση σε PDF</button>
+    </div>
+
+    <footer>
+        Σεμινάριο Εκπαίδευσης Επιθεωρητών ISO 9001
+    </footer>
+</div>
+</body>
+</html>
