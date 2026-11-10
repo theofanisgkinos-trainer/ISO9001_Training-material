@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Πολιτική Ποιότητας ISO 9001 (5.2.1) — Εκαπιδευτικό Υλικό</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-bg: #eff6ff;
+      --accent: #0f766e;
+      --accent-bg: #f0fdfa;
+      --amber: #b45309;
+      --amber-bg: #fffbeb;
+      --danger: #b91c1c;
+      --danger-bg: #fef2f2;
+      --success: #15803d;
+      --success-bg: #f0fdf4;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding-bottom: 4rem;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1d4ed8 100%);
+      color: #ffffff;
+      padding: 2.75rem 1.5rem 2.25rem;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #e0f2fe;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.01em;
+    }
+
+    header p {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 780px;
+    }
+
+    /* Navigation Tabs */
+    .nav-wrapper {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 0.65rem 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn:hover {
+      background: var(--primary-bg);
+      color: var(--primary);
+      border-color: #bfdbfe;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+    }
+
+    .print-btn {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.6rem 1.05rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .print-btn:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1120px;
+      margin: 2rem auto 0;
+      padding: 0 1.5rem;
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Intro Callout */
+    .intro-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--primary);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    }
+
+    .intro-box h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 0.45rem;
+    }
+
+    .intro-box p {
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    /* Cards Grid for Tab 1 */
+    .req-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .req-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .req-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+    }
+
+    .req-header {
+      background: linear-gradient(90deg, #f8fafc 0%, #eff6ff 100%);
+      padding: 1.25rem 1.65rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .req-num {
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .req-title-group {
+      flex: 1;
+    }
+
+    .req-clause {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .req-header h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+    }
+
+    .req-body {
+      padding: 1.5rem 1.65rem;
+      display: grid;
+      gap: 1.15rem;
+    }
+
+    .sub-block {
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+    }
+
+    .block-simple {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+    }
+
+    .block-example {
+      background: var(--accent-bg);
+      border: 1px solid #ccfbf1;
+    }
+
+    .block-audit {
+      background: var(--amber-bg);
+      border: 1px solid #fde68a;
+    }
+
+    .block-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.45rem;
+    }
+
+    .block-simple .block-label { color: var(--primary); }
+    .block-example .block-label { color: var(--accent); }
+    .block-audit .block-label { color: var(--amber); }
+
+    .sub-block p + p {
+      margin-top: 0.6rem;
+    }
+
+    .sub-block ul {
+      margin-left: 1.25rem;
+      margin-top: 0.4rem;
+    }
+
+    .sub-block li {
+      margin-bottom: 0.35rem;
+    }
+
+    .highlight-quote {
+      margin-top: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: #ffffff;
+      border-left: 4px solid var(--primary);
+      border-radius: 6px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* Summary Grid at bottom of Tab 1 */
+    .summary-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .summary-section h2 {
+      font-size: 1.3rem;
+      color: #0f172a;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .mini-card {
+      background: var(--primary-bg);
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      padding: 1.1rem;
+    }
+
+    .mini-card h4 {
+      font-size: 0.96rem;
+      color: var(--primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .mini-card p {
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    .auditor-takeaway {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 1.4rem 1.65rem;
+      border-radius: 12px;
+    }
+
+    .auditor-takeaway h4 {
+      font-size: 1rem;
+      color: #93c5fd;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+    }
+
+    .auditor-takeaway p {
+      font-size: 0.95rem;
+      color: #f1f5f9;
+      margin-bottom: 0.65rem;
+    }
+
+    .auditor-takeaway p:last-child {
+      margin-bottom: 0;
+      font-weight: 700;
+      color: #ffffff;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 0.65rem;
+    }
+
+    /* Tab 2 Specific Styles */
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .quick-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 14px;
+      padding: 1.35rem;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+    }
+
+    .pill {
+      display: inline-block;
+      background: var(--primary-bg);
+      color: var(--primary);
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.65rem;
+    }
+
+    .quick-card h3 {
+      font-size: 1.05rem;
+      color: #0f172a;
+      margin-bottom: 0.65rem;
+    }
+
+    .quick-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .quick-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Policy Examples Comparison */
+    .policy-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+    }
+
+    .policy-box-header {
+      padding: 1.25rem 1.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .policy-good .policy-box-header {
+      background: var(--success-bg);
+      border-bottom: 1px solid #bbf7d0;
+    }
+
+    .policy-bad .policy-box-header {
+      background: var(--danger-bg);
+      border-bottom: 1px solid #fecaca;
+    }
+
+    .policy-box-header h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .policy-good .policy-box-header h3 { color: var(--success); }
+    .policy-bad .policy-box-header h3 { color: var(--danger); }
+
+    .status-tag {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .tag-good {
+      background: #dcfce7;
+      color: var(--success);
+      border: 1px solid #86efac;
+    }
+
+    .tag-bad {
+      background: #fee2e2;
+      color: var(--danger);
+      border: 1px solid #fca5a5;
+    }
+
+    .policy-document {
+      padding: 1.75rem;
+      background: #ffffff;
+    }
+
+    .doc-frame {
+      border: 2px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 1.65rem;
+      background: #fcfdff;
+      position: relative;
+    }
+
+    .doc-title {
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.03em;
+      padding-bottom: 0.85rem;
+      margin-bottom: 1.1rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .doc-frame p, .doc-frame li {
+      font-size: 0.96rem;
+      color: #1e293b;
+      margin-bottom: 0.85rem;
+    }
+
+    .doc-frame ul {
+      margin-left: 1.4rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .clause-badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.18rem 0.6rem;
+      border-radius: 6px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .doc-bad-frame {
+      border: 2px dashed #fca5a5;
+      border-radius: 12px;
+      padding: 1.65rem;
+      background: #fffafa;
+      font-style: italic;
+      color: #334155;
+    }
+
+    /* Interactive Reveal for Bad Policy Reasons */
+    .reveal-section {
+      padding: 0 1.75rem 1.75rem;
+    }
+
+    .reveal-btn {
+      background: var(--danger);
+      color: #ffffff;
+      border: none;
+      font-size: 0.94rem;
+      font-weight: 700;
+      padding: 0.75rem 1.35rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .reveal-btn:hover {
+      background: #991b1b;
+    }
+
+    .rejection-list {
+      display: none;
+      margin-top: 1.25rem;
+      background: var(--danger-bg);
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      padding: 1.35rem 1.5rem;
+    }
+
+    .rejection-list.visible {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .rejection-list h4 {
+      color: var(--danger);
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .rejection-item {
+      background: #ffffff;
+      border-left: 4px solid var(--danger);
+      padding: 0.85rem 1.1rem;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      font-size: 0.93rem;
+    }
+
+    .rejection-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .nc-code {
+      display: inline-block;
+      background: #fee2e2;
+      color: var(--danger);
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 5px;
+      margin-right: 0.45rem;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 1120px;
+      margin: 3rem auto 0;
+      padding: 1.5rem 1.5rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff;
+        padding-bottom: 0;
+      }
+      header {
+        background: #1e3a8a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 1.5rem;
+      }
+      .nav-wrapper, .reveal-btn {
+        display: none !important;
+      }
+      .tab-panel {
+        display: block !important;
+        margin-bottom: 2.5rem;
+        page-break-after: always;
+      }
+      .tab-panel:last-of-type {
+        page-break-after: auto;
+      }
+      .rejection-list {
+        display: block !important;
+      }
+      .req-card, .policy-box, .summary-section {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.55rem; }
+      .nav-inner { flex-direction: column; align-items: stretch; }
+      .tabs { flex-direction: column; }
+      .tab-btn, .print-btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <span class="badge">Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας ISO 9001</span>
+      <h1>Αποκωδικοποίηση &amp; Επιθεώρηση της Πολιτικής Ποιότητας</h1>
+      <p>Αναλυτική ερμηνεία των 4 απαιτήσεων της παραγράφου 5.2.1 και πρακτικός οδηγός επιθεώρησης με παραδείγματα εφαρμογής σε Κέντρα Επαγγελματικής Κατάρτισης (ΚΕΚ)</p>
+    </div>
+  </header>
+
+  <div class="nav-wrapper">
+    <div class="nav-inner">
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('tab1', this)">
+          <span>1. Αποκωδικοποίηση Πολιτικής Ποιότητας</span>
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('tab2', this)">
+          <span>2. Οδηγός Επιθεώρησης &amp; Παραδείγματα (ΚΕΚ)</span>
+        </button>
+      </div>
+      <button class="print-btn" onclick="window.print()">
+        <span>🖨️ Εκτύπωση / PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- ΚΑΡΤΕΛΑ 1: ΑΠΟΚΩΔΙΚΟΠΟΙΗΣΗ -->
+    <section id="tab1" class="tab-panel active">
+      <div class="intro-box">
+        <h2>Τι θέλει να εξασφαλίσει ο ISO 9001;</h2>
+        <p>Ότι η Πολιτική Ποιότητας δεν είναι ένα γενικόλογο κείμενο ή μια διακήρυξη καλών προθέσεων, αλλά εκφράζει τον προσανατολισμό του Οργανισμού και συνδέεται με την πραγματική λειτουργία του.</p>
+      </div>
+
+      <div class="req-grid">
+        <!-- Απαίτηση 1 -->
+        <article class="req-card">
+          <div class="req-header">
+            <div class="req-num">1</div>
+            <div class="req-title-group">
+              <div class="req-clause">Παράγραφος 5.2.1 — Απαίτηση α</div>
+              <h3>Να είναι κατάλληλη για τον σκοπό και το πλαίσιο του Οργανισμού και να υποστηρίζει το στρατηγικό προσανατολισμό του</h3>
+            </div>
+          </div>
+          <div class="req-body">
+            <div class="sub-block block-simple">
+              <span class="block-label">Με απλά λόγια</span>
+              <p>Η Πολιτική Ποιότητας πρέπει να ταιριάζει σε αυτό που κάνει ο Οργανισμός, στο μέγεθός του, στις δραστηριότητές του και στις συνθήκες μέσα στις οποίες λειτουργεί.</p>
+              <p>Δεν μπορεί να έχει την ίδια φιλοσοφία και το ίδιο περιεχόμενο η Πολιτική Ποιότητας ενός νοσοκομείου, μιας βιομηχανίας τροφίμων και ενός εκπαιδευτικού οργανισμού.</p>
+            </div>
+            <div class="sub-block block-example">
+              <span class="block-label">Παράδειγμα</span>
+              <p>Μια βιομηχανία γαλακτοκομικών προϊόντων θα πρέπει να δίνει έμφαση, μεταξύ άλλων, στην ασφάλεια και στην ποιότητα των προϊόντων της, στην ικανοποίηση των πελατών και στη συμμόρφωση με τις εφαρμοστέες απαιτήσεις.</p>
+              <p>Αντίθετα, ένα Κέντρο Επαγγελματικής Κατάρτισης θα πρέπει να δίνει έμφαση στην ποιότητα της εκπαίδευσης, στην επάρκεια των εκπαιδευτών και στην ικανοποίηση των εκπαιδευομένων.</p>
+            </div>
+            <div class="sub-block block-audit">
+              <span class="block-label">Τι εξετάζει ο επιθεωρητής;</span>
+              <p>Εάν ο Οργανισμός έχει προσδιορίσει τις εφαρμοστέες απαιτήσεις, εάν η Πολιτική Ποιότητας περιλαμβάνει σαφή δέσμευση για την ικανοποίησή τους και εάν η δέσμευση αυτή υποστηρίζεται στην πράξη από τις διεργασίες, τις λειτουργικές πρακτικές και τα σχετικά τεκμήρια.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Απαίτηση 2 -->
+        <article class="req-card">
+          <div class="req-header">
+            <div class="req-num">2</div>
+            <div class="req-title-group">
+              <div class="req-clause">Παράγραφος 5.2.1 — Απαίτηση β</div>
+              <h3>Να παρέχει πλαίσιο για τον καθορισμό στόχων ποιότητας</h3>
+            </div>
+          </div>
+          <div class="req-body">
+            <div class="sub-block block-simple">
+              <span class="block-label">Με απλά λόγια</span>
+              <p>Η Πολιτική Ποιότητας πρέπει να δίνει την κατεύθυνση προς την οποία θα κινηθεί ο Οργανισμός, ώστε να μπορεί στη συνέχεια να καθορίσει συγκεκριμένους και μετρήσιμους στόχους ποιότητας.</p>
+              <div class="highlight-quote">Η Πολιτική λέει γενικά «πού θέλουμε να πάμε», ενώ οι στόχοι προσδιορίζουν «τι ακριβώς θέλουμε να πετύχουμε».</div>
+            </div>
+            <div class="sub-block block-example">
+              <span class="block-label">Παράδειγμα</span>
+              <p>Έστω ότι η Πολιτική Ποιότητας ενός ΚΕΚ περιλαμβάνει τη δέσμευση για παροχή εκπαιδευτικών υπηρεσιών υψηλής ποιότητας και για την ικανοποίηση των εκπαιδευομένων. Από αυτή την κατεύθυνση μπορούν να προκύψουν στόχοι όπως:</p>
+              <ul>
+                <li>Επίτευξη μέσης βαθμολογίας ικανοποίησης εκπαιδευομένων τουλάχιστον 4,5/5.</li>
+                <li>Διατήρηση ποσοστού ολοκλήρωσης εκπαιδευτικών προγραμμάτων άνω του 95%.</li>
+                <li>Αξιολόγηση του 100% των εκπαιδευτών κάθε έτος.</li>
+              </ul>
+            </div>
+            <div class="sub-block block-audit">
+              <span class="block-label">Τι εξετάζει ο επιθεωρητής;</span>
+              <p>Εάν οι στόχοι ποιότητας που έχει θέσει ο Οργανισμός συνδέονται λογικά με τις δεσμεύσεις και τις κατευθύνσεις της Πολιτικής Ποιότητας.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Απαίτηση 3 -->
+        <article class="req-card">
+          <div class="req-header">
+            <div class="req-num">3</div>
+            <div class="req-title-group">
+              <div class="req-clause">Παράγραφος 5.2.1 — Απαίτηση γ</div>
+              <h3>Να περιλαμβάνει δέσμευση για την ικανοποίηση των εφαρμοστέων απαιτήσεων</h3>
+            </div>
+          </div>
+          <div class="req-body">
+            <div class="sub-block block-simple">
+              <span class="block-label">Με απλά λόγια</span>
+              <p>Ο Οργανισμός δεσμεύεται να γνωρίζει και να ικανοποιεί τις απαιτήσεις που εφαρμόζονται στις δραστηριότητές του και στα προϊόντα ή τις υπηρεσίες του.</p>
+              <p>Οι απαιτήσεις αυτές δεν προέρχονται μόνο από τους πελάτες. Μπορεί να απορρέουν από τη νομοθεσία και τις κανονιστικές διατάξεις, από πρότυπα ή άλλα κανονιστικά/συμβατικά πλαίσια που ο Οργανισμός έχει επιλέξει να εφαρμόζει, καθώς και από άλλες δεσμεύσεις που έχει αναλάβει.</p>
+            </div>
+            <div class="sub-block block-example">
+              <span class="block-label">Παράδειγμα</span>
+              <p>Ένα Κέντρο Επαγγελματικής Κατάρτισης δεσμεύεται:</p>
+              <ul>
+                <li>Να υλοποιεί τα εκπαιδευτικά προγράμματα σύμφωνα με τις συμφωνημένες απαιτήσεις των πελατών.</li>
+                <li>Να τηρεί το εφαρμοστέο νομοθετικό και κανονιστικό πλαίσιο που διέπει τη λειτουργία του.</li>
+                <li>Να ικανοποιεί τις απαιτήσεις που αφορούν τα προσόντα των εκπαιδευτών και την υλοποίηση των προγραμμάτων.</li>
+                <li>Να εφαρμόζει τις απαιτήσεις προτύπων ή σχημάτων πιστοποίησης που έχει επιλέξει να υιοθετήσει.</li>
+              </ul>
+              <p>Η Πολιτική δεν χρειάζεται να απαριθμεί μία προς μία όλες τις εφαρμοστέες απαιτήσεις. Πρέπει, όμως, να περιλαμβάνει σαφή δέσμευση για την ικανοποίησή τους.</p>
+            </div>
+            <div class="sub-block block-audit">
+              <span class="block-label">Τι εξετάζει ο επιθεωρητής;</span>
+              <ul>
+                <li>Εάν ο Οργανισμός έχει προσδιορίσει τις απαιτήσεις που εφαρμόζονται στις δραστηριότητές του.</li>
+                <li>Εάν η Πολιτική Ποιότητας περιλαμβάνει σαφή δέσμευση για την ικανοποίησή τους.</li>
+                <li>Εάν η δέσμευση αυτή υποστηρίζεται στην πράξη από τις διεργασίες, τις λειτουργικές πρακτικές και τα σχετικά τεκμήρια.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Απαίτηση 4 -->
+        <article class="req-card">
+          <div class="req-header">
+            <div class="req-num">4</div>
+            <div class="req-title-group">
+              <div class="req-clause">Παράγραφος 5.2.1 — Απαίτηση δ</div>
+              <h3>Να περιλαμβάνει δέσμευση για συνεχή βελτίωση του Συστήματος Διαχείρισης Ποιότητας</h3>
+            </div>
+          </div>
+          <div class="req-body">
+            <div class="sub-block block-simple">
+              <span class="block-label">Με απλά λόγια</span>
+              <p>Ο Οργανισμός δεν πρέπει να αρκείται στο ότι το Σύστημα Διαχείρισης Ποιότητας λειτουργεί σήμερα ικανοποιητικά. Πρέπει να δεσμεύεται ότι θα αναζητά ευκαιρίες για να το κάνει καλύτερο.</p>
+              <p>Αυτό σημαίνει ότι θα αξιολογεί την αποτελεσματικότητα των διεργασιών του, θα εντοπίζει προβλήματα και αδυναμίες και θα λαμβάνει μέτρα για τη βελτίωσή τους.</p>
+            </div>
+            <div class="sub-block block-example">
+              <span class="block-label">Παράδειγμα</span>
+              <p>Ένα ΚΕΚ διαπιστώνει από τις αξιολογήσεις των εκπαιδευομένων ότι υπάρχει δυσαρέσκεια σχετικά με το εκπαιδευτικό υλικό. Αντί να περιοριστεί στην καταγραφή των παραπόνων, αποφασίζει να αναθεωρήσει το εκπαιδευτικό υλικό, να εκπαιδεύσει τους εισηγητές στη χρήση του και να αξιολογήσει εκ νέου την ικανοποίηση των εκπαιδευομένων.</p>
+              <p><strong>Αυτό αποτελεί μια πρακτική εφαρμογή της συνεχούς βελτίωσης.</strong></p>
+            </div>
+            <div class="sub-block block-audit">
+              <span class="block-label">Τι εξετάζει ο επιθεωρητής;</span>
+              <p>Εάν η Πολιτική περιλαμβάνει ρητή δέσμευση για συνεχή βελτίωση του Συστήματος Διαχείρισης Ποιότητας και εάν αυτή η δέσμευση υποστηρίζεται στην πράξη από τη λειτουργία του Οργανισμού.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Τι πρέπει να συγκρατήσετε -->
+      <div class="summary-section">
+        <h2>Τι πρέπει να συγκρατήσετε</h2>
+        <div class="summary-cards">
+          <div class="mini-card">
+            <h4>1. Κατάλληλη για τον σκοπό &amp; το πλαίσιο</h4>
+            <p>Να ταιριάζει σε αυτό που πραγματικά κάνει ο Οργανισμός.</p>
+          </div>
+          <div class="mini-card">
+            <h4>2. Πλαίσιο για τον καθορισμό στόχων</h4>
+            <p>Να δείχνει προς ποια κατεύθυνση πρέπει να κινηθεί ο Οργανισμός.</p>
+          </div>
+          <div class="mini-card">
+            <h4>3. Ικανοποίηση εφαρμοστέων απαιτήσεων</h4>
+            <p>Να δεσμεύεται ότι θα ικανοποιεί τις απαιτήσεις που τον αφορούν.</p>
+          </div>
+          <div class="mini-card">
+            <h4>4. Συνεχής βελτίωση</h4>
+            <p>Να αξιολογεί και να βελτιώνει διαρκώς το Σύστημα Διαχείρισης Ποιότητας.</p>
+          </div>
+        </div>
+
+        <div class="auditor-takeaway">
+          <h4>Σημαντική επισήμανση για τον επιθεωρητή</h4>
+          <p>Δεν αρκεί να διαπιστώσει ότι η Πολιτική Ποιότητας περιλαμβάνει τις τέσσερις παραπάνω δεσμεύσεις. Πρέπει να εξετάσει εάν αυτές έχουν ουσιαστικό περιεχόμενο και εάν αντανακλώνται στη λειτουργία του Οργανισμού.</p>
+          <p>Η Πολιτική Ποιότητας δεν είναι αυτό που ο Οργανισμός γράφει ότι θέλει να κάνει. Είναι η κατεύθυνση που δηλώνει ότι δεσμεύεται να ακολουθεί και την οποία πρέπει να μπορεί να υποστηρίξει με αποδείξεις.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ΚΑΡΤΕΛΑ 2: ΟΔΗΓΟΣ ΕΠΙΘΕΩΡΗΣΗΣ ΚΕΚ -->
+    <section id="tab2" class="tab-panel">
+      <div class="intro-box">
+        <h2>Οδηγός Επιθεώρησης: Πολιτική Ποιότητας ISO 9001 (5.2.1) για ΚΕΚ</h2>
+        <p>Συνοπτικός χάρτης ελέγχου των 4 απαιτήσεων της παραγράφου 5.2.1 σε εκπαιδευτικούς οργανισμούς και σύγκριση δύο πραγματικών σεναρίων: μιας άρτιας πολιτικής και μιας τυπικής «παγίδας Copy-Paste».</p>
+      </div>
+
+      <!-- Σύνοψη των 4 απαιτήσεων για ΚΕΚ -->
+      <div class="quick-grid">
+        <div class="quick-card">
+          <span class="pill">Απαίτηση α</span>
+          <h3>1. Κατάλληλη για τον σκοπό &amp; το πλαίσιο</h3>
+          <p><strong>Με απλά λόγια:</strong> Πρέπει να φωτογραφίζει ένα ΚΕΚ (ποιότητα εκπαίδευσης, επάρκεια εισηγητών, ικανοποίηση σπουδαστών) και όχι μια γενική επιχείρηση.</p>
+          <p><strong>Τι κοιτάζει ο επιθεωρητής:</strong> Αν ταιριάζει με το πραγματικό μέγεθος και τις δραστηριότητες (π.χ. Voucher, ΕΣΠΑ).</p>
+        </div>
+
+        <div class="quick-card">
+          <span class="pill">Απαίτηση β</span>
+          <h3>2. Πλαίσιο για καθορισμό στόχων</h3>
+          <p><strong>Με απλά λόγια:</strong> Δείχνει γενικά «πού πάμε», ώστε να βγουν συγκεκριμένοι και μετρήσιμοι εκπαιδευτικοί στόχοι.</p>
+          <p><strong>Τι κοιτάζει ο επιθεωρητής:</strong> Αν οι Στόχοι Ποιότητας (π.χ. βαθμολογία &gt;4,5/5, επιτυχία πιστοποιήσεων) συνδέονται λογικά με τις δεσμεύσεις της Πολιτικής.</p>
+        </div>
+
+        <div class="quick-card">
+          <span class="pill">Απαίτηση γ</span>
+          <h3>3. Ικανοποίηση εφαρμοστέων απαιτήσεων</h3>
+          <p><strong>Με απλά λόγια:</strong> Ρητή δέσμευση για τήρηση των νόμων και των αναγκών των εμπλεκόμενων μερών.</p>
+          <p><strong>Τι κοιτάζει ο επιθεωρητής:</strong> Δέσμευση για συμμόρφωση με το θεσμικό πλαίσιο (Υπ. Παιδείας, ΕΟΠΠΕΠ) και τις απαιτήσεις των προγραμμάτων.</p>
+        </div>
+
+        <div class="quick-card">
+          <span class="pill">Απαίτηση δ</span>
+          <h3>4. Δέσμευση για συνεχή βελτίωση</h3>
+          <p><strong>Με απλά λόγια:</strong> Δεν μένουμε στάσιμοι. Αναζητούμε διαρκώς ευκαιρίες για να κάνουμε το ΚΕΚ και το Σύστημα καλύτερο.</p>
+          <p><strong>Τι κοιτάζει ο επιθεωρητής:</strong> Ύπαρξη της φράσης «συνεχής βελτίωση» και αν αυτή υποστηρίζεται στην πράξη (π.χ. αναθεώρηση υλικού μετά από παράπονα).</p>
+        </div>
+      </div>
+
+      <!-- Παράδειγμα 1: Καλογραμμένη Πολιτική -->
+      <div class="policy-box policy-good">
+        <div class="policy-box-header">
+          <h3>Παράδειγμα «Καλογραμμένης» Πολιτικής</h3>
+          <span class="status-tag tag-good">Πλήρης Συμμόρφωση</span>
+        </div>
+        <div class="policy-document">
+          <div class="doc-frame">
+            <div class="doc-title">ΠΟΛΙΤΙΚΗ ΠΟΙΟΤΗΤΑΣ του Κ.Δ.Β.Μ. «Ορίζοντας»</div>
+            <p>Στο Κέντρο Διά Βίου Μάθησης «Ορίζοντας», αποστολή μας είναι η παροχή υψηλού επιπέδου υπηρεσιών επαγγελματικής κατάρτισης και συμβουλευτικής, που ανταποκρίνονται στις σύγχρονες απαιτήσεις της αγοράς εργασίας και υποστηρίζουν την επαγγελματική αποκατάσταση των αποφοίτων μας. Η στρατηγική μας κατεύθυνση εστιάζει στην καθιέρωση του Κέντρου ως πρότυπου φορέα εκπαίδευσης ενηλίκων στην Περιφέρεια, μέσω της αξιοποίησης καινοτόμων εκπαιδευτικών μεθοδολογιών και σύγχρονων υποδομών. <span class="clause-badge">Κάλυψη Απαίτησης 5.2.1-α</span></p>
+            <p>Η Διοίκηση του Κ.Δ.Β.Μ. «Ορίζοντας» δεσμεύεται ρητά για:</p>
+            <ul>
+              <li>Την πλήρη <strong>ικανοποίηση των αναγκών</strong> των εκπαιδευομένων, των συνεργαζόμενων επιχειρήσεων και των δημόσιων φορέων, καθώς και για τη συμμόρφωση με το ισχύον <strong>εθνικό και ευρωπαϊκό θεσμικό πλαίσιο</strong> (νόμοι Υπουργείου Παιδείας/ΕΟΠΠΕΠ, προδιαγραφές συγχρηματοδοτούμενων έργων ΕΣΠΑ). <span class="clause-badge">Κάλυψη Απαίτησης 5.2.1-γ</span></li>
+              <li>Τη <strong>συνεχή βελτίωση</strong> της αποτελεσματικότητας του Συστήματος Διαχείρισης Ποιότητας, επενδύοντας στη διαρκή αναβάθμιση των προγραμμάτων σπουδών και στην επιστημονική εξέλιξη του εκπαιδευτικού μας προσωπικού. <span class="clause-badge">Κάλυψη Απαίτησης 5.2.1-δ</span></li>
+            </ul>
+            <p style="margin-bottom: 0;">Η παρούσα Πολιτική αποτελεί το <strong>πλαίσιο για τη θέσπιση, παρακολούθηση και ανασκόπηση των Αντικειμενικών Στόχων Ποιότητας</strong> της εταιρείας. Οι στόχοι αυτοί (όπως τα ποσοστά επιτυχίας στις πιστοποιήσεις, οι δείκτες ικανοποίησης των σπουδαστών και η απορρόφηση στην αγορά εργασίας) ορίζονται, ποσοτικοποιούνται και αξιολογούνται σε ετήσια βάση ως προς την επίτευξή τους. <span class="clause-badge">Κάλυψη Απαίτησης 5.2.1-β</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Παράδειγμα 2: Κακογραμμένη Πολιτική -->
+      <div class="policy-box policy-bad">
+        <div class="policy-box-header">
+          <h3>Παράδειγμα «Κακογραμμένης» Πολιτικής</h3>
+          <span class="status-tag tag-bad">Ρεαλιστική Παγίδα Copy-Paste</span>
+        </div>
+        <div class="policy-document">
+          <div class="doc-bad-frame">
+            <p style="margin-bottom: 0;">«Η εταιρεία μας, λειτουργώντας ως σύγχρονος εκπαιδευτικός φορέας, εφαρμόζει Σύστημα Διαχείρισης Ποιότητας σύμφωνα με τις απαιτήσεις του διεθνούς προτύπου ISO 9001:2015 με σκοπό την παροχή ποιοτικών υπηρεσιών κατάρτισης. Η φιλοσοφία μας επικεντρώνεται στην άριστη εξυπηρέτηση των πελατών μας, στην τήρηση των προθεσμιών των προγραμμάτων και στην εμπειρία των εισηγητών μας. Στόχος μας είναι η διατήρηση της υψηλής μας θέσης στον κλάδο της εκπαίδευσης και η ανάπτυξη του κύκλου εργασιών μας μέσα από νέες συνεργασίες. Η Διοίκηση υποστηρίζει την προσπάθεια αυτή, παρέχοντας όλους τους απαραίτητους πόρους για την εύρυθμη λειτουργία των τμημάτων και την επίτευξη των σκοπών της επιχείρησης, μεριμνώντας παράλληλα για την τήρηση των κανόνων και των διαδικασιών που έχουν θεσπιστεί.»</p>
+          </div>
+        </div>
+
+        <div class="reveal-section">
+          <button class="reveal-btn" onclick="toggleRejection(this)">
+            <span>🔍 Εμφάνιση Λόγων Απόρριψης από τον Επιθεωρητή</span>
+          </button>
+
+          <div id="rejectionBox" class="rejection-list">
+            <h4>Λόγοι απόρριψης από τον Επιθεωρητή (Ευρήματα Μη Συμμόρφωσης):</h4>
+            <div class="rejection-item">
+              <span class="nc-code">Μη συμμόρφωση στο 5.2.1-δ</span>
+              <strong>Απουσία Συνεχούς Βελτίωσης:</strong> Το κείμενο μιλάει μόνο για «διατήρηση» και «εύρυθμη λειτουργία». Η έννοια ή η λέξη της βελτίωσης λείπει τελείως (στατικό σύστημα).
+            </div>
+            <div class="rejection-item">
+              <span class="nc-code">Μη συμμόρφωση στο 5.2.1-β</span>
+              <strong>Απουσία Πλαισίου για Στόχους Ποιότητας:</strong> Οι μόνοι στόχοι που αναφέρονται είναι οικονομικοί/επιχειρηματικοί (ανάπτυξη κύκλου εργασιών), χωρίς καμία σύνδεση με τη γέννηση μετρήσιμων εκπαιδευτικών στόχων ποιότητας.
+            </div>
+            <div class="rejection-item">
+              <span class="nc-code">Μη συμμόρφωση στο 5.2.1-γ</span>
+              <strong>Ελλιπής Δέσμευση Απαιτήσεων:</strong> Το «μεριμνώντας για την τήρηση των κανόνων» αναφέρεται σε εσωτερικές διαδικασίες. Δεν υπάρχει ρητή δέσμευση για το αυστηρό εξωτερικό κανονιστικό πλαίσιο ενός ΚΕΚ (ΕΟΠΠΕΠ, voucher).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας ISO 9001 — Εκπαιδευτικό Υλικό</p>
+  </footer>
+
+  <script>
+    function switchTab(tabId, btnElement) {
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      document.getElementById(tabId).classList.add('active');
+      btnElement.classList.add('active');
+      btnElement.setAttribute('aria-selected', 'true');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleRejection(btn) {
+      const box = document.getElementById('rejectionBox');
+      const isVisible = box.classList.toggle('visible');
+      btn.innerHTML = isVisible
+        ? '<span>🙈 Απόκρυψη Λόγων Απόρριψης</span>'
+        : '<span>🔍 Εμφάνιση Λόγων Απόρριψης από τον Επιθεωρητή</span>';
+    }
+  </script>
+</body>
+</html>
