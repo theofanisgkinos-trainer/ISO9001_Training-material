@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Σύνοψη των βασικών αλλαγών του ISO 9001:2026</title>
+  <style>
+    :root {
+      --primary: #0f2942;
+      --primary-light: #1e466e;
+      --accent: #0284c7;
+      --accent-soft: #e0f2fe;
+      --gold: #b45309;
+      --gold-bg: #fffbeb;
+      --gold-border: #fcd34d;
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --text-muted: #475569;
+      --border: #cbd5e1;
+      --shadow: 0 10px 25px -5px rgba(15, 41, 66, 0.08), 0 8px 10px -6px rgba(15, 41, 66, 0.04);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding-bottom: 60px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #ffffff;
+      padding: 44px 24px 48px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(15, 41, 66, 0.18);
+    }
+
+    .badge-top {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #e0f2fe;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-size: clamp(1.75rem, 3.5vw, 2.55rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      max-width: 860px;
+      margin: 0 auto;
+      line-height: 1.25;
+    }
+
+    .print-btn {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .print-btn:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1120px;
+      margin: -24px auto 0;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Intro Banner */
+    .info-strip {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px 26px;
+      box-shadow: var(--shadow);
+      border-left: 5px solid var(--accent);
+      margin-bottom: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .info-strip p {
+      color: var(--text);
+      font-size: 0.98rem;
+      max-width: 780px;
+    }
+
+    .info-strip strong {
+      color: var(--primary);
+    }
+
+    .timeline-pill {
+      background: var(--accent-soft);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      border: 1px solid #bae6fd;
+    }
+
+    /* Table Card */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 30px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .card-header {
+      background: #f8fafc;
+      padding: 20px 26px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card-header h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    thead th {
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 15px 20px;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #e2e8f0;
+      transition: background-color 0.15s ease;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    tbody td {
+      padding: 18px 20px;
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+
+    .col-topic {
+      width: 22%;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .topic-num {
+      display: inline-block;
+      background: var(--accent);
+      color: #ffffff;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      margin-right: 8px;
+    }
+
+    .col-clause {
+      width: 14%;
+    }
+
+    .clause-badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .col-change {
+      width: 32%;
+      color: var(--text);
+    }
+
+    .col-audit {
+      width: 32%;
+      color: var(--text-muted);
+      background-color: rgba(248, 250, 252, 0.6);
+    }
+
+    /* Conclusion / Golden Rule Box */
+    .conclusion-box {
+      background: var(--gold-bg);
+      border: 1px solid var(--gold-border);
+      border-left: 6px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 26px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .conclusion-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .conclusion-icon {
+      background: var(--gold);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    .conclusion-header h3 {
+      font-size: 1.2rem;
+      color: #78350f;
+      font-weight: 800;
+    }
+
+    .conclusion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+    }
+
+    .conclusion-item {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+
+    .conclusion-item h4 {
+      color: #92400e;
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .conclusion-item p {
+      color: #451a03;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 36px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .print-btn {
+        position: static;
+        margin-top: 18px;
+      }
+      header {
+        padding-top: 32px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .print-btn {
+        display: none;
+      }
+      header {
+        background: var(--primary) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 24px 16px;
+      }
+      .container {
+        margin-top: 16px;
+        max-width: 100%;
+      }
+      .card, .info-strip, .conclusion-box {
+        box-shadow: none;
+      }
+      thead th {
+        background: var(--primary) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge-top">ISO 9001:2026 • Οδηγός Αναφοράς Επιθεωρητών</div>
+    <h1>Σύνοψη των βασικών αλλαγών του ISO 9001:2026</h1>
+    <button class="print-btn" onclick="window.print()">🖨️ Εκτύπωση / Αποθήκευση PDF</button>
+  </header>
+
+  <main class="container">
+
+    <section class="info-strip">
+      <p>
+        Το <strong>ISO 9001:2026</strong> διατηρεί τη γνώριμη δομή των 10 κεφαλαίων (Harmonized Structure), εισάγοντας στοχευμένες αναβαθμίσεις που μετατοπίζουν το βάρος από την τυπική συμμόρφωση στην <strong>κουλτούρα, την ηθική και την ουσιαστική ανθεκτικότητα</strong>.
+      </p>
+      <div class="timeline-pill">Έκδοση: Σεπτ. 2026 • Μετάβαση έως: Σεπτ. 2029</div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Οι 5 Κομβικές Αλλαγές &amp; Η Εστίαση της Επιθεώρησης (Audit Focus)</h2>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Θεματική Ενότητα</th>
+              <th>Παράγραφος</th>
+              <th>Τι Άλλαξε στην Έκδοση 2026</th>
+              <th>Τι Ελέγχει ο Επιθεωρητής (Audit Focus)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-topic"><span class="topic-num">1</span>Κουλτούρα Ποιότητας &amp; Ηθική Συμπεριφορά</td>
+              <td class="col-clause"><span class="clause-badge">5.1.1 &amp; 7.3</span></td>
+              <td class="col-change">
+                Η ανώτατη διοίκηση υποχρεούται ρητά να προάγει την <strong>κουλτούρα ποιότητας (quality culture)</strong> και την <strong>ηθική συμπεριφορά (ethical behaviour)</strong>. Επεκτείνεται αντίστοιχα και η επίγνωση (awareness) του προσωπικού στο 7.3.
+              </td>
+              <td class="col-audit">
+                Δεν ελέγχεται με «έγγραφο», αλλά με συνεντεύξεις και παρατήρηση. Πώς αντιδρά η διοίκηση σε αστοχίες; Ενθαρρύνεται η αναφορά λαθών χωρίς φόβο ή «κουκουλώνονται» προβλήματα για να βγουν οι στόχοι;
+              </td>
+            </tr>
+            <tr>
+              <td class="col-topic"><span class="topic-num">2</span>Διαχωρισμός Κινδύνων &amp; Ευκαιριών</td>
+              <td class="col-clause"><span class="clause-badge">6.1.1, 6.1.2 &amp; 6.1.3</span></td>
+              <td class="col-change">
+                Η παλιά 6.1 χωρίζεται στα δύο: η <strong>6.1.2</strong> αφορά αποκλειστικά τους <strong>κινδύνους</strong> και η <strong>6.1.3</strong> αποκλειστικά τις <strong>ευκαιρίες</strong>. Και οι δύο απαιτούν πλέον ρητά: <em>προσδιορισμό, ανάλυση και αξιολόγηση</em>.
+              </td>
+              <td class="col-audit">
+                Οι ευκαιρίες δεν αντιμετωπίζονται πλέον ως «υποσημείωση» των κινδύνων. Ο επιθεωρητής ελέγχει ξεχωριστά πώς ο οργανισμός εντοπίζει, αξιολογεί και αξιοποιεί προληπτικά ευκαιρίες βελτίωσης.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-topic"><span class="topic-num">3</span>Κλιματική Αλλαγή &amp; Πλαίσιο Οργανισμού</td>
+              <td class="col-clause"><span class="clause-badge">4.1 &amp; 4.2</span></td>
+              <td class="col-change">
+                Ενσωματώνεται επίσημα στο κύριο κείμενο η τροποποίηση του 2024: υποχρεωτική εξέταση της <strong>κλιματικής αλλαγής</strong> ως σχετικού ζητήματος (4.1) και των περιβαλλοντικών απαιτήσεων των ενδιαφερόμενων μερών (4.2).
+              </td>
+              <td class="col-audit">
+                Αν ο οργανισμός έκρινε ότι η κλιματική αλλαγή είναι σχετική (π.χ. ακραία καιρικά φαινόμενα στις μεταφορές ή στην ενέργεια), υπάρχει σύνδεση με το 6.1.2; Αν έκρινε ότι δεν είναι, το σκεπτικό του είναι λογικό;
+              </td>
+            </tr>
+            <tr>
+              <td class="col-topic"><span class="topic-num">4</span>Ολοκληρωμένος Σχεδιασμός Αλλαγών</td>
+              <td class="col-clause"><span class="clause-badge">6.3</span></td>
+              <td class="col-change">
+                Ενισχύονται οι απαιτήσεις για τη διαχείριση των αλλαγών σε όλο τον κύκλο ζωής τους: <strong>επικοινωνία, υλοποίηση και ανασκόπηση της αποτελεσματικότητας</strong> κάθε αλλαγής.
+              </td>
+              <td class="col-audit">
+                Όταν γίνεται μια αλλαγή (π.χ. νέο λογισμικό, αλλαγή προμηθευτή, νέα γραμμή), ο επιθεωρητής ζητά αποδείξεις όχι μόνο ότι σχεδιάστηκε, αλλά ότι <strong>αξιολογήθηκε εκ των υστέρων</strong> αν πέτυχε τον σκοπό της.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-topic"><span class="topic-num">5</span>Γνώση Οργανισμού &amp; Εξωτερικοί Πάροχοι</td>
+              <td class="col-clause"><span class="clause-badge">7.1.6 &amp; 8.4.3</span></td>
+              <td class="col-change">
+                Η γνώση (7.1.6) επεκτείνεται πέρα από τη συμμόρφωση προϊόντος, απαιτώντας <strong>διατήρηση, εφαρμογή και διαμοιρασμό</strong> σε όλο το ΣΔΠ. Στο 8.4.3 απαιτείται επικοινωνία των κανόνων αλληλεπίδρασης των προμηθευτών με τους πελάτες.
+              </td>
+              <td class="col-audit">
+                Πώς διαχέεται η τεχνογνωσία όταν αποχωρεί ένας έμπειρος υπάλληλος; Πώς ελέγχονται οι υπεργολάβοι που έρχονται σε άμεση επαφή με τον τελικό πελάτη (π.χ. συνεργεία εγκατάστασης, courier);
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="conclusion-box">
+      <div class="conclusion-header">
+        <span class="conclusion-icon">ΣΥΜΠΕΡΑΣΜΑΤΑ</span>
+        <h3>2015 vs 2026: Τι αλλάζει στην ουσία για τον Επιθεωρητή</h3>
+      </div>
+      <div class="conclusion-grid">
+        <div class="conclusion-item">
+          <h4>1. Εξέλιξη, όχι Ανατροπή</h4>
+          <p>
+            Η δομή των 10 κεφαλαίων και η φιλοσοφία του κύκλου PDCA παραμένουν αμετάβλητες. Ένα ώριμο σύστημα του 2015 δεν χρειάζεται επανασχεδιασμό από το μηδέν, αλλά στοχευμένη εμβάθυνση.
+          </p>
+        </div>
+        <div class="conclusion-item">
+          <h4>2. Καμία Νέα Γραφειοκρατία</h4>
+          <p>
+            Σε σύγκριση με το 2015, η έκδοση του 2026 <strong>δεν προσθέτει</strong> νέες υποχρεωτικές τεκμηριωμένες διαδικασίες ή έντυπα. Ο φόρτος τεκμηρίωσης παραμένει στα ίδια λιτά επίπεδα.
+          </p>
+        </div>
+        <div class="conclusion-item">
+          <h4>3. Από τη Συμμόρφωση στη Συμπεριφορά</h4>
+          <p>
+            Ενώ το 2015 έδινε έμφαση στη <em>δομή</em> των διεργασιών και στη <em>σκέψη βάσει κινδύνου</em>, το 2026 μετατοπίζει το κέντρο βάρους στον <strong>ανθρώπινο παράγοντα</strong> (κουλτούρα, ηθική) και στην <strong>αποδεδειγμένη αποτελεσματικότητα</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Εκπαιδευτικό Υλικό Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας • ISO 9001:2026
+    </footer>
+
+  </main>
+
+</body>
+</html>
