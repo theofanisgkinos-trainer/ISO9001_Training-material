@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Στόχοι Ποιότητας ISO 9001:2026 (6.2) — Εκπαιδευτικό Υλικό</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --accent: #0284c7;
+      --accent-soft: #e0f2fe;
+      --teal: #0d9488;
+      --teal-soft: #ccfbf1;
+      --amber: #d97706;
+      --amber-soft: #fef3c7;
+      --rose: #e11d48;
+      --rose-soft: #ffe4e6;
+      --emerald: #059669;
+      --emerald-soft: #d1fae5;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #334155;
+      --heading: #0f172a;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      color: #ffffff;
+      padding: 2.5rem 1.5rem 3.2rem;
+      text-align: center;
+      border-bottom: 4px solid var(--accent);
+    }
+
+    .badge-top {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #e0f2fe;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      padding: 0.35rem 0.95rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.65rem;
+      color: #ffffff;
+    }
+
+    header p {
+      max-width: 780px;
+      margin: 0 auto;
+      color: #cbd5e1;
+      font-size: 1rem;
+    }
+
+    /* Container & Navigation Tabs */
+    .container {
+      max-width: 1180px;
+      margin: -1.75rem auto 3rem;
+      padding: 0 1.25rem;
+    }
+
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      background: var(--card);
+      padding: 0.65rem;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+      border: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+      position: sticky;
+      top: 12px;
+      z-index: 1000;
+    }
+
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tab-btn {
+      appearance: none;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.65rem 1.15rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .tab-btn:hover {
+      background: #f1f5f9;
+      color: var(--primary);
+    }
+
+    .tab-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+    }
+
+    .print-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: var(--primary);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .print-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* Tab Panels */
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Intro Box */
+    .intro-card {
+      background: var(--card);
+      border-left: 5px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.75rem;
+      box-shadow: var(--shadow);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .intro-card h2 {
+      font-size: 1.2rem;
+      color: var(--heading);
+      margin-bottom: 0.45rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--heading);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-badge {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    /* Requirement Cards (6.2.1) */
+    .req-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .req-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .req-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .req-num {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .req-meta {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 0.2rem;
+    }
+
+    .req-header h3 {
+      font-size: 1.05rem;
+      color: var(--heading);
+      line-height: 1.35;
+    }
+
+    .sub-block {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      font-size: 0.92rem;
+    }
+
+    .sub-block.audit {
+      background: #f0f9ff;
+      border-color: #bae6fd;
+    }
+
+    .sub-block.highlight-new {
+      background: #fefce8;
+      border-color: #fde047;
+    }
+
+    .sub-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .sub-block.audit .sub-label {
+      color: #0369a1;
+    }
+
+    /* SMART Section */
+    .smart-wrapper {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.75rem;
+    }
+
+    .smart-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin: 1.1rem 0 1.35rem;
+    }
+
+    .smart-box {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 0.9rem;
+      background: #f8fafc;
+      text-align: left;
+    }
+
+    .smart-letter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--teal);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .smart-box h4 {
+      font-size: 0.95rem;
+      color: var(--heading);
+      margin-bottom: 0.35rem;
+    }
+
+    .smart-box p {
+      font-size: 0.86rem;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .transform-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .transform-bad {
+      background: var(--rose-soft);
+      border: 1px solid #fecdd3;
+      border-radius: 8px;
+      padding: 0.95rem 1.1rem;
+    }
+
+    .transform-good {
+      background: var(--emerald-soft);
+      border: 1px solid #a7f3d0;
+      border-radius: 8px;
+      padding: 0.95rem 1.1rem;
+    }
+
+    /* Planning 6.2.2 Grid */
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .plan-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--teal);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .plan-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--teal);
+      background: var(--teal-soft);
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-card h4 {
+      font-size: 0.98rem;
+      color: var(--heading);
+      margin-bottom: 0.45rem;
+    }
+
+    .plan-card p {
+      font-size: 0.87rem;
+      line-height: 1.5;
+    }
+
+    /* Summary Box */
+    .takeaway-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .takeaway-box h3 {
+      color: #38bdf8;
+      font-size: 1.1rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .takeaway-box p {
+      color: #e2e8f0;
+      font-size: 0.94rem;
+    }
+
+    /* Tab 2: Auditor Guide */
+    .quick-map {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .map-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem;
+      box-shadow: var(--shadow);
+    }
+
+    .map-pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 0.18rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .map-card h3 {
+      font-size: 0.98rem;
+      color: var(--heading);
+      margin-bottom: 0.45rem;
+    }
+
+    .map-card p {
+      font-size: 0.87rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* Good & Bad Examples */
+    .example-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.35rem;
+    }
+
+    .example-card.good {
+      border-left: 5px solid var(--emerald);
+    }
+
+    .example-card.bad {
+      border-left: 5px solid var(--rose);
+    }
+
+    .ex-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .ex-header h3 {
+      font-size: 1.1rem;
+      color: var(--heading);
+    }
+
+    .status-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    .status-pill.good {
+      background: var(--emerald-soft);
+      color: #065f46;
+    }
+
+    .status-pill.bad {
+      background: var(--rose-soft);
+      color: #9f1239;
+    }
+
+    .quote-statement {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 0.95rem;
+    }
+
+    .smart-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .s-tag {
+      font-size: 0.8rem;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      padding: 0.22rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    .plan-mini {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      font-size: 0.88rem;
+    }
+
+    /* Reveal Toggle */
+    .reveal-btn {
+      appearance: none;
+      border: 1px solid #fecdd3;
+      background: #fff1f2;
+      color: #9f1239;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .reveal-btn:hover {
+      background: var(--rose);
+      color: #ffffff;
+      border-color: var(--rose);
+    }
+
+    .findings-box {
+      display: none;
+      margin-top: 1rem;
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+    }
+
+    .findings-box.open {
+      display: block;
+    }
+
+    .findings-box h4 {
+      color: #9f1239;
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .finding-item {
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+    }
+
+    .finding-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .nc-tag {
+      display: inline-block;
+      background: #9f1239;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.12rem 0.5rem;
+      border-radius: 4px;
+      margin-right: 0.35rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      color: #64748b;
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .req-grid, .transform-box {
+        grid-template-columns: 1fr;
+      }
+      .smart-grid, .plan-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .quick-map {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .smart-grid, .plan-grid, .quick-map {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Print Rules — Only Active Tab, Zero Blank Pages */
+    @media print {
+      @page {
+        margin: 12mm;
+      }
+
+      body {
+        background: #ffffff !important;
+        font-size: 12pt;
+      }
+
+      header {
+        background: #0f172a !important;
+        color: #ffffff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 1.2rem 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .container {
+        margin: 0 auto;
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .nav-bar, .reveal-btn {
+        display: none !important;
+      }
+
+      .tab-panel {
+        display: none !important;
+      }
+
+      .tab-panel.active {
+        display: block !important;
+      }
+
+      .findings-box {
+        display: block !important;
+      }
+
+      .req-card, .example-card, .smart-wrapper, .plan-card, .map-card, .intro-card, .takeaway-box {
+        break-inside: avoid;
+        box-shadow: none !important;
+      }
+
+      .req-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .smart-grid, .plan-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-map {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge-top">Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας ISO 9001:2026</div>
+    <h1>Αντικειμενικοί Στόχοι Ποιότητας &amp; Σχεδιασμός Επίτευξης (6.2)</h1>
+    <p>Αναλυτική ερμηνεία των απαιτήσεων της παραγράφου 6.2.1 (a–h), εφαρμογή των κριτηρίων SMART, σχεδιασμός επίτευξης (6.2.2) και πρακτικός οδηγός επιθεώρησης με «καλά» και «κακά» παραδείγματα.</p>
+  </header>
+
+  <main class="container">
+    <div class="nav-bar">
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('tab1', this)">1. Απαιτήσεις 6.2.1, SMART &amp; Σχεδιασμός 6.2.2</button>
+        <button class="tab-btn" onclick="switchTab('tab2', this)">2. Οδηγός Επιθεωρητή: Καλά &amp; Κακά Παραδείγματα</button>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨 Εκτύπωση Καρτέλας</button>
+    </div>
+
+    <!-- ==================== TAB 1 ==================== -->
+    <section id="tab1" class="tab-panel active">
+      <div class="intro-card">
+        <h2>Τι θέλει να εξασφαλίσει το ISO 9001:2026 στην παράγραφο 6.2;</h2>
+        <p>Οι Αντικειμενικοί Στόχοι Ποιότητας μετατρέπουν τις γενικές δεσμεύσεις της Πολιτικής Ποιότητας (5.2.1) σε <strong>συγκεκριμένα, μετρήσιμα αποτελέσματα</strong> σε σχετικές λειτουργίες, επίπεδα και διεργασίες. Το πρότυπο <strong>ISO 9001:2026</strong> ενσωματώνει πλέον στην ίδια την παράγραφο 6.2.1 τόσο τη διαθεσιμότητα των στόχων ως <strong>τεκμηριωμένες πληροφορίες (6.2.1-g)</strong> όσο και τη σύνδεσή τους με τη συμμόρφωση προϊόντων/υπηρεσιών και την ενίσχυση της ικανοποίησης των πελατών <strong>(6.2.1-h)</strong>.</p>
+      </div>
+
+      <h2 class="section-title">
+        <span>Μέρος Α: Οι 8 Απαιτήσεις για τους Στόχους Ποιότητας</span>
+        <span class="section-badge">ISO 9001:2026 — Παρ. 6.2.1</span>
+      </h2>
+
+      <div class="req-grid">
+        <!-- 6.2.1 a -->
+        <div class="req-card">
+          <div class="req-header">
+            <div class="req-num">a</div>
+            <div>
+              <div class="req-meta">Παράγραφος 6.2.1 — Απαίτηση a</div>
+              <h3>Να είναι συνεπείς με την Πολιτική Ποιότητας (Consistent with the quality policy)</h3>
+            </div>
+          </div>
+          <div class="sub-block">
+            <span class="sub-label">Με απλά λόγια</span>
+            Κάθε στόχος ποιότητας πρέπει να «πηγάζει» λογικά από τις κατευθύνσεις και τις δεσμεύσεις της Πολιτικής Ποιότητας. Δεν μπορεί η Πολιτική να μιλά για αριστεία στην εκπαίδευση και οι στόχοι να αφορούν μόνο τη μείωση κόστους χαρτιού.
+          </div>
+          <div class="sub-block audit">
+            <span class="sub-label">Τι εξετάζει ο επιθεωρητής;</span>
+            Αν υπάρχει καθαρή ιχνηλασιμότητα («χρυσή κλωστή») ανάμεσα στις δεσμεύσεις της Πολιτικής Ποιότητας (5.2.1) και στους θεσπισμένους στόχους.
+          </div>
+        </div>
+
+        <!-- 6.2.1 b -->
+        <div class="req-card">
+          <div class="req-header">
+            <div class="req-num">b</div>
+            <div>
+              <div class="req-meta">Παράγραφος 6.2.1 — Απαίτηση b</div>
+              <h3>Να είναι μετρήσιμοι (Be measurable)</h3>
+            </div>
+          </div>
+          <div class="sub-block">
+            <span class="sub-label">Με απλά λόγια</span>
+            Πρέπει να μπορούμε να αποδείξουμε αντικειμενικά —με αριθμούς, ποσοστά, χρόνους ή σαφή δυαδικά κριτήρια (ναι/όχι)— αν ο στόχος επιτεύχθηκε ή όχι. Οι αόριστες ευχές (π.χ. «βελτίωση εξυπηρέτησης») απορρίπτονται.
+          </div>
+          <div class="sub-block audit">
+            <span class="sub-label">Τι εξετάζει ο επιθεωρητής;</span>
+            Αν κάθε στόχος συνοδεύεται από συγκεκριμένο δείκτη μέτρησης (KPI), μονάδα μέτρησης και τιμή-στόχο (π.χ. &ge; 92%, &le; 24 ώρες).
+          </div>
+        </div>
+
+        <!-- 6.2.1 c -->
+        <div class="req-card">
+          <div class="req-header">
+            <div class="req-num">c</div>
+            <div>
+              <div class="req-meta">Παράγραφος 6.2.1 — Απαίτηση c</div>
+              <h3>Να λαμβάνουν υπόψη τις εφαρμοστέες απαιτήσεις (Take into account applicable requirements)</h3>
+            </div>
+          </div>
+          <div class="sub-block">
+            <span class="sub-label">Με απλά λόγια</span>
+            Οι στόχοι πρέπει να σέβονται και να ενσωματώνουν τις απαιτήσεις των πελατών, της νομοθεσίας, των κανονιστικών αρχών (π.χ. ΕΟΠΠΕΠ, Υπ. Παιδείας) και των συμβατικών υποχρεώσεων. Δεν επιτρέπεται στόχος που υπονομεύει τη νομιμότητα.
+          </div>
+          <div class="sub-block audit">
+            <span class="sub-label">Τι εξετάζει ο επιθεωρητής;</span>
+            Αν ο οργανισμός έχει λάβει υπόψη τις απαιτήσεις πελατών και κανονιστικών φορέων κατά τον καθορισμό των ορίων (π.χ. υποχρεωτικά ποσοστά παρακολούθησης ή χρόνοι απόκρισης SLA).
+          </div>
+        </div>
+
+        <!-- 6.2.1 d -->
+        <div class="req-card">
+          <div class="req-header">
+            <div class="req-num">d</div>
+            <div>
+              <div class="req-meta">Παράγραφος 6.2.1 — Απαίτηση d</div>
+              <h3>Να παρακολουθούνται (Be monitored)</h3>
+            </div>
+          </div>
+          <div class="sub-block">
+            <span class="sub-label">Με απλά λόγια</span>
+            Δεν ορίζουμε στόχους τον Ιανουάριο για να τους θυμηθούμε τον Δεκέμβριο. Χρειάζεται τακτική παρακολούθηση της πορείας τους (π.χ. ανά μήνα ή τρίμηνο) ώστε να γίνονται έγκαιρες διορθωτικές κινήσεις αν υπάρξει απόκλιση.
+          </div>
+          <div class="sub-block audit">
+            <span class="sub-label">Τι εξετάζει ο επιθεωρητής;</span>
+            Αρχεία περιοδικής παρακολούθησης (π.χ. πίνακες KPIs, τριμηνιαίες αναφορές διεργασιών, πρακτικά Ανασκόπησης 9.3).
+          </div>
+        </div>
+
+        <!-- 6.2.1 e -->
+        <div class="req-card">
+          <div class="req-header">
+            <div class="req-num">e</div>
+            <div>
+              <div class="req-meta">Παράγραφος 6.2.1 — Απαίτηση e</div>
+              <h3>Να επικοινωνούνται (Be communicated)</h3>
+            </div>
+          </div>
+          <div class="sub-block">
+            <span class="sub-label">Με απλά λόγια</span>
+            Οι εργαζόμενοι σε κάθε τμήμα ή επίπεδο πρέπει να γνωρίζουν ποιοι στόχοι αφορούν τη δική τους εργασία και πώς συμβάλλουν στην επίτευξή τους (σύνδεση με την Επίγνωση — παρ. 7.3).
+          </div>
+          <div class="sub-block audit">
+            <span class="sub-label">Τι εξετάζει ο επιθεωρητής;</span>
+            Μέσω συνεντεύξεων με το προσωπικό: γνωρίζουν οι υπεύθυνοι διεργασιών και οι εργαζόμενοι τους στόχους του τμήματός τους και την τρέχουσα επίδοση;
+          </div>
+        </div>
+
+        <!-- 6.2.1 f -->
+        <div class="req-card">
+          <div class="req-header">
+            <div class="req-num">f</div>
+            <div>
+              <div class="req-meta">Παράγραφος 6.2.1 — Απαίτηση f</div>
+              <h3>Να επικαιροποιούνται όπως ενδείκνυται (Be updated as appropriate)</h3>
+            </div>
+          </div>
+          <div class="sub-block">
+            <span class="sub-label">Με απλά λόγια</span>
+            Οι στόχοι δεν είναι «γραμμένοι σε πέτρα». Αν αλλάξει η νομοθεσία, η αγορά, η τεχνολογία ή αν ένας στόχος επιτυγχάνεται εύκολα για χρόνια, πρέπει να αναπροσαρμόζονται ώστε να οδηγούν σε συνεχή βελτίωση.
+          </div>
+          <div class="sub-block audit">
+            <span class="sub-label">Τι εξετάζει ο επιθεωρητής;</span>
+            Αν ο οργανισμός αναθεωρεί τους στόχους του όταν αλλάζει το πλαίσιο (4.1), μετά από αλλαγές (6.3) ή στην Ανασκόπηση από τη Διοίκηση (9.3).
+          </div>
+        </div>
+
+        <!-- 6.2.1 g -->
+        <div class="req-card">
+          <div class="req-header">
+            <div class="req-num">g</div>
+            <div>
+              <div class="req-meta">Παράγραφος 6.2.1 — Απαίτηση g (Υποχρεωτική Τεκμηρίωση)</div>
+              <h3>Να είναι διαθέσιμοι ως τεκμηριωμένες πληροφορίες (Be available as documented information)</h3>
+            </div>
+          </div>
+          <div class="sub-block highlight-new">
+            <span class="sub-label">Κρίσιμο σημείο ISO 9001:2026</span>
+            Σε αντίθεση με τους κινδύνους (6.1.2), εδώ το πρότυπο απαιτεί <strong>ρητά τεκμηριωμένες πληροφορίες</strong>! Οι στόχοι ποιότητας (καθώς και τα σχέδια επίτευξής τους) πρέπει να υπάρχουν καταγεγραμμένοι και ελεγχόμενοι (π.χ. Πίνακας Στόχων, ERP/BI dashboard).
+          </div>
+          <div class="sub-block audit">
+            <span class="sub-label">Τι εξετάζει ο επιθεωρητής;</span>
+            Την ύπαρξη, διαθεσιμότητα και έλεγχο έκδοσης (7.5) των καταγεγραμμένων στόχων ποιότητας σε όλα τα σχετικά επίπεδα και διεργασίες.
+          </div>
+        </div>
+
+        <!-- 6.2.1 h -->
+        <div class="req-card">
+          <div class="req-header">
+            <div class="req-num">h</div>
+            <div>
+              <div class="req-meta">Παράγραφος 6.2.1 — Απαίτηση h (Ουσία &amp; Πελάτης)</div>
+              <h3>Να είναι σχετικοί με τη συμμόρφωση προϊόντων/υπηρεσιών και την ενίσχυση της ικανοποίησης πελατών</h3>
+            </div>
+          </div>
+          <div class="sub-block highlight-new">
+            <span class="sub-label">Κρίσιμο σημείο ISO 9001:2026</span>
+            Το 2026 τοποθετεί αυτήν την απαίτηση ρητά ως στοιχείο <strong>6.2.1-h</strong>: οι στόχοι ποιότητας πρέπει να αγγίζουν την ουσία της ποιότητας (λιγότερα λάθη, έγκαιρη παράδοση, καλύτερη εξυπηρέτηση) και όχι μόνο καθαρά οικονομικά μεγέθη (π.χ. αύξηση τζίρου).
+          </div>
+          <div class="sub-block audit">
+            <span class="sub-label">Τι εξετάζει ο επιθεωρητής;</span>
+            Αν οι στόχοι έχουν πραγματικό αντίκτυπο στην ποιότητα του παραγόμενου προϊόντος/υπηρεσίας και στην εμπειρία του πελάτη.
+          </div>
+        </div>
+      </div>
+
+      <!-- SMART SECTION -->
+      <h2 class="section-title">
+        <span>Μέρος Β: Η Μεθοδολογία SMART στην Πράξη</span>
+        <span class="section-badge">Κριτήρια Διατύπωσης</span>
+      </h2>
+
+      <div class="smart-wrapper">
+        <p>Αν και το ISO 9001:2026 δεν χρησιμοποιεί το ακρωνύμιο <strong>SMART</strong> ως τυπικό όρο, η εφαρμογή του καλύπτει αυτόματα τις απαιτήσεις <strong>6.2.1 (a, b, c, h)</strong> και <strong>6.2.2 (d)</strong>. Κάθε στόχος πρέπει να ελέγχεται με τα 5 παρακάτω κριτήρια:</p>
+
+        <div class="smart-grid">
+          <div class="smart-box">
+            <div class="smart-letter">S</div>
+            <h4>Specific (Συγκεκριμένος)</h4>
+            <p>Ορίζει ξεκάθαρα <strong>τι</strong> ακριβώς θέλουμε να πετύχουμε, σε ποια διεργασία ή υπηρεσία, χωρίς ασάφειες.</p>
+          </div>
+          <div class="smart-box">
+            <div class="smart-letter">M</div>
+            <h4>Measurable (Μετρήσιμος)</h4>
+            <p>Περιλαμβάνει σαφή αριθμητικό δείκτη (ποσοστό, βαθμολογία, ώρες, πλήθος) ώστε να μετράται αντικειμενικά (<strong>6.2.1-b</strong>).</p>
+          </div>
+          <div class="smart-box">
+            <div class="smart-letter">A</div>
+            <h4>Achievable (Εφικτός)</h4>
+            <p>Είναι ρεαλιστικός με βάση τους διαθέσιμους πόρους, την τεχνολογία και τις δυνατότητες του οργανισμού.</p>
+          </div>
+          <div class="smart-box">
+            <div class="smart-letter">R</div>
+            <h4>Relevant (Σχετικός)</h4>
+            <p>Ευθυγραμμίζεται με την Πολιτική Ποιότητας (<strong>6.2.1-a</strong>) και επηρεάζει τη συμμόρφωση &amp; τον πελάτη (<strong>6.2.1-h</strong>).</p>
+          </div>
+          <div class="smart-box">
+            <div class="smart-letter">T</div>
+            <h4>Time-bound (Χρονικά Προσδιορισμένος)</h4>
+            <p>Έχει σαφή προθεσμία ολοκλήρωσης ή περίοδο αξιολόγησης (π.χ. «έως 31/12/2026» ή «ανά ακαδημαϊκό εξάμηνο»).</p>
+          </div>
+        </div>
+
+        <div class="transform-box">
+          <div class="transform-bad">
+            <span class="sub-label" style="color:#9f1239;">❌ Αόριστος / Μη αποδεκτός στόχος</span>
+            <p>«Να βελτιώσουμε την τεχνική υποστήριξη των σπουδαστών στην πλατφόρμα e-learning.»</p>
+          </div>
+          <div class="transform-good">
+            <span class="sub-label" style="color:#065f46;">✅ Πλήρως SMART στόχος (ISO 9001:2026)</span>
+            <p>«Μείωση του μέσου χρόνου επίλυσης αιτημάτων τεχνικής υποστήριξης (tickets) στην πλατφόρμα e-learning κάτω από τις 4 εργάσιμες ώρες, για το σύνολο των προγραμμάτων, έως τις 31/12/2026.»</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLANNING 6.2.2 -->
+      <h2 class="section-title">
+        <span>Μέρος Γ: Σχεδιασμός Επίτευξης των Στόχων</span>
+        <span class="section-badge">ISO 9001:2026 — Παρ. 6.2.2</span>
+      </h2>
+
+      <p style="margin-bottom: 1rem;">Ένας στόχος χωρίς σχέδιο δράσης είναι απλή ευχή. Η παράγραφος <strong>6.2.2</strong> υποχρεώνει τον οργανισμό να καθορίζει <strong>5 συγκεκριμένα στοιχεία</strong> για το πώς θα επιτευχθεί κάθε στόχος:</p>
+
+      <div class="plan-grid">
+        <div class="plan-card">
+          <span class="plan-tag">6.2.2 — Στοιχείο a</span>
+          <h4>Τι θα γίνει (What will be done)</h4>
+          <p>Οι συγκεκριμένες ενέργειες, παρεμβάσεις ή έργα που πρέπει να υλοποιηθούν για να επιτευχθεί ο στόχος.</p>
+        </div>
+        <div class="plan-card">
+          <span class="plan-tag">6.2.2 — Στοιχείο b</span>
+          <h4>Ποιοι πόροι απαιτούνται (What resources)</h4>
+          <p>Ο εξοπλισμός, το λογισμικό, η χρηματοδότηση, οι ανθρωποώρες ή η εκπαίδευση που χρειάζονται.</p>
+        </div>
+        <div class="plan-card">
+          <span class="plan-tag">6.2.2 — Στοιχείο c</span>
+          <h4>Ποιος είναι υπεύθυνος (Who is responsible)</h4>
+          <p>Ο ονομαστικός ή θεσμικός υπεύθυνος (Process Owner) που λογοδοτεί για την υλοποίηση των ενεργειών.</p>
+        </div>
+        <div class="plan-card">
+          <span class="plan-tag">6.2.2 — Στοιχείο d</span>
+          <h4>Πότε θα ολοκληρωθεί (When completed)</h4>
+          <p>Τα ορόσημα (milestones) και η τελική καταληκτική ημερομηνία ολοκλήρωσης κάθε ενέργειας.</p>
+        </div>
+        <div class="plan-card">
+          <span class="plan-tag">6.2.2 — Στοιχείο e</span>
+          <h4>Πώς θα αξιολογηθούν (How evaluated)</h4>
+          <p>Ο τρόπος, ο δείκτης (KPI) και η συχνότητα με την οποία θα μετρηθεί αν οι ενέργειες έφεραν αποτέλεσμα.</p>
+        </div>
+      </div>
+
+      <div class="takeaway-box">
+        <h3>💡 Συμπέρασμα-Κλειδί για την Παράγραφο 6.2 (ISO 9001:2026)</h3>
+        <p>Η παράγραφος <strong>6.2.1</strong> απαντά στο <em>«Τι θέλουμε να πετύχουμε και πώς το ελέγχουμε»</em> (απαιτώντας ρητά τεκμηριωμένες πληροφορίες στο <strong>6.2.1-g</strong>), ενώ η παράγραφος <strong>6.2.2</strong> απαντά στο <em>«Πώς θα φτάσουμε εκεί»</em>. Χωρίς σχέδιο δράσης 6.2.2, ο στόχος παραμένει θεωρητικός.</p>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2 ==================== -->
+    <section id="tab2" class="tab-panel">
+      <div class="intro-card">
+        <h2>Οδηγός Επιθεωρητή: Αξιολόγηση Στόχων Ποιότητας (ISO 9001:2026 — Παρ. 6.2)</h2>
+        <p>Πρακτικός χάρτης ελέγχου και σύγκριση <strong>«καλών»</strong> και <strong>«κακών»</strong> διατυπώσεων στόχων. <strong>Προσπαθήστε να εντοπίσετε τις Μη Συμμορφώσεις στα 4 «κακά» παραδείγματα πριν αποκαλύψετε τα ευρήματα.<strong></p>
+      </div>
+
+      <div class="quick-map">
+        <div class="map-card">
+          <span class="map-pill">Έλεγχος 1 (6.2.1-a &amp; h)</span>
+          <h3>Ευθυγράμμιση &amp; Ουσία</h3>
+          <p><strong>Τι κοιτάζει ο επιθεωρητής:</strong> Αν ο στόχος συνδέεται με την Πολιτική Ποιότητας και αφορά την ποιότητα προϊόντος/υπηρεσίας ή τον πελάτη (όχι μόνο τζίρο).</p>
+        </div>
+        <div class="map-card">
+          <span class="map-pill">Έλεγχος 2 (6.2.1-b &amp; g)</span>
+          <h3>Μετρησιμότητα &amp; Έγγραφα</h3>
+          <p><strong>Τι κοιτάζει ο επιθεωρητής:</strong> Αν υπάρχει σαφής αριθμητικός δείκτης/στόχος και αν είναι διαθέσιμος ως <strong>τεκμηριωμένη πληροφορία</strong>.</p>
+        </div>
+        <div class="map-card">
+          <span class="map-pill">Έλεγχος 3 (6.2.2 a–e)</span>
+          <h3>Σχέδιο Δράσης &amp; Πόροι</h3>
+          <p><strong>Τι κοιτάζει ο επιθεωρητής:</strong> Αν υπάρχουν ενέργειες, πόροι, υπεύθυνος, χρονοδιάγραμμα και μέθοδος αξιολόγησης πίσω από κάθε στόχο.</p>
+        </div>
+        <div class="map-card">
+          <span class="map-pill">Έλεγχος 4 (6.2.1-d, e, f)</span>
+          <h3>Παρακολούθηση &amp; Επίγνωση</h3>
+          <p><strong>Τι κοιτάζει ο επιθεωρητής:</strong> Αν παρακολουθείται περιοδικά, αν το προσωπικό τον γνωρίζει και αν επικαιροποιείται όταν αλλάζουν τα δεδομένα.</p>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span>Α. «Καλά» Παραδείγματα Στόχων Ποιότητας (Πλήρης Συμμόρφωση)</span>
+        <span class="section-badge">Best Practices</span>
+      </h2>
+
+      <!-- Good Example 1 -->
+      <div class="example-card good">
+        <div class="ex-header">
+          <h3>1. Εκπαιδευτικός Οργανισμός / Κολλέγιο (Διεργασία Υλοποίησης Προγραμμάτων)</h3>
+          <span class="status-pill good">✓ Πλήρης Συμμόρφωση (6.2.1 &amp; 6.2.2)</span>
+        </div>
+        <div class="quote-statement">
+          «Επίτευξη ποσοστού επιτυχίας των καταρτιζομένων στις εξετάσεις πιστοποίησης τουλάχιστον 90% (έναντι 82% το προηγούμενο έτος) για όλα τα προγράμματα επαγγελματικής κατάρτισης του ακαδημαϊκού έτους 2026–2027.»
+        </div>
+        <div class="smart-tags">
+          <span class="s-tag"><strong>S:</strong> Επιτυχία σε εξετάσεις πιστοποίησης</span>
+          <span class="s-tag"><strong>M:</strong> &ge; 90% (από 82%)</span>
+          <span class="s-tag"><strong>A:</strong> Ρεαλιστική αύξηση +8%</span>
+          <span class="s-tag"><strong>R:</strong> Ποιότητα εκπαίδευσης (6.2.1-a &amp; h)</span>
+          <span class="s-tag"><strong>T:</strong> Ακαδ. έτος 2026–2027</span>
+        </div>
+        <div class="plan-mini">
+          <strong>Σχέδιο Επίτευξης (6.2.2):</strong> <em>Ενέργειες (a):</em> Εισαγωγή 2 προσομοιωτικών τεστ ανά πρόγραμμα &amp; ενισχυτική διδασκαλία. <em>Πόροι (b):</em> Τράπεζα θεμάτων &amp; 20 ώρες εισηγητών. <em>Υπεύθυνος (c):</em> Ακαδημαϊκός Διευθυντής. <em>Προθεσμία (d):</em> Έως 30/06/2027. <em>Αξιολόγηση (e):</em> Επίσημα αποτελέσματα εξετάσεων ανά εξεταστική περίοδο.
+        </div>
+      </div>
+
+      <!-- Good Example 2 -->
+      <div class="example-card good">
+        <div class="ex-header">
+          <h3>2. Βιομηχανία Παραγωγής (Διεργασία Παραγωγής &amp; Ποιοτικού Ελέγχου)</h3>
+          <span class="status-pill good">✓ Πλήρης Συμμόρφωση (6.2.1 &amp; 6.2.2)</span>
+        </div>
+        <div class="quote-statement">
+          «Μείωση του ποσοστού ελαττωματικών τεμαχίων (scrap) στη γραμμή CNC από 2,8% σε κάτω από 1,5% επί του συνόλου της παραγωγής, έως τις 31 Δεκεμβρίου 2026.»
+        </div>
+        <div class="smart-tags">
+          <span class="s-tag"><strong>S:</strong> Μείωση scrap στη γραμμή CNC</span>
+          <span class="s-tag"><strong>M:</strong> &lt; 1,5% (από 2,8%)</span>
+          <span class="s-tag"><strong>A:</strong> Εφικτό με προληπτική συντήρηση</span>
+          <span class="s-tag"><strong>R:</strong> Συμμόρφωση προϊόντος (6.2.1-h)</span>
+          <span class="s-tag"><strong>T:</strong> Έως 31/12/2026</span>
+        </div>
+        <div class="plan-mini">
+          <strong>Σχέδιο Επίτευξης (6.2.2):</strong> <em>Ενέργειες (a):</em> Εβδομαδιαία διακρίβωση εργαλείων &amp; εκπαίδευση χειριστών. <em>Πόροι (b):</em> Κονδύλι συντήρησης &amp; 8 ώρες εκπαίδευσης. <em>Υπεύθυνος (c):</em> Διευθυντής Παραγωγής. <em>Προθεσμία (d):</em> Ορόσημα ανά τρίμηνο, ολοκλήρωση 31/12/2026. <em>Αξιολόγηση (e):</em> Μηνιαία αναφορά απορριμμάτων ERP.
+        </div>
+      </div>
+
+      <!-- Good Example 3 -->
+      <div class="example-card good">
+        <div class="ex-header">
+          <h3>3. Εταιρεία Υπηρεσιών / Logistics (Διεργασία Εξυπηρέτησης Πελατών)</h3>
+          <span class="status-pill good">✓ Πλήρης Συμμόρφωση (6.2.1 &amp; 6.2.2)</span>
+        </div>
+        <div class="quote-statement">
+          «Επίτευξη έγκαιρης παράδοσης παραγγελιών (On-Time Delivery) σε ποσοστό τουλάχιστον 97% εντός του συμφωνημένου χρόνου SLA (48 ώρες) για όλους τους εταιρικούς πελάτες, σε τριμηνιαία βάση για το 2026.»
+        </div>
+        <div class="smart-tags">
+          <span class="s-tag"><strong>S:</strong> Έγκαιρη παράδοση (OTD)</span>
+          <span class="s-tag"><strong>M:</strong> &ge; 97% εντός 48 ωρών</span>
+          <span class="s-tag"><strong>A:</strong> Βασισμένο σε ιστορικά δεδομένα</span>
+          <span class="s-tag"><strong>R:</strong> Απαιτήσεις πελατών &amp; SLA (6.2.1-c &amp; h)</span>
+          <span class="s-tag"><strong>T:</strong> Τριμηνιαία αξιολόγηση 2026</span>
+        </div>
+        <div class="plan-mini">
+          <strong>Σχέδιο Επίτευξης (6.2.2):</strong> <em>Ενέργειες (a):</em> Ανασχεδιασμός δρομολογίων &amp; εφεδρικός συνεργάτης courier. <em>Πόροι (b):</em> Λογισμικό δρομολόγησης. <em>Υπεύθυνος (c):</em> Υπεύθυνος Εφοδιαστικής Αλυσίδας. <em>Προθεσμία (d):</em> Έναρξη Q1, έλεγχος ανά τρίμηνο. <em>Αξιολόγηση (e):</em> Δείκτης OTD από το σύστημα παρακολούθησης αποστολών.
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span>Β. «Κακά» Παραδείγματα Στόχων (Παγίδες Επιθεώρησης)</span>
+        <span class="section-badge">Ασκήσεις Αίθουσας</span>
+      </h2>
+
+      <!-- Bad Example 1 -->
+      <div class="example-card bad">
+        <div class="ex-header">
+          <h3>Παγίδα 1: Ο «Αόριστος &amp; Μη Μετρήσιμος» Στόχος</h3>
+          <span class="status-pill bad">✗ Ακατάλληλος Στόχος</span>
+        </div>
+        <div class="quote-statement">
+          «Στόχος του Τμήματος Εκπαίδευσης για το 2026 είναι η συνεχής αναβάθμιση της ποιότητας των μαθημάτων και η μέγιστη δυνατή ικανοποίηση των σπουδαστών μας.»
+        </div>
+        <button class="reveal-btn" onclick="toggleFindings('f1')">🔍 Εμφάνιση Μη Συμμορφώσεων</button>
+        <div id="f1" class="findings-box">
+          <h4>Ευρήματα Μη Συμμόρφωσης (ISO 9001:2026):</h4>
+          <div class="finding-item"><span class="nc-tag">Παρ. 6.2.1-b</span> <strong>Μη μετρήσιμος στόχος:</strong> Οι εκφράσεις «συνεχής αναβάθμιση» και «μέγιστη δυνατή ικανοποίηση» δεν περιέχουν κανένα ποσοτικό δείκτη, μονάδα μέτρησης ή τιμή-στόχο (π.χ. βαθμολογία &ge; 4,5/5). Δεν μπορεί να αποδειχθεί αντικειμενικά αν επιτεύχθηκε.</div>
+          <div class="finding-item"><span class="nc-tag">Παρ. 6.2.2</span> <strong>Αδυναμία σχεδιασμού &amp; αξιολόγησης:</strong> Εφόσον δεν υπάρχει μετρήσιμο μέγεθος, δεν μπορεί να καθοριστεί πώς θα αξιολογηθούν τα αποτελέσματα (6.2.2-e).</div>
+        </div>
+      </div>
+
+      <!-- Bad Example 2 -->
+      <div class="example-card bad">
+        <div class="ex-header">
+          <h3>Παγίδα 2: Ο «Καθαρά Οικονομικός» Στόχος (Χωρίς Σχέση με Ποιότητα)</h3>
+          <span class="status-pill bad">✗ Ακατάλληλος Στόχος Ποιότητας</span>
+        </div>
+        <div class="quote-statement">
+          «Αύξηση του καθαρού κύκλου εργασιών της εταιρείας κατά 18% και μείωση των λειτουργικών εξόδων κατά 10% έως τις 31/12/2026.»
+        </div>
+        <button class="reveal-btn" onclick="toggleFindings('f2')">🔍 Εμφάνιση Μη Συμμορφώσεων</button>
+        <div id="f2" class="findings-box">
+          <h4>Ευρήματα Μη Συμμόρφωσης (ISO 9001:2026):</h4>
+          <div class="finding-item"><span class="nc-tag">Παρ. 6.2.1-h</span> <strong>Άσχετος με τη συμμόρφωση &amp; τον πελάτη:</strong> Πρόκειται για καθαρά επιχειρηματικούς/οικονομικούς στόχους (Business Objectives) και όχι για <em>Στόχους Ποιότητας</em>. Μάλιστα, μια οριζόντια μείωση εξόδων κατά 10% μπορεί να υποβαθμίσει την ποιότητα της υπηρεσίας!</div>
+          <div class="finding-item"><span class="nc-tag">Παρ. 6.2.1-a</span> <strong>Ασυμβατότητα με την Πολιτική Ποιότητας:</strong> Δεν συνδέεται με τις δεσμεύσεις της Πολιτικής Ποιότητας για συμμόρφωση απαιτήσεων και ικανοποίηση πελατών.</div>
+        </div>
+      </div>
+
+      <!-- Bad Example 3 -->
+      <div class="example-card bad">
+        <div class="ex-header">
+          <h3>Παγίδα 3: Ο «Αυτονόητος / Παράνομος» Στόχος (Κάτω από το Νόμιμο Όριο)</h3>
+          <span class="status-pill bad">✗ Ακατάλληλος Στόχος</span>
+        </div>
+        <div class="quote-statement">
+          «Τουλάχιστον το 85% των εισηγητών που θα διδάξουν στα επιδοτούμενα προγράμματα κατάρτισης να είναι εγγεγραμμένοι στο Μητρώο Εκπαιδευτών Ενηλίκων του ΕΟΠΠΕΠ.»
+        </div>
+        <button class="reveal-btn" onclick="toggleFindings('f3')">🔍 Εμφάνιση Μη Συμμορφώσεων</button>
+        <div id="f3" class="findings-box">
+          <h4>Ευρήματα Μη Συμμόρφωσης (ISO 9001:2026):</h4>
+          <div class="finding-item"><span class="nc-tag">Παρ. 6.2.1-c</span> <strong>Παραβίαση εφαρμοστέων απαιτήσεων:</strong> Η νομοθεσία απαιτεί το <strong>100%</strong> των εισηγητών να πληροί τα νόμιμα προσόντα! Ένας στόχος 85% ουσιαστικά «νομιμοποιεί» 15% παράνομη λειτουργία. Επίσης, η απλή τήρηση του νόμου (100%) αποτελεί βασική προϋπόθεση συμμόρφωσης, όχι στόχο βελτίωσης.</div>
+        </div>
+      </div>
+
+      <!-- Bad Example 4 -->
+      <div class="example-card bad">
+        <div class="ex-header">
+          <h3>Παγίδα 4: Ο «Ορφανός» Στόχος (Χωρίς Σχέδιο 6.2.2 &amp; Χωρίς Τεκμηρίωση 6.2.1-g)</h3>
+          <span class="status-pill bad">✗ Μη Συμμόρφωση Σχεδιασμού</span>
+        </div>
+        <div class="quote-statement">
+          «Ο Υπεύθυνος Παραγωγής δηλώνει προφορικά στον επιθεωρητή: "Φέτος βάλαμε στόχο να μειώσουμε τις καθυστερήσεις παραδόσεων κατά 50%. Δεν το έχουμε γράψει κάπου, ούτε έχουμε φτιάξει πλάνο ενεργειών, απλώς προσπαθούμε όλοι περισσότερο."»
+        </div>
+        <button class="reveal-btn" onclick="toggleFindings('f4')">🔍 Εμφάνιση Μη Συμμορφώσεων</button>
+        <div id="f4" class="findings-box">
+          <h4>Ευρήματα Μη Συμμόρφωσης (ISO 9001:2026):</h4>
+          <div class="finding-item"><span class="nc-tag">Παρ. 6.2.1-g</span> <strong>Έλλειψη τεκμηριωμένων πληροφοριών:</strong> Ο στόχος υπάρχει μόνο προφορικά και δεν είναι διαθέσιμος ως τεκμηριωμένη πληροφορία.</div>
+          <div class="finding-item"><span class="nc-tag">Παρ. 6.2.2 (a–e)</span> <strong>Παντελής απουσία σχεδιασμού επίτευξης:</strong> Δεν έχουν καθοριστεί συγκεκριμένες ενέργειες («προσπαθούμε περισσότερο» δεν είναι ενέργεια), απαιτούμενοι πόροι, υπεύθυνος, χρονοδιάγραμμα και τρόπος αξιολόγησης.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας ISO 9001:2026 — Εκπαιδευτικό Υλικό (Παράγραφος 6.2)
+  </footer>
+
+  <script>
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-btn').forEach(button => {
+        button.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleFindings(id) {
+      const box = document.getElementById(id);
+      box.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
