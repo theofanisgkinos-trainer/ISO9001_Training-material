@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 1 – Ερωτήσεις</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; color: #333; background: #f0f2f5; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+        h1 { color: #000000; margin: 0 0 15px 0; font-size: 28px; font-weight: bold; }
+        
+        .header-meta-row { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-size: 14px; 
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .edu-badge {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 4px 12px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            border-radius: 3px;
+        }
+        
+        .black-line { border: none; border-top: 3px solid #000000; margin-top: 0; margin-bottom: 25px; }
+
+        .instruction-text { font-size: 16px; font-weight: bold; color: #000000; margin-bottom: 25px; }
+        .item { background: #fff; border: 1px solid #e2e8f0; padding: 20px; margin-bottom: 25px; border-radius: 6px; }
+        .title { font-weight: bold; margin-bottom: 15px; color: #2c3e50; font-size: 16px; line-height: 1.5; }
+
+        .justification-label { font-size: 14px; font-weight: bold; color: #4a5568; display: block; margin-top: 15px; }
+        .justification-box {
+            width: 100%;
+            height: 100px;
+            margin-top: 8px;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-family: inherit;
+            resize: vertical;
+            box-sizing: border-box;
+            background-color: #f8fafc;
+        }
+        .justification-box:focus {
+            outline: none;
+            border-color: #3182ce;
+            background-color: #fff;
+        }
+
+        .btn-container { text-align: center; margin-top: 35px; margin-bottom: 25px; }
+        .save-btn { background-color: #27ae60; color: white; border: none; padding: 15px 30px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.2s ease; }
+        .save-btn:hover { background-color: #219653; transform: translateY(-2px); box-shadow: 0 6px 8px rgba(0,0,0,0.15); }
+
+        .footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 14px; color: #7f8c8d; font-weight: 500; }
+
+        @media print {
+            body { background: #fff; padding: 0; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .btn-container { display: none; }
+            .justification-box { background: #fafafa; border: 1px solid #94a3b8; min-height: 100px; }
+            .edu-badge { background-color: #000 !important; color: #fff !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        }
+        
+        body {
+            -webkit-user-select: none; 
+            -moz-user-select: none;    
+            -ms-user-select: none;     
+            user-select: none;         
+        }
+        
+        input, textarea {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+/* Custom Modal Ειδοποίησης */
+.custom-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.custom-modal-box {
+  background: #ffffff;
+  max-width: 440px;
+  width: 90%;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  border-top: 5px solid #dc2626;
+  text-align: center;
+  font-family: inherit;
+}
+.custom-modal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+.custom-modal-text {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+.custom-modal-btn {
+  background: #1e3a8a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.custom-modal-btn:hover {
+  background: #1d4ed8;
+}
+@media print {
+  .custom-modal-overlay { display: none !important; }
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>ISO 9001: Μύθοι &amp; Εξαιρέσεις</h1>
+    
+    <div class="header-meta-row">
+        <div>Homework 1</div>
+        <div class="edu-badge">Εκπαιδευτικό Υλικό</div>
+    </div>
+
+    <hr class="black-line">
+
+    <div style="margin-bottom: 25px; background: #fff; padding: 15px; border: 1px solid #cbd5e1; border-radius: 6px; display: flex; align-items: center; gap: 10px;">
+        <span style="font-weight: bold; color: #2c3e50; white-space: nowrap;">👤 ΟΝΟΜΑΤΕΠΩΝΥΜΟ:</span>
+        <input id="participantName" type="text" placeholder="Γράψτε το ονοματεπώνυμό σας..." style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit; font-size: 15px;">
+    </div>
+
+    <div class="instruction-text">
+        Απαντήστε στις παρακάτω ερωτήσεις, αιτιολογώντας την απάντησή σας:
+    </div>
+
+    <div class="item">
+        <div class="title">1 Είναι υποχρεωτική η ύπαρξη Οργανογράμματος σε έναν Οργανισμό που θέλει να πιστοποιηθεί κατά ISO 9001;</div>
+        <span class="justification-label">✍️ Η απάντηση και η αιτιολόγησή σας:</span>
+        <textarea id="answer1" class="justification-box" placeholder="Γράψτε την απάντησή σας εδώ..."></textarea>
+    </div>
+
+    <div class="item">
+        <div class="title">2 Επιθεωρείτε ένα Οργανισμό κατά ISO 9001 ο οποίος δεν έχει τεκμηριώσει τις υπευθυνότητες και τις αρμοδιότητες των εργαζομένων σε "παραδοσιακά" έντυπα Job Description (Καθηκοντολόγια). Αυτό συνιστά απόκλιση από την απαίτηση της παραγράφου 5.3;</div>
+        <span class="justification-label">✍️ Η απάντηση και η αιτιολόγησή σας:</span>
+        <textarea id="answer2" class="justification-box" placeholder="Γράψτε την απάντησή σας εδώ..."></textarea>
+    </div>
+
+    <div class="item">
+        <div class="title">3 Μπορούν να εξαιρεθούν οι απαιτήσεις της παραγράφου 8.3 (Σχεδιασμός και ανάπτυξη προϊόντων και υπηρεσιών) από ένα ξενοδοχείο που διοργανώνει συνέδρια;</div>
+        <span class="justification-label">✍️ Η απάντηση και η αιτιολόγησή σας:</span>
+        <textarea id="answer3" class="justification-box" placeholder="Γράψτε την απάντησή σας εδώ..."></textarea>
+    </div>
+
+    <div class="btn-container">
+        <button class="save-btn" type="button" onclick="validateAndPrint()">💾 Αποθήκευση &amp; Λήψη Homework (PDF)</button>
+    </div>
+
+    <div class="footer">
+        Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας ISO 9001
+    </div>
+
+</div>
+<!-- Παράθυρο Ειδοποίησης -->
+<div id="customAlertModal" class="custom-modal-overlay">
+  <div class="custom-modal-box">
+    <div class="custom-modal-title">⚠️ Υποχρεωτικά Πεδία</div>
+    <div id="customAlertMessage" class="custom-modal-text"></div>
+    <button type="button" class="custom-modal-btn" onclick="closeCustomAlert()">Εντάξει, το κατάλαβα</button>
+  </div>
+</div>
+
+    <script>
+function showCustomAlert(msg) {
+  document.getElementById('customAlertMessage').textContent = msg;
+  document.getElementById('customAlertModal').style.display = 'flex';
+}
+function closeCustomAlert() {
+  document.getElementById('customAlertModal').style.display = 'none';
+}
+
+        function validateAndPrint() {
+            const fields = [
+                { element: document.getElementById('participantName'), label: 'Ονοματεπώνυμο' },
+                { element: document.getElementById('answer1'), label: 'Απάντηση στην Ερώτηση 1' },
+                { element: document.getElementById('answer2'), label: 'Απάντηση στην Ερώτηση 2' },
+                { element: document.getElementById('answer3'), label: 'Απάντηση στην Ερώτηση 3' }
+            ];
+
+            const missing = fields.filter(field => !field.element.value.trim());
+
+            if (missing.length > 0) {
+                showCustomAlert(
+                    'Πριν από την αποθήκευση του Homework σε PDF, συμπληρώστε τα παρακάτω πεδία:\n\n' +
+                    missing.map(field => '• ' + field.label).join('\n')
+                );
+                missing[0].element.focus();
+                return;
+            }
+
+            window.print();
+        }
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && ['c', 'x', 'u'].includes(e.key.toLowerCase())) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
+
+</body>
+</html>
