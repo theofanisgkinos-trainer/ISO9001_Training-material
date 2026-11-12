@@ -1,0 +1,1154 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>ISO 9001:2026 | Επικύρωση διεργασιών</title>
+
+<style>
+:root {
+  --navy:#173653;
+  --blue:#27658a;
+  --ink:#203047;
+  --muted:#5d6b7d;
+  --line:#d8e1e8;
+  --pale:#edf4f8;
+  --paler:#f6f9fb;
+  --teal:#287c78;
+  --teal-bg:#eaf5f3;
+  --amber:#95651c;
+  --amber-bg:#fbf4e7;
+  --white:#ffffff;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  padding:24px;
+  background:#e9eef2;
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
+}
+
+.container {
+  max-width:1150px;
+  margin:0 auto;
+  background:var(--white);
+  box-shadow:0 10px 35px rgba(26,48,68,.12);
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.hero {
+  padding:38px 48px 32px;
+  background:linear-gradient(135deg,#173653 0%,#245d7c 100%);
+  color:#fff;
+}
+
+.kicker {
+  font-size:12px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#c7dce9;
+}
+
+h1 {
+  font-size:30px;
+  line-height:1.2;
+  margin:12px 0 10px;
+}
+
+.subtitle {
+  font-size:16px;
+  color:#e1edf4;
+  margin:0;
+  max-width:850px;
+}
+
+.hero-meta {
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.hero-meta span {
+  font-size:12px;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:20px;
+  padding:5px 11px;
+  color:#edf5f9;
+}
+
+.tabs {
+  display:flex;
+  flex-wrap:wrap;
+  gap:0;
+  padding:0 35px;
+  background:#f1f5f8;
+  border-bottom:1px solid var(--line);
+}
+
+.tab-button {
+  appearance:none;
+  border:0;
+  border-bottom:4px solid transparent;
+  background:transparent;
+  color:#526579;
+  padding:17px 22px 14px;
+  font-size:14px;
+  font-weight:700;
+  font-family:inherit;
+  cursor:pointer;
+  transition:background .2s,color .2s;
+}
+
+.tab-button:hover {
+  background:#e7eef3;
+  color:var(--navy);
+}
+
+.tab-button.active {
+  color:var(--navy);
+  border-bottom-color:var(--blue);
+  background:#fff;
+}
+
+.content {
+  padding:34px 48px 48px;
+}
+
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+.intro {
+  font-size:16px;
+  color:#33465b;
+  border-left:4px solid #4f91ad;
+  padding:3px 0 3px 18px;
+  margin:0 0 28px;
+}
+
+h2 {
+  font-size:21px;
+  color:var(--navy);
+  margin:34px 0 13px;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--line);
+}
+
+h3 {
+  font-size:17px;
+  color:var(--navy);
+  margin:20px 0 8px;
+}
+
+p { margin:8px 0 13px; }
+
+ul,ol { padding-left:23px; }
+li { margin:6px 0; }
+
+.callout {
+  padding:17px 19px;
+  border-radius:8px;
+  margin:18px 0;
+  background:var(--pale);
+  border:1px solid #d5e4ed;
+}
+
+.callout.teal {
+  background:var(--teal-bg);
+  border-color:#cfe6e2;
+}
+
+.callout.amber {
+  background:var(--amber-bg);
+  border-color:#efdfbd;
+}
+
+.keyline {
+  font-size:17px;
+  font-weight:700;
+  color:var(--navy);
+}
+
+.two-column {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+  margin:18px 0;
+}
+
+.info-card {
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:18px;
+  background:#fbfcfd;
+}
+
+.info-card h3 {
+  margin:0 0 9px;
+  font-size:16px;
+}
+
+.info-card p {
+  margin:0;
+  font-size:14px;
+}
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:13px;
+  margin:18px 0;
+}
+
+.step {
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px;
+  background:#fbfcfd;
+}
+
+.step-number {
+  display:flex;
+  width:28px;
+  height:28px;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:var(--navy);
+  color:#fff;
+  font-weight:700;
+  font-size:13px;
+  margin-bottom:9px;
+}
+
+.step h3 {
+  font-size:15px;
+  margin:0 0 7px;
+}
+
+.step p {
+  font-size:13.5px;
+  margin:0;
+  color:#4c5d70;
+}
+
+.thought-box {
+  background:#fffbeb;
+  border:2px dashed #e5ae43;
+  border-radius:8px;
+  padding:19px 21px;
+  margin:20px 0;
+}
+
+.thought-box h3 {
+  color:#805616;
+  margin:0 0 10px;
+}
+
+.thought-box li {
+  color:#684b1b;
+  font-size:14px;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin:14px 0 22px;
+  font-size:14px;
+}
+
+th {
+  background:#eaf1f5;
+  color:var(--navy);
+  text-align:left;
+}
+
+th,td {
+  padding:11px 12px;
+  border:1px solid var(--line);
+  vertical-align:top;
+}
+
+tr:nth-child(even) td { background:#fbfcfd; }
+
+.small {
+  font-size:13px;
+  color:var(--muted);
+}
+
+.example-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  margin:18px 0;
+}
+
+.example-card {
+  border:1px solid var(--line);
+  border-radius:9px;
+  overflow:hidden;
+  background:#fff;
+  break-inside:avoid;
+}
+
+.example-heading {
+  padding:12px 16px;
+  background:#f1f5f8;
+  color:var(--navy);
+  font-weight:700;
+}
+
+.example-body {
+  padding:15px 17px;
+  font-size:14px;
+}
+
+.example-body p:last-child { margin-bottom:0; }
+
+.sector-tag {
+  display:inline-block;
+  font-size:11px;
+  font-weight:700;
+  color:#526b80;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  margin-bottom:6px;
+}
+
+.verdict {
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:5px;
+  margin-top:10px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.verdict.yes {
+  background:var(--teal-bg);
+  color:#22645f;
+}
+
+.verdict.conditional {
+  background:var(--amber-bg);
+  color:#805616;
+}
+
+.reference {
+  padding:17px 19px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#fafcfd;
+  margin-top:18px;
+}
+
+a {
+  color:#17638a;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  overflow-wrap:anywhere;
+}
+
+.footer {
+  padding:18px 48px;
+  background:#f3f6f8;
+  border-top:1px solid var(--line);
+  font-size:12px;
+  color:#657487;
+}
+
+.footer strong { color:#334a60; }
+
+@media(max-width:760px) {
+  body { padding:0; }
+  .container { border-radius:0; }
+  .hero { padding:30px 23px; }
+  .content { padding:25px 22px 35px; }
+  .tabs { padding:0 10px; }
+  .tab-button { flex:1 1 100%; text-align:left; padding:13px 14px; }
+  .two-column,.steps,.example-grid { grid-template-columns:1fr; }
+  h1 { font-size:25px; }
+  table { font-size:12.5px; }
+  th,td { padding:8px; }
+  .footer { padding:17px 22px; }
+}
+
+@media print {
+  @page { size:A4; margin:13mm; }
+  body { padding:0; background:#fff; font-size:10pt; }
+  .container { max-width:none; box-shadow:none; border-radius:0; }
+  .hero { padding:22px 28px; print-color-adjust:exact; }
+  .tabs { display:none; }
+  .content { padding:20px 28px; }
+  .tab-panel { display:block!important; }
+  .tab-panel + .tab-panel { break-before:page; }
+  .footer { padding:12px 28px; }
+  h1 { font-size:23pt; }
+  h2 { font-size:15pt; }
+  .example-card,.info-card,.callout,.thought-box,.step,table {
+    break-inside:avoid;
+  }
+}
+/* 1. Ξεκλείδωμα overflow ώστε να λειτουργεί το sticky σε όλα τα containers */
+html, body, .wrapper, .container, .page, main {
+  overflow: visible !important;
+}
+
+/* 2. Πλεούμενη μπάρα καρτελών */
+nav.tabs {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 12px !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14) !important;
+}
+
+/* 3. Κουμπί Εκτύπωσης */
+.custom-print-btn {
+  margin-left: auto;
+  background: #1e3a8a;
+  color: #ffffff;
+  border: none;
+  padding: 9px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+.custom-print-btn:hover {
+  background: #1d4ed8;
+}
+
+/* 4. Εκτύπωση ΜΟΝΟ της ενεργής καρτέλας ΧΩΡΙΣ κενή 1η σελίδα */
+@media print {
+  nav.tabs,
+  .custom-print-btn {
+    display: none !important;
+  }
+  .tab-panel {
+    display: none !important;
+  }
+  .tab-panel.active {
+    display: block !important;
+    page-break-before: auto !important;
+    break-before: auto !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .tab-panel.active > *:first-child {
+    page-break-before: auto !important;
+    break-before: auto !important;
+    margin-top: 0 !important;
+  }
+}
+/* Στυλ για 4η Καρτέλα: Quiz / Παγίδες Επιθεώρησης */
+.quiz-trap-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #1e3a8a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+.quiz-trap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.quiz-trap-badge {
+  background: #eff6ff;
+  color: #1e3a8a;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid #bfdbfe;
+}
+.quiz-trap-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 10px 0;
+}
+.quiz-trap-scenario {
+  background: #f8fafc;
+  padding: 14px 16px;
+  border-radius: 8px;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  border: 1px solid #e2e8f0;
+}
+.quiz-trap-question {
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+.reveal-trap-btn {
+  background: #0f766e;
+  color: #ffffff;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.reveal-trap-btn:hover {
+  background: #115e59;
+}
+.quiz-trap-answer {
+  display: none;
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: #fef2f2;
+  border-left: 4px solid #dc2626;
+  border-radius: 8px;
+  color: #1e293b;
+  line-height: 1.6;
+}
+.quiz-trap-answer.valid-ok {
+  background: #f0fdf4;
+  border-left-color: #16a34a;
+}
+@media print {
+  .reveal-trap-btn { display: none !important; }
+  .quiz-trap-answer { display: block !important; }
+}
+.term-trigger {
+  color: #1d4ed8; font-weight: 700; border-bottom: 2px dashed #3b82f6;
+  cursor: pointer; padding: 0 2px; border-radius: 3px;
+}
+.term-trigger:hover { background: #dbeafe; color: #1e3a8a; }
+.term-modal-overlay {
+  display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(3px);
+  z-index: 10000; align-items: center; justify-content: center; padding: 16px;
+}
+.term-modal-box {
+  background: #ffffff; max-width: 560px; width: 100%; padding: 24px;
+  border-radius: 14px; box-shadow: 0 20px 30px rgba(15, 23, 42, 0.25);
+  border-top: 5px solid #1e3a8a; text-align: left;
+}
+.term-modal-title { font-size: 1.15rem; font-weight: 700; color: #1e3a8a; margin-bottom: 12px; }
+.term-modal-body { font-size: 0.95rem; color: #334155; line-height: 1.65; margin-bottom: 20px; }
+.term-modal-footer { text-align: right; }
+.term-modal-close {
+  background: #1e3a8a; color: #ffffff; border: none; padding: 8px 20px;
+  border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+}
+@media print { .term-modal-overlay { display: none !important; } .term-trigger { border-bottom: none; color: inherit; } }
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header class="hero">
+  <div class="kicker">Εκπαιδευτικό υλικό • Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης ISO 9001</div>
+  <h1>ISO 9001:2026 | Επικύρωση διεργασιών</h1>
+  <p class="subtitle">Κατανόηση της απαίτησης 8.5.1(στ), αξιολόγηση της δυνατότητας επαλήθευσης και πρακτική προσέγγιση της επικύρωσης διεργασιών παραγωγής και παροχής υπηρεσιών.</p>
+  <div class="hero-meta">
+    <span>ISO 9001:2026</span>
+    <span>§ 8.5.1(στ)</span>
+    <span>Οδηγός επιθεωρητή</span>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Καρτέλες εκπαιδευτικού υλικού">
+  <button class="tab-button active" data-tab="tab1" type="button">1. Βασικές έννοιες &amp; επιθεώρηση</button>
+  <button class="tab-button" data-tab="tab2" type="button">2. Παραγωγή προϊόντων</button>
+  <button class="tab-button" data-tab="tab3" type="button">3. Παροχή υπηρεσιών</button>
+<button class="tab-button" data-tab="tab4" type="button">4. Quiz / Σενάρια Επιθεώρησης</button>
+<button class="custom-print-btn" type="button" onclick="window.print()">🖨 Εκτύπωση Καρτέλας</button>
+</nav>
+
+<main class="content">
+
+<!-- ΚΑΡΤΕΛΑ 1: ΒΑΣΙΚΕΣ ΕΝΝΟΙΕΣ ΚΑΙ ΟΔΗΓΟΣ ΕΠΙΘΕΩΡΗΣΗΣ -->
+
+<section class="tab-panel active" id="tab1">
+
+<p class="intro"><strong>Η επικύρωση αφορά την ικανότητα μιας διεργασίας να επιτυγχάνει τα σχεδιασμένα αποτελέσματα.</strong> Εφαρμόζεται όταν το αποτέλεσμα της διεργασίας δεν μπορεί να επαληθευτεί με επακόλουθη παρακολούθηση ή μέτρηση. Το κρίσιμο ζήτημα, επομένως, δεν είναι πόσο σύνθετη ή σημαντική είναι μια διεργασία, αλλά εάν το αποτέλεσμα που πρέπει να επιτευχθεί μπορεί να ελεγχθεί επαρκώς μετά την ολοκλήρωσή της (και <strong>πριν</strong> την παράδοσή του στον πελάτη).</p>
+
+<h2>1. Τι απαιτεί το ISO 9001:2026;</h2>
+
+<p>Η παράγραφος <strong>8.5.1(στ)</strong> απαιτεί από τον Οργανισμό να επικυρώνει και να επανεπικυρώνει, σε κατάλληλα διαστήματα, την ικανότητα των διεργασιών παραγωγής και παροχής υπηρεσιών να επιτυγχάνουν τα σχεδιασμένα αποτελέσματα, όταν η έξοδος της διεργασίας δεν μπορεί να επαληθευτεί με επακόλουθη παρακολούθηση ή μέτρηση.</p>
+
+<div class="callout">
+  <div class="keyline">Η βασική λογική της απαίτησης</div>
+  <p>Όταν δεν μπορούμε να αποδείξουμε με κατάλληλο μεταγενέστερο έλεγχο ότι επιτεύχθηκε το επιθυμητό αποτέλεσμα, πρέπει να αποδείξουμε ότι η ίδια η διεργασία είναι ικανή να το επιτυγχάνει.</p>
+</div>
+
+<h2>2. Επαλήθευση αποτελέσματος και επικύρωση διεργασίας</h2>
+
+<div class="two-column">
+  <div class="info-card">
+    <h3>Επαλήθευση αποτελέσματος</h3>
+    <p>Με κατάλληλη μέτρηση, δοκιμή ή εξέταση μετά την ολοκλήρωση της διεργασίας μπορώ να διαπιστώσω εάν ικανοποιούνται οι καθορισμένες απαιτήσεις του αποτελέσματος.</p>
+  </div>
+  <div class="info-card">
+    <h3>Επικύρωση διεργασίας</h3>
+    <p>Όταν ο μεταγενέστερος έλεγχος δεν μπορεί να αποδείξει εάν επιτεύχθηκε το απαιτούμενο αποτέλεσμα, τεκμηριώνω ότι η ίδια η διεργασία είναι ικανή να το επιτυγχάνει υπό καθορισμένες συνθήκες.</p>
+  </div>
+</div>
+
+<h2>3. Η πρακτική δυνατότητα επαλήθευσης</h2>
+
+<div class="thought-box">
+  <h3>Θεωρητικά μπορώ να ελέγξω τα πάντα. Πρακτικά, μπορώ;</h3>
+  <ul>
+  <li>
+    <strong>Φύση της μεθόδου ελέγχου (Μη καταστροφικός vs. Καταστροφικός):</strong> Η ύπαρξη μιας μεθόδου ελέγχου δεν συνεπάγεται τη δυνατότητα καθολικής εφαρμογής της. Όταν η επαλήθευση απαιτεί καταστροφικές δοκιμές (π.χ. μικροβιολογικός έλεγχος αποστειρωμένης κονσέρβας), ο έλεγχος του 100% της παραγωγής είναι πρακτικά ανέφικτος, σε αντίθεση με τους μη καταστροφικούς ελέγχους (π.χ. έλεγχος διαστάσεων, βάρους και αντοχής πλαστικών κάδων).
+  </li>
+  <li>
+    <strong>Οικονομοτεχνικοί και χρονικοί περιορισμοί:</strong> Ορισμένες μέθοδοι ελέγχου είναι εξαιρετικά δαπανηρές, χρονοβόρες ή αποδίδουν αποτελέσματα αφού το προϊόν έχει ήδη διατεθεί ή ενσωματωθεί, καθιστώντας τη στατιστική δειγματοληψία μονόδρομο.
+  </li>
+  <li>
+    <strong>Ομοιογένεια διεργασίας και επάρκεια δειγματοληψίας:</strong> Ο Οργανισμός οφείλει να αξιολογεί εάν το δείγμα αντιπροσωπεύει αξιόπιστα το σύνολο της παρτίδας. Σε διεργασίες υψηλής επαναληψιμότητας (π.χ. παραγωγή πλαστικών κάδων μέσω injection molding), η δειγματοληψία παρέχει επαρκή βεβαιότητα, ενώ όταν υφίσταται ανομοιογένεια στην παρτίδα (π.χ. θερμικά «ψυχρά σημεία» στον κλίβανο αποστείρωσης) και υψηλή κρισιμότητα αστοχίας, ο δειγματοληπτικός έλεγχος κρίνεται ανεπαρκής.
+  </li>
+  <li>
+    <strong>Μετάβαση στην επικύρωση (8.5.1 στ):</strong> Όταν η επακόλουθη παρακολούθηση ή μέτρηση αδυνατεί να αποδείξει με επαρκή στατιστική βεβαιότητα τη συμμόρφωση της εξόδου, καθίσταται υποχρεωτική η επικύρωση της ικανότητας της ίδιας της διεργασίας.
+  </li>
+</ul>
+
+</div>
+
+<p>Ο επιθεωρητής δεν αρκείται στη διαπίστωση ότι υπάρχει κάποια μέθοδος ελέγχου. Εξετάζει εάν η μέθοδος είναι κατάλληλη, εάν καλύπτει τα απαιτούμενα χαρακτηριστικά και εάν μπορεί πράγματι να εφαρμοστεί ώστε να παρέχει επαρκή στοιχεία για το αποτέλεσμα.</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Παράμετρος Αξιολόγησης</th>
+      <th>Παραγωγή Πλαστικών Κάδων (Επάρκεια Επαλήθευσης)</th>
+      <th>Εμπορική Αποστείρωση Κονσερβών (Ανάγκη Επικύρωσης)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Φύση της μεθόδου ελέγχου</strong></td>
+      <td>Μη καταστροφική (το προϊόν παραμένει λειτουργικό και εμπορεύσιμο).</td>
+      <td>Καταστροφική (η επιβεβαίωση απαιτεί την καταστροφή του δείγματος).</td>
+    </tr>
+    <tr>
+      <td><strong>Εφικτότητα 100% ελέγχου</strong></td>
+      <td>Τεχνικά εφικτή (η δειγματοληψία επιλέγεται για μείωση κόστους/χρόνου).</td>
+      <td>Τεχνικά ανέφικτη (θα οδηγούσε σε καταστροφή ολόκληρης της παραγωγής).</td>
+    </tr>
+    <tr>
+      <td><strong>Αντιπροσωπευτικότητα δείγματος</strong></td>
+      <td>Υψηλή, λόγω σταθερότητας και επαναληψιμότητας της διεργασίας.</td>
+      <td>Περιορισμένη, λόγω πιθανής θερμικής ανομοιογένειας εντός της παρτίδας.</td>
+    </tr>
+    <tr>
+      <td><strong>Συνέπεια ενδεχόμενης αστοχίας</strong></td>
+      <td>Περιορισμένη (εμπορική/αισθητική απόκλιση, αντικατάσταση προϊόντος).</td>
+      <td>Κρίσιμη (σοβαρός κίνδυνος ασφάλειας τροφίμων και δημόσιας υγείας).</td>
+    </tr>
+    <tr>
+      <td><strong>Συμπέρασμα κατά 8.5.1(στ)</strong></td>
+      <td>Αρκεί η επακόλουθη παρακολούθηση και μέτρηση (παρ. 8.6).</td>
+      <td>Απαιτείται τεκμηριωμένη επικύρωση της ικανότητας της διεργασίας.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2>4. Τι περιλαμβάνει η επικύρωση;</h2>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-number">1</div>
+    <h3>Καθορίζω τι πρέπει να επιτευχθεί</h3>
+    <p>Προσδιορίζω το προβλεπόμενο αποτέλεσμα και τα κριτήρια αποδοχής.</p>
+  </div>
+  <div class="step">
+    <div class="step-number">2</div>
+    <h3>Ορίζω τις κατάλληλες συνθήκες</h3>
+    <p>Καθορίζω τις παραμέτρους, τον εξοπλισμό, τις μεθόδους και τις απαιτούμενες ικανότητες.</p>
+  </div>
+  <div class="step">
+    <div class="step-number">3</div>
+    <h3>Συγκεντρώνω αντικειμενικά στοιχεία</h3>
+    <p>Με δοκιμές, μελέτες ή άλλα τεκμηριωμένα στοιχεία αποδεικνύω ότι η διεργασία μπορεί να επιτυγχάνει το αποτέλεσμα.</p>
+  </div>
+</div>
+
+<h3>Επανεπικύρωση</h3>
+<p>Αλλαγές στο προϊόν / υπηρεσία, στον εξοπλισμό, στα υλικά, στις παραμέτρους ή στις συνθήκες λειτουργίας μπορεί να επηρεάσουν την ικανότητα της διεργασίας. Ο Οργανισμός καθορίζει πότε απαιτείται επανεπικύρωση και τεκμηριώνει ότι η διεργασία εξακολουθεί να επιτυγχάνει το προβλεπόμενο αποτέλεσμα.</p>
+
+<h2>5. Τι δεν πρέπει να συγχέει ο επιθεωρητής;</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Παράγοντας</th>
+  <th>Τι πρέπει να θυμάται ο επιθεωρητής</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong><span class="term-trigger" onclick="openTermModal('1. Κρισιμότητα διεργασίας', '<p><strong>Βιομηχανία:</strong> Η συναρμολόγηση των φρένων ενός αυτοκινήτου είναι απολύτως κρίσιμη. Όμως επαληθεύεται 100% με μέτρηση ροπής σύσφιξης, έλεγχο πίεσης υγρών και δοκιμή σε δυναμόμετρο.</p><p><strong>Υπηρεσίες:</strong> Η έκδοση της τελικής βαθμολογίας και του πτυχίου είναι κρίσιμη. Επαληθεύεται πλήρως με επανέλεγχο βαθμολογιών, διδακτικών μονάδων και υπογραφών πριν την παράδοση.</p>')">Κρισιμότητα διεργασίας</span>
+</strong></td>
+  <td>Μια διεργασία μπορεί να είναι εξαιρετικά κρίσιμη χωρίς αυτό να σημαίνει ότι το αποτέλεσμά της δεν μπορεί να επαληθευτεί.</td>
+</tr>
+<tr>
+  <td><strong><span class="term-trigger" onclick="openTermModal('2. Πολυπλοκότητα διεργασίας', '<p><strong>Βιομηχανία:</strong> Η κατεργασία αεροπορικού εξαρτήματος σε CNC 5 αξόνων είναι πολύπλοκη. Όμως το αποτέλεσμα επαληθεύεται με απόλυτη ακρίβεια μέσω τρισδιάστατης μέτρησης (CMM) χωρίς καταστροφή.</p><p><strong>Υπηρεσίες:</strong> Ο υπολογισμός μισθοδοσίας 500 εργαζομένων με βάρδιες και επιδόματα είναι πολύπλοκος. Επαληθεύεται πλήρως μέσω λογιστικών διασταυρώσεων πριν την εκταμίευση.</p>')">Πολυπλοκότητα διεργασίας</span>
+</strong></td>
+  <td>Η πολυπλοκότητα δεν συνεπάγεται αδυναμία επαλήθευσης του αποτελέσματος.</td>
+</tr>
+<tr>
+  <td><strong><span class="term-trigger" onclick="openTermModal('3. Αυτοματοποίηση', '<p><strong>Βιομηχανία:</strong> Μια αυτοματοποιημένη γραμμή εμφιάλωσης εκτελεί χιλιάδες κινήσεις ανά ώρα. Το αποτέλεσμα επαληθεύεται άμεσα στην έξοδο με οπτικούς αισθητήρες (vision systems) και ζυγιστικά ελέγχου.</p><p><strong>Υπηρεσίες:</strong> Ένα αυτόματο σύστημα έκδοσης ηλεκτρονικών εισιτηρίων λειτουργεί χωρίς υπάλληλο. Το αποτέλεσμα (ημερομηνία, χρέωση, QR) επαληθεύεται αυτόματα πριν την αποστολή.</p>')">Αυτοματοποίηση</span>
+</strong></td>
+  <td>Η αυτόματη εκτέλεση δεν σημαίνει ότι το αποτέλεσμα δεν μπορεί να ελεγχθεί.</td>
+</tr>
+<tr>
+  <td><strong><span class="term-trigger" onclick="openTermModal('4. Παροχή υπηρεσίας σε πραγματικό χρόνο', '<p><strong>Αυτόματο Check-in Ξενοδοχείου (Self-Service Kiosk):</strong> Ο πελάτης πραγματοποιεί μόνος του την άφιξη σε μηχάνημα χωρίς ρεσεψιονίστ, σε πραγματικό χρόνο. Το σύστημα επαληθεύει αυτόματα και ακαριαία τον κωδικό κράτησης, την πληρωμή, τη διαθεσιμότητα καθαρού δωματίου και τη σωστή κωδικοποίηση της κάρτας-κλειδιού πριν ολοκληρωθεί η συναλλαγή.</p><p><strong>Φαρμακείο (Εκτέλεση συνταγής):</strong> Ο φαρμακοποιός συγκεντρώνει και παραδίδει τα φάρμακα παρουσία του ασθενούς. Τα σκευάσματα, οι δοσολογίες και οι ημερομηνίες λήξης επαληθεύονται μέσω σάρωσης barcode έναντι της συνταγής πριν την παράδοση.</p>')">Παροχή υπηρεσίας σε πραγματικό χρόνο</span>
+</strong></td>
+  <td>Η ταυτόχρονη παροχή και κατανάλωση της υπηρεσίας δεν αποδεικνύει από μόνη της ότι κάθε αποτέλεσμα είναι μη επαληθεύσιμο.</td>
+</tr>
+<tr>
+  <td><strong><span class="term-trigger" onclick="openTermModal('5. Ικανοποίηση πελάτη', '<p><strong>Εκπαίδευση / ΚΕΚ:</strong> Οι συμμετέχοντες αξιολογούν με «Άριστα» τον εισηγητή. Αυτό δεν αποδεικνύει ότι τηρήθηκαν οι κανονιστικές απαιτήσεις (π.χ. ελάχιστες ώρες παρακολούθησης ή επιτυχία σε τεστ).</p><p><strong>Υπηρεσίες:</strong> Ένας πελάτης μένει ικανοποιημένος από την ευγένεια τεχνικού ψυκτικού. Η θετική γνώμη δεν επαληθεύει ότι ο τεχνικός διαθέτει Πιστοποιητικό Φθοριούχων Αερίων (F-Gases).</p>')">Ικανοποίηση πελάτη</span>
+</strong></td>
+  <td>Η θετική αξιολόγηση του πελάτη δεν αποδεικνύει από μόνη της ότι εκπληρώθηκαν όλα τα καθορισμένα χαρακτηριστικά και οι απαιτήσεις.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>6. Οδηγός επιθεώρησης</h2>
+
+<p>Ο επιθεωρητής δεν ξεκινά ρωτώντας απλώς «Υπάρχει διαδικασία επικύρωσης;». Πρώτα διερευνά εάν πληρούται η προϋπόθεση εφαρμογής της απαίτησης 8.5.1(στ).</p>
+
+<ol>
+  <li><strong>Προσδιορισμός αποτελέσματος:</strong> Ποιο είναι το σχεδιασμένο αποτέλεσμα της διεργασίας και ποια είναι τα κριτήρια αποδοχής;</li>
+  <li><strong>Μέθοδος επαλήθευσης:</strong> Πώς και πότε ελέγχεται το αποτέλεσμα; Είναι η μέθοδος κατάλληλη για τα χαρακτηριστικά που πρέπει να αποδειχθούν;</li>
+  <li><strong>Επάρκεια ελέγχου:</strong> Παρέχουν οι διαθέσιμες μέθοδοι επαρκή αντικειμενικά στοιχεία ότι επιτεύχθηκε το σχεδιασμένο αποτέλεσμα;</li>
+  <li><strong>Περιορισμοί:</strong> Υπάρχουν χαρακτηριστικά που δεν μπορούν να επαληθευτούν με επακόλουθη παρακολούθηση ή μέτρηση;</li>
+  <li><strong>Επικύρωση, όπου απαιτείται:</strong> Έχουν καθοριστεί κριτήρια ανασκόπησης και έγκρισης των διεργασιών, έγκριση εξοπλισμού και προσόντων προσωπικού, ειδικές μέθοδοι και διαδικασίες, απαιτήσεις τήρησης αρχείων και επανεπικύρωσης;</li>
+  <li><strong>Διατήρηση της ικανότητας:</strong> Παρακολουθεί ο Οργανισμός τις συνθήκες που επηρεάζουν την ικανότητα της διεργασίας και επανεπικυρώνει όταν απαιτείται;</li>
+</ol>
+
+<div class="callout teal">
+  <div class="keyline">Το βασικό συμπέρασμα</div>
+  <p><strong>Δεν χαρακτηρίζουμε μια διεργασία ως ειδική από το όνομά της, τον κλάδο ή τη σημασία της.</strong> Εξετάζουμε το σχεδιασμένο αποτέλεσμα και τη δυνατότητα επαλήθευσής του με επακόλουθη παρακολούθηση ή μέτρηση. Όταν αυτή η επαλήθευση δεν είναι δυνατή, εφαρμόζεται η απαίτηση επικύρωσης της ικανότητας της διεργασίας.</p>
+</div>
+
+</section>
+
+<!-- Η ΚΑΡΤΕΛΑ 2 ΣΥΝΕΧΙΖΕΤΑΙ ΣΤΟ ΜΕΡΟΣ 2 -->
+
+<!-- ΚΑΡΤΕΛΑ 2: ΔΙΕΡΓΑΣΙΕΣ ΠΑΡΑΓΩΓΗΣ ΠΡΟΪΟΝΤΩΝ -->
+
+<section class="tab-panel" id="tab2">
+
+<p class="intro"><strong>Στις διεργασίες παραγωγής προϊόντων</strong>, το βασικό ερώτημα είναι εάν τα χαρακτηριστικά που πρέπει να αποκτήσει το προϊόν μπορούν να επαληθευτούν μετά την ολοκλήρωση της παραγωγικής διεργασίας. Σε ορισμένες περιπτώσεις, ο τελικός έλεγχος δεν μπορεί να αποδείξει πλήρως ότι έχουν επιτευχθεί όλες οι απαιτούμενες ιδιότητες.</p>
+
+<h2>1. Ενδεικτικά παραδείγματα διεργασιών που απαιτούν επικύρωση</h2>
+
+<div class="example-grid">
+
+  <div class="example-card">
+    <div class="example-heading">1. Συγκόλληση μεταλλικών εξαρτημάτων</div>
+    <div class="example-body">
+      <span class="sector-tag">Μεταλλουργία</span>
+      <p>Υπάρχουν διάφορες μέθοδοι μη καταστροφικών ελέγχων (NDT), με συγκεκριμένες δυνατότητες και περιορισμούς. Δεν μπορούν κατ' ανάγκη να επαληθεύσουν όλες τις απαιτούμενες ιδιότητες μιας συγκόλλησης, ούτε είναι πάντοτε εφικτή η εφαρμογή τους στο σύνολο των συγκολλημένων εξαρτημάτων.</p>
+      <p>Επομένως, όταν τα απαιτούμενα χαρακτηριστικά δεν μπορούν να επαληθευτούν πλήρως με μεταγενέστερους ελέγχους, απαιτείται επικύρωση της διεργασίας συγκόλλησης.</p>
+      <span class="verdict conditional">Επικύρωση όταν δεν επαρκεί η επακόλουθη επαλήθευση</span>
+    </div>
+  </div>
+
+  <div class="example-card">
+    <div class="example-heading">2. Παραγωγή σκυροδέματος</div>
+    <div class="example-body">
+      <span class="sector-tag">Κατασκευές</span>
+      <p>Η τελική αντοχή του σκυροδέματος προσδιορίζεται με εργαστηριακές δοκιμές, συνήθως σε ηλικία 28 ημερών. Σε πολλές περιπτώσεις, όταν προκύψει το αποτέλεσμα της δοκιμής, το σκυρόδεμα έχει ήδη τοποθετηθεί και σκληρυνθεί στην κατασκευή.</p>
+      <p>Εάν η αντοχή δεν ικανοποιεί τις απαιτήσεις, η διόρθωση μπορεί να είναι ιδιαίτερα δύσκολη ή να απαιτεί σημαντικές επεμβάσεις. Για τον λόγο αυτό, η ικανότητα της παραγωγικής διεργασίας διασφαλίζεται με κατάλληλο έλεγχο των εισροών και των παραμέτρων ανάμειξης, όπως η αναλογία νερού/τσιμέντου και η υγρασία των αδρανών.</p>
+      <span class="verdict conditional">Απαιτείται τεκμηρίωση της ικανότητας της διεργασίας</span>
+    </div>
+  </div>
+
+  <div class="example-card">
+    <div class="example-heading">3. Αποστείρωση</div>
+    <div class="example-body">
+      <span class="sector-tag">Ιατροτεχνολογικά προϊόντα</span>
+      <p>Δεν είναι πρακτικά δυνατό να ελεγχθεί κάθε προϊόν με τρόπο που να αποδεικνύει τη στειρότητά του, καθώς η αποσφράγιση για εργαστηριακό έλεγχο επιμολύνει και καταστρέφει το ίδιο το προϊόν.</p>
+      <p>Για τον λόγο αυτό, επικυρώνεται ο κύκλος αποστείρωσης και οι καθορισμένες φυσικοχημικές συνθήκες λειτουργίας του κλιβάνου, ώστε να τεκμηριώνεται ότι η διεργασία επιτυγχάνει το απαιτούμενο αποτέλεσμα.</p>
+      <span class="verdict conditional">Κλασικό παράδειγμα ανάγκης επικύρωσης</span>
+    </div>
+  </div>
+
+  <div class="example-card">
+    <div class="example-heading">4. Θερμοσυγκόλληση πλαστικών</div>
+    <div class="example-body">
+      <span class="sector-tag">Συσκευασία</span>
+      <p>Η απλή οπτική εξέταση μετά το πέρας της διεργασίας δεν επαρκεί για να αποδείξει ότι κάθε επιμέρους ένωση είναι απόλυτα στεγανή και ανθεκτική.</p>
+      <p>Η διεργασία απαιτεί εκ των προτέρων επικύρωση ως προς τις κρίσιμες λειτουργικές παραμέτρους, όπως η θερμοκρασία, η ασκούμενη πίεση και ο χρόνος επαφής.</p>
+      <span class="verdict conditional">Επικύρωση κρίσιμων παραμέτρων διεργασίας</span>
+    </div>
+  </div>
+
+  <div class="example-card">
+    <div class="example-heading">5. Ηλεκτροστατική βαφή και σκλήρυνση</div>
+    <div class="example-body">
+      <span class="sector-tag">Επιφανειακή κατεργασία</span>
+      <p>Το τελικό χρώμα και το πάχος της εξωτερικής στρώσης δεν αποδεικνύουν από μόνα τους ότι έχει επιτευχθεί ο απαιτούμενος βαθμός εσωτερικής σκλήρυνσης ή πρόσφυσης στο μέταλλο.</p>
+      <p>Απαιτείται τεκμηριωμένη επικύρωση της ικανότητας της εφαρμογής και του συνολικού θερμικού κύκλου σκλήρυνσης του φούρνου.</p>
+      <span class="verdict conditional">Ο τελικός οπτικός έλεγχος δεν αρκεί</span>
+    </div>
+  </div>
+
+  <div class="example-card">
+    <div class="example-heading">6. Θερμική επεξεργασία / αποστείρωση τροφίμου</div>
+    <div class="example-body">
+      <span class="sector-tag">Βιομηχανία τροφίμων</span>
+      <p>Οι δειγματοληπτικοί τελικοί έλεγχοι δεν αποδεικνύουν από μόνοι τους ότι κάθε συσκευασία πέτυχε το απαιτούμενο μικροβιολογικό αποτέλεσμα και είναι ασφαλής για τον καταναλωτή.</p>
+      <p>Επικυρώνεται η θερμική διεργασία, δηλαδή η σχέση χρόνου και θερμοκρασίας, για το συγκεκριμένο προϊόν και τον τύπο συσκευασίας.</p>
+      <span class="verdict conditional">Η επικύρωση αφορά τη συγκεκριμένη θερμική διεργασία</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="callout amber">
+  <div class="keyline">Προσοχή στο παράδειγμα των τροφίμων</div>
+  <p>Το ότι μπορώ να μετρήσω στο τελικό προϊόν το βάρος, το χρώμα, τις διαστάσεις ή την υφή δεν σημαίνει ότι μπορώ να επαληθεύσω κάθε χαρακτηριστικό που πρέπει να έχει επιτευχθεί κατά την παραγωγή.</p>
+  <p>Για παράδειγμα, ένας απλός τελικός έλεγχος δεν αποδεικνύει από μόνος του την απαιτούμενη μικροβιολογική ασφάλεια μετά από θερμική επεξεργασία.</p>
+</div>
+
+<h2>2. Τι πρέπει να προσέξει ο επιθεωρητής;</h2>
+
+<p>Η ύπαρξη τελικών ελέγχων δεν σημαίνει αυτομάτως ότι η διεργασία μπορεί να επαληθευτεί πλήρως. Ο επιθεωρητής πρέπει να εξετάζει εάν οι έλεγχοι καλύπτουν πράγματι τα απαιτούμενα χαρακτηριστικά του προϊόντος.</p>
+
+<ul>
+  <li><strong>Μη καταστροφικοί έλεγχοι:</strong> Ποιες ακριβώς ιδιότητες μπορούν να ελέγξουν και ποιοι είναι οι περιορισμοί τους;</li>
+  <li><strong>Δειγματοληψία:</strong> Είναι η έκταση των ελέγχων επαρκής για να παρέχει την απαιτούμενη βεβαιότητα;</li>
+  <li><strong>Καταστροφικές δοκιμές:</strong> Απαιτείται καταστροφή ή αλλοίωση του προϊόντος για να επαληθευτούν ορισμένα χαρακτηριστικά;</li>
+  <li><strong>Χρονική καθυστέρηση:</strong> Το αποτέλεσμα του ελέγχου γίνεται γνωστό όταν το προϊόν έχει ήδη παραδοθεί ή ενσωματωθεί σε άλλη κατασκευή;</li>
+  <li><strong>Κρίσιμες παράμετροι:</strong> Έχουν προσδιοριστεί και ελέγχονται οι παράμετροι που επηρεάζουν την ικανότητα της διεργασίας;</li>
+</ul>
+
+<div class="callout teal">
+  <div class="keyline">Το πρακτικό μήνυμα</div>
+  <p>Ο επιθεωρητής δεν αρκείται στο ότι ο Οργανισμός πραγματοποιεί ελέγχους στο τελικό προϊόν. Διερευνά εάν αυτοί οι έλεγχοι μπορούν πράγματι να αποδείξουν ότι επιτεύχθηκαν όλα τα σχεδιασμένα χαρακτηριστικά. Όταν δεν μπορούν, εξετάζει την επάρκεια της επικύρωσης της διεργασίας.</p>
+</div>
+
+</section>
+
+<!-- Η ΚΑΡΤΕΛΑ 3 ΣΥΝΕΧΙΖΕΤΑΙ ΣΤΟ ΜΕΡΟΣ 3 -->
+
+<!-- ΚΑΡΤΕΛΑ 3: ΔΙΕΡΓΑΣΙΕΣ ΠΑΡΟΧΗΣ ΥΠΗΡΕΣΙΩΝ -->
+
+<section class="tab-panel" id="tab3">
+
+<p class="intro"><strong>Στις διεργασίες παροχής υπηρεσιών</strong>, η αξιολόγηση μπορεί να είναι πιο σύνθετη, επειδή ο πελάτης συχνά συμμετέχει άμεσα στην παροχή ή λαμβάνει την υπηρεσία την ίδια στιγμή που αυτή υλοποιείται. Αυτό, όμως, δεν σημαίνει ότι όλες οι υπηρεσίες αποτελούν αυτομάτως ειδικές διεργασίες. Ο επιθεωρητής εξετάζει το συγκεκριμένο σχεδιασμένο αποτέλεσμα και τη δυνατότητα επαλήθευσής του.</p>
+
+<h2>1. Παραδείγματα εφαρμογής</h2>
+
+<div class="example-grid">
+
+  <div class="example-card">
+    <div class="example-heading">1. Παροχή εκπαιδευτικού προγράμματος από ΚΕΚ</div>
+    <div class="example-body">
+      <span class="sector-tag">Εκπαίδευση και κατάρτιση</span>
+      <p><strong>Δηλωμένος σκοπός:</strong> Οι συμμετέχοντες να μπορούν να εφαρμόζουν στην πράξη τη διαδικασία επιθεώρησης και να αναπτύξουν τον τρόπο σκέψης και τις δεξιότητες που απαιτεί ο ρόλος του επιθεωρητή.</p>
+      <p>Το ΚΕΚ μπορεί να αξιολογήσει την επίτευξη των μαθησιακών αποτελεσμάτων με γραπτές εξετάσεις, πρακτικές ασκήσεις, προσομοίωση επιθεώρησης και προφορική εξέταση. Εφόσον οι μέθοδοι αυτές είναι κατάλληλες και επαρκείς για τα αποτελέσματα που έχουν καθοριστεί, υπάρχει δυνατότητα επαλήθευσης.</p>
+      <p>Εάν, όμως, το ΚΕΚ ισχυρίζεται ότι οι απόφοιτοι μπορούν να εκτελούν αποτελεσματικά επιθεωρήσεις σε πραγματικές συνθήκες, πρέπει να εξεταστεί εάν οι αξιολογήσεις του αποδεικνύουν πράγματι αυτή την ευρύτερη ικανότητα. Μια προσομοίωση δεν αποδεικνύει από μόνη της κάθε πτυχή της μελλοντικής επαγγελματικής απόδοσης.</p>
+      <span class="verdict yes">Δεν χαρακτηρίζεται αυτομάτως ειδική διεργασία</span>
+    </div>
+  </div>
+
+  <div class="example-card">
+    <div class="example-heading">2. Check-in ξενοδοχείου</div>
+    <div class="example-body">
+      <span class="sector-tag">Φιλοξενία</span>
+      <p><strong>Επιδιωκόμενα αποτελέσματα:</strong> Ορθή ταυτοποίηση πελάτη, επιβεβαίωση κράτησης, σωστή καταχώριση στοιχείων, διάθεση του προβλεπόμενου δωματίου, λειτουργική κάρτα πρόσβασης, γρήγορη και αποτελεσματική εξυπηρέτηση πελάτη.</p>
+      <p>Τα μετρήσιμα στοιχεία του check-in (κράτηση, χρέωση, ετοιμότητα δωματίου, λειτουργία κάρτας) επαληθεύονται αντικειμενικά μέσω του συστήματος πριν ολοκληρωθεί η συναλλαγή. <strong>Επικύρωση</strong> απαιτείται μόνο για τα μη τυποποιημένα μέρη της επαφής (π.χ. διαχείριση κρίσης ή παραπόνου σε πραγματικό χρόνο), τα οποία διασφαλίζονται εκ των προτέρων μέσω της εκπαίδευσης και των σεναρίων αντίδρασης του προσωπικού.</p>
+      <p>Ο επιθεωρητής δεν αρκείται στην ετικέτα «real-time service». Εξετάζει τα επιμέρους σχεδιασμένα αποτελέσματα και το κατά πόσο μπορούν να επαληθευτούν.</p>
+      <span class="verdict conditional">Απαιτείται αξιολόγηση ανά αποτέλεσμα</span>
+    </div>
+  </div>
+
+  <div class="example-card">
+    <div class="example-heading">3. Πιλοτάρισμα αεροσκάφους</div>
+    <div class="example-body">
+      <span class="sector-tag">Αεροπορικές υπηρεσίες</span>
+      <p><strong>Επιδιωκόμενο αποτέλεσμα:</strong> Η ασφαλής και σύμφωνη με τις καθορισμένες απαιτήσεις εκτέλεση της πτήσης.</p>
+      <p>Η ασφαλής προσγείωση δεν αποδεικνύει από μόνη της ότι όλες οι απαιτήσεις και οι κρίσιμες παράμετροι της πτήσης τηρήθηκαν. Η συνολική ικανότητα εκτέλεσης πρέπει να διασφαλίζεται μέσω κατάλληλα καθορισμένων και ελεγχόμενων συνθηκών, εκπαίδευσης και αξιολόγησης προσωπικού, διαδικασιών και συστημάτων.</p>
+      <span class="verdict conditional">Ισχυρή περίπτωση όπου η επικύρωση έχει ουσιαστικό ρόλο</span>
+    </div>
+  </div>
+
+  <div class="example-card">
+    <div class="example-heading">4. Καθαρισμός δωματίου ξενοδοχείου</div>
+    <div class="example-body">
+      <span class="sector-tag">Φιλοξενία</span>
+      <p>Η υπηρεσία καθαρισμού ολοκληρώνεται συνήθως πριν παραδοθεί το δωμάτιο στον πελάτη.</p>
+      <p>Το αποτέλεσμα μπορεί να ελεγχθεί με επιθεώρηση του δωματίου και, εάν χρειάζεται, να διορθωθεί πριν από τη διάθεσή του.</p>
+      <span class="verdict yes">Κατά κανόνα υπάρχει δυνατότητα επαλήθευσης πριν από την παράδοση</span>
+    </div>
+  </div>
+
+  <div class="example-card">
+    <div class="example-heading">5. Αυτοματοποιημένο backup ηλεκτρονικών αρχείων</div>
+    <div class="example-body">
+      <span class="sector-tag">Υπηρεσίες πληροφορικής</span>
+      <p>Ένας πάροχος υπηρεσιών IT αναλαμβάνει για λογαριασμό πελάτη τη δημιουργία αντιγράφων ασφαλείας ηλεκτρονικών αρχείων.</p>
+      <p>Η ένδειξη «backup completed successfully» δεν αποδεικνύει από μόνη της ότι τα δεδομένα μπορούν να ανακτηθούν πλήρη και αξιοποιήσιμα.</p>
+      <p>Δοκιμαστικές επαναφορές (restore tests), έλεγχοι ακεραιότητας και επαλήθευση πληρότητας μπορούν να παρέχουν ουσιαστικά στοιχεία για την καταλληλότητα του αποτελέσματος.</p>
+      <span class="verdict conditional">Η απόφαση εξαρτάται από την επάρκεια της επαλήθευσης</span>
+    </div>
+  </div>
+
+</div>
+
+<h2>2. Τι πρέπει να προσέξει ο επιθεωρητής;</h2>
+
+<h3>Α. Υπηρεσίες που παρέχονται σε πραγματικό χρόνο</h3>
+
+<p>Σε ορισμένες υπηρεσίες, ο πελάτης συμμετέχει άμεσα στην υλοποίησή τους και λαμβάνει την υπηρεσία την ώρα που αυτή παρέχεται. Αυτό συχνά περιορίζει τη δυνατότητα ελέγχου πριν από την παράδοση. Δεν αποτελεί, όμως, από μόνο του τελική απόδειξη ότι κάθε αποτέλεσμα της διεργασίας είναι μη επαληθεύσιμο.</p>
+
+<p>Ο επιθεωρητής πρέπει να εξετάζει:</p>
+
+<ul>
+  <li>Ποιο ακριβώς αποτέλεσμα έχει ορίσει ο Οργανισμός.</li>
+  <li>Ποια χαρακτηριστικά του αποτελέσματος μπορούν να ελεγχθούν και πότε.</li>
+  <li>Εάν η επαλήθευση είναι αντικειμενική και επαρκής.</li>
+  <li>Εάν τυχόν έλεγχος μετά την παροχή μπορεί πράγματι να αποδείξει τη συμμόρφωση του αποτελέσματος.</li>
+</ul>
+
+<h3>Β. Αξιολόγηση των μαθησιακών αποτελεσμάτων</h3>
+
+<p>Στην περίπτωση ενός εκπαιδευτικού προγράμματος, είναι σημαντικό να διακρίνονται:</p>
+
+<ul>
+  <li>Η ολοκλήρωση της εκπαίδευσης.</li>
+  <li>Η επίτευξη των καθορισμένων μαθησιακών αποτελεσμάτων.</li>
+  <li>Η αποτελεσματικότητα της εκπαιδευτικής διεργασίας.</li>
+</ul>
+
+<p>Η θετική αξιολόγηση ικανοποίησης των εκπαιδευομένων ή μια υψηλή βαθμολογία σε γραπτή εξέταση δεν αποδεικνύει από μόνη της την επίτευξη όλων των γνώσεων και δεξιοτήτων που επιδιώκει το πρόγραμμα. Οι μέθοδοι αξιολόγησης πρέπει να αντιστοιχούν στα πραγματικά μαθησιακά αποτελέσματα.</p>
+
+<h3>Γ. Επαλήθευση του ουσιαστικού αποτελέσματος</h3>
+
+<p>Η ύπαρξη ενός αρχείου, μιας ηλεκτρονικής καταχώρισης ή μιας ένδειξης ολοκλήρωσης δεν αποδεικνύει αυτομάτως ότι επιτεύχθηκε το ουσιαστικό αποτέλεσμα της υπηρεσίας.</p>
+
+<p>Ο επιθεωρητής πρέπει να εξετάζει εάν τα διαθέσιμα στοιχεία αποδεικνύουν τα πραγματικά χαρακτηριστικά που έχει καθορίσει ο Οργανισμός ως απαιτούμενα.</p>
+
+<h2>3. Χρήσιμη καθοδήγηση για την επιθεώρηση υπηρεσιών</h2>
+
+<div class="reference">
+  <strong>ISO 9001 Auditing Practices Group (APG)</strong><br>
+  <em>Guidance on: Service organizations</em> — 13 January 2016
+
+  <p>Το έγγραφο εξετάζει ιδιαιτερότητες της επιθεώρησης Οργανισμών παροχής υπηρεσιών. Στην ενότητα 3.2 αναφέρεται σε δύο τύπους διεργασιών υπηρεσιών:</p>
+
+  <ul>
+    <li>Διεργασίες στις οποίες ο πελάτης συμμετέχει κατά την υλοποίηση της υπηρεσίας (real-time delivery).</li>
+    <li>Διεργασίες στις οποίες το αποτέλεσμα παραδίδεται μετά την ολοκλήρωση της διεργασίας.</li>
+  </ul>
+
+  <p>Χρησιμοποιεί, μεταξύ άλλων, τα παραδείγματα check-in/check-out και καθαρισμού δωματίου ξενοδοχείου.</p>
+
+  <p><a href="https://www.iso.org/files/live/sites/tc176sc2/files/documents/ISO%209001%20Auditing%20Practices%20Group%20docs/Auditing%20to%20ISO%209001%202015/APG-ServiceOrganizations2015.pdf" target="_blank" rel="noopener noreferrer">Άνοιγμα του πρωτότυπου εγγράφου APG (PDF)</a></p>
+
+  <p class="small"><strong>Σημαντικό:</strong> Τα έγγραφα του APG παρέχουν μη δεσμευτική καθοδήγηση για επιθεωρητές. Δεν αποτελούν κανονιστικές απαιτήσεις του ISO 9001 ούτε υποκαθιστούν το πρότυπο. Το ίδιο το APG επισημαίνει ότι οι απόψεις και τα παραδείγματα των εγγράφων του δεν είναι οριστικά και δεν προορίζονται να χρησιμοποιούνται ως απαιτήσεις ή υποχρεωτικά κριτήρια επιθεώρησης.</p>
+
+  <p class="small">Επίσημη σελίδα της ομάδας: <a href="https://committee.iso.org/home/tc176/iso-9001-auditing-practices-group.html" target="_blank" rel="noopener noreferrer">ISO 9001 Auditing Practices Group</a>.</p>
+</div>
+
+<div class="callout teal">
+  <div class="keyline">Το βασικό μήνυμα για τις υπηρεσίες</div>
+  <p>Δεν χαρακτηρίζουμε μια υπηρεσία ως ειδική διεργασία μόνο και μόνο επειδή παρέχεται σε πραγματικό χρόνο. Εξετάζουμε τα επιμέρους σχεδιασμένα αποτελέσματα και εάν μπορούν να επαληθευτούν με κατάλληλα αντικειμενικά στοιχεία. Όταν η επαλήθευση δεν είναι δυνατή, εφαρμόζεται η απαίτηση επικύρωσης.</p>
+</div>
+
+</section>
+<!-- ΚΑΡΤΕΛΑ 4: QUIZ / ΠΑΓΙΔΕΣ ΕΠΙΘΕΩΡΗΣΗΣ -->
+<section class="tab-panel" id="tab4">
+  <p class="intro"><strong>Εκπαιδευτικό Quiz Επιθεώρησης (ISO 9001 — παρ. 8.5.1-f vs 8.6):</strong> Αξιολογήστε τα ακόλουθα 5 σενάρια επιθεώρησης. <p><span style="color: #dc2626; font-weight: 600;">Καταγράψτε τη δική σας τεκμηριωμένη θέση, πριν αποκαλύψετε την απάντηση.</span></p>
+
+  <!-- ΠΑΓΙΔΑ 1 -->
+  <div class="quiz-trap-card">
+    <div class="quiz-trap-header">
+      <span class="quiz-trap-badge">Σενάριο Επιθεώρησης #1 • Παραγωγή</span>
+    </div>
+    <h3 class="quiz-trap-title">Η «απλή» ηλεκτροστατική βαφή</h3>
+    <div class="quiz-trap-scenario">
+      Ένα εργοστάσιο κατασκευής μεταλλικών επίπλων βάφει τα προϊόντα με ηλεκτροστατική βαφή πούδρας. Ο Υπεύθυνος Ποιότητας δηλώνει στον επιθεωρητή: <em>«Δεν κάνουμε επικύρωση της διεργασίας βαφής, γιατί έχουμε βαθμονομημένο παχύμετρο και μετράμε το πάχος του χρώματος σε κάθε κομμάτι αμέσως μετά τον φούρνο.»</em>
+    </div>
+    <div class="quiz-trap-question">❓ Ερώτηση: Έχει δίκιο ο Υπεύθυνος Ποιότητας;</div>
+    <button type="button" class="reveal-trap-btn" onclick="toggleTrapAnswer('trap-ans-1', this)">👁 Εμφάνιση Απάντησης</button>
+    <div id="trap-ans-1" class="quiz-trap-answer">
+      <strong>❌ ΟΧΙ — Υπάρχει Μη Συμμόρφωση αναφορικά με την παρ. 8.5.1(στ):</strong><br>
+      Το παχύμετρο μετρά μόνο το πάχος της επίστρωσης, <strong>όχι την πρόσφυση</strong> της βαφής στο μέταλλο. Για να ελεγχθεί αν το χρώμα θα ξεφλουδίσει με την πάροδο του χρόνου, απαιτείται καταστροφική δοκιμή (cross-cut test) που αχρηστεύει το έπιπλο. Επομένως, η διεργασία βαφής <strong>απαιτεί επικύρωση</strong> (παράμετροι θερμοκρασίας φούρνου, χρόνου ψησίματος και προετοιμασίας επιφάνειας).
+    </div>
+  </div>
+
+  <!-- ΠΑΓΙΔΑ 2 -->
+  <div class="quiz-trap-card">
+    <div class="quiz-trap-header">
+      <span class="quiz-trap-badge">Σενάριο Επιθεώρησης #2 • Υγεία / Εργαστήρια</span>
+    </div>
+    <h3 class="quiz-trap-title">Ο «πανάκριβος» αυτόματος αιματολογικός αναλυτής</h3>
+    <div class="quiz-trap-scenario">
+      Ένας επιθεωρητής καταγράφει Μη Συμμόρφωση σε ένα διαγνωστικό κέντρο επειδή δεν υπάρχει «Φάκελος Επικύρωσης Διεργασίας» για τη διενέργεια γενικών εξετάσεων αίματος στους αυτόματους αναλυτές.
+    </div>
+    <div class="quiz-trap-question">❓ Ερώτηση: Είναι βάσιμη η Μη Συμμόρφωση;</div>
+    <button type="button" class="reveal-trap-btn" onclick="toggleTrapAnswer('trap-ans-2', this)">👁 Εμφάνιση Απάντησης</button>
+        <div id="trap-ans-2" class="quiz-trap-answer valid-ok">
+      <strong>✅ ΟΧΙ — Αβάσιμη Μη Συμμόρφωση (Αρκεί η Επαλήθευση 8.6 &amp; 7.1.5):</strong><br>
+      Η λειτουργία του αναλυτή και η ακρίβεια των μετρήσεων <strong>επαληθεύονται καθημερινά</strong> μέσω δειγμάτων ελέγχου (Quality Control samples) και βαθμονόμησης πριν εκδοθούν τα αποτελέσματα στους ασθενείς. Επιπλέον, το δείγμα παραμένει διαθέσιμο για επαναληπτικό έλεγχο πριν την παράδοση. Η υψηλή κρισιμότητα και η αυτοματοποίηση δεν καθιστούν τη διεργασία «μη επαληθεύσιμη».<br><br>
+      <em>💡 Σημείωση: Η επικύρωση (validation) σε ένα εργαστήριο αφορά την αρχική εισαγωγή νέου αναλυτή ή νέας μεθόδου εξέτασης (παρ. 8.3), και όχι την καθημερινή διεργασία ρουτίνας της παρ. 8.5.1(στ).</em>
+    </div>
+
+  </div>
+
+  <!-- ΠΑΓΙΔΑ 3 -->
+  <div class="quiz-trap-card">
+    <div class="quiz-trap-header">
+      <span class="quiz-trap-badge">Σενάριο Επιθεώρησης #3 • Παροχή Υπηρεσιών</span>
+    </div>
+    <h3 class="quiz-trap-title">Η παροχή υπηρεσιών καθαρισμού γραφείων</h3>
+    <div class="quiz-trap-scenario">
+      Ένας επιθεωρητής καταγράφει Μη Συμμόρφωση σε μια εταιρεία καθαρισμού γραφείων επειδή δεν έχουν επικυρωθεί οι μέθοδοι καθαρισμού που ακολουθούνται. Ο Διευθυντής της εταιρείας αιτιολογεί την απουσία επικύρωσης λέγοντας: <em>«Τα συνεργεία μας είναι πολύ έμπειρα και χρησιμοποιούν μόνο εγκεκριμένα από τον ΕΟΦ καθαριστικά. Επιπρόσθετα, πάντα μετά το τέλος των εργασιών ακολουθεί οπτικός έλεγχος από τον επόπτη του συνεργείου, σύμφωνα με αναλυτικό checklist.»</em>.
+    </div>
+    <div class="quiz-trap-question">❓ Ερώτηση: Είναι βάσιμη η Μη Συμμόρφωση;</div>
+    <button type="button" class="reveal-trap-btn" onclick="toggleTrapAnswer('trap-ans-3', this)">👁 Εμφάνιση Απάντησης</button>
+    <div id="trap-ans-3" class="quiz-trap-answer valid-ok">
+      <strong>✅ ΟΧΙ — Αβάσιμη Μη Συμμόρφωση (Αρκεί η Επαλήθευση 8.6):</strong><br>
+      Το αποτέλεσμα του καθαρισμού γραφείων (π.χ. καθαρά δάπεδα και τζάμια, άδειοι κάδοι, κ.λπ.) <strong>επαληθεύεται πλήρως με οπτικό έλεγχο (checklist επόπτη)</strong> μετά την ολοκλήρωση της βάρδιας και πριν προσέλθουν οι εργαζόμενοι. Το αποτέλεσμα ελέγχεται και, εάν χρειάζεται, επαναλαμβάνεται ο καθαρισμός πριν από τη διάθεση του χώρου.
+    </div>
+  </div>
+
+  <!-- ΠΑΓΙΔΑ 4 -->
+  <div class="quiz-trap-card">
+    <div class="quiz-trap-header">
+      <span class="quiz-trap-badge">Σενάριο Επιθεώρησης #4 • Εξυπηρέτηση Πελατών</span>
+    </div>
+    <h3 class="quiz-trap-title">Η ζωντανή τηλεφωνική πώληση &amp; υποστήριξη</h3>
+    <div class="quiz-trap-scenario">
+      Σε ένα τηλεφωνικό κέντρο (call center), ο επιθεωρητής ζητά τεκμήρια επικύρωσης της διεργασίας ζωντανής εξυπηρέτησης (εκπαίδευση και αξιολόγηση ικανοτήτων προσωπικού, εγκεκριμένα σενάρια διαλόγου). Ο Διευθυντής απαντά: <em>«Αφού ηχογραφούμε όλες τις κλήσεις και τις ακούμε δειγματοληπτικά μετά, κάνουμε επαλήθευση και δεν χρειαζόμαστε επικύρωση.»</em>
+    </div>
+    <div class="quiz-trap-question">❓ Ερώτηση: Στέκει το επιχείρημα του Διευθυντή;</div>
+    <button type="button" class="reveal-trap-btn" onclick="toggleTrapAnswer('trap-ans-4', this)">👁 Εμφάνιση Απάντησης</button>
+    <div id="trap-ans-4" class="quiz-trap-answer">
+      <strong>❌ ΟΧΙ — Υπάρχει Μη Συμμόρφωση αναφορικά με την παρ. 8.5.1(στ):</strong><br>
+      Η ακρόαση της ηχογράφησης γίνεται <strong>αφού</strong> η υπηρεσία έχει ήδη παραδοθεί στον πελάτη (εκ των υστέρων). Αν ο υπάλληλος έδωσε λανθασμένη πληροφορία, η αστοχία έχει ήδη φτάσει στον πελάτη. Συνεπώς, απαιτείται <strong>προηγούμενη επικύρωση</strong> των ικανοτήτων, των εργαλείων και των σεναρίων διαλόγου πριν ο υπάλληλος αναλάβει κλήσεις.
+    </div>
+  </div>
+
+<!-- ΠΑΓΙΔΑ 5 -->
+  <div class="quiz-trap-card">
+    <div class="quiz-trap-header">
+      <span class="quiz-trap-badge">Σενάριο Επιθεώρησης #5 • Βιομηχανική Παραγωγή</span>
+    </div>
+    <h3 class="quiz-trap-title">Ο δειγματοληπτικός έλεγχος αντοχής στη θερμοσυγκόλληση</h3>
+    <div class="quiz-trap-scenario">
+      Μια βιομηχανία παραγωγής αποστειρωμένων ιατρικών συσκευασιών κλείνει τους φακέλους συσκευασίας με θερμοσυγκόλληση. Ο Υπεύθυνος Ποιοτικού Ελέγχου δηλώνει στον επιθεωρητή: <em>«Δεν έχουμε επικυρώσει τις παραμέτρους των μηχανών θερμοσυγκόλλησης (θερμοκρασία, πίεση, χρόνος), διότι εφαρμόζουμε αυστηρό στατιστικό δειγματοληπτικό έλεγχο κατά ISO 2859 (AQL) σε κάθε παρτίδα, κάνοντας καταστροφικές δοκιμές εφελκυσμού (peel test) για να μετρήσουμε την αντοχή της ραφής»</em>
+    </div>
+    <div class="quiz-trap-question">❓ Ερώτηση: Επαρκεί ο δειγματοληπτικός έλεγχος που εφαρμόζει η εταιρεία;</div>
+    <button type="button" class="reveal-trap-btn" onclick="toggleTrapAnswer('trap-ans-5', this)">👁 Εμφάνιση Απάντησης</button>
+    <div id="trap-ans-5" class="quiz-trap-answer">
+      <strong>❌ ΟΧΙ — Υπάρχει Μη Συμμόρφωση αναφορικά με την παρ. 8.5.1(στ):</strong><br>
+      Η δοκιμή εφελκυσμού (peel test) είναι <strong>καταστροφικός έλεγχος</strong> που αχρηστεύει τη συσκευασία, καθιστώντας αδύνατη την καθολική (100%) επαλήθευση της παρτίδας. Επιπλέον, η στατιστική δειγματοληψία δεν μπορεί να εγγυηθεί ότι δεν υπήρξαν στιγμιαίες διακυμάνσεις θερμοκρασίας ή πίεσης στις υπόλοιπες μονάδες της παρτίδας. Δεδομένης της κρισιμότητας του προϊόντος (διατήρηση στειρότητας ιατροτεχνολογικού υλικού), ο δειγματοληπτικός έλεγχος <strong>δεν παρέχει επαρκή βεβαιότητα</strong> και απαιτείται προηγούμενη επικύρωση της διεργασίας θερμοσυγκόλλησης.
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+  <strong>Εκπαιδευτικό Υλικό για το Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης ISO 9001</strong><br>
+  ISO 9001:2026 • Παράγραφος 8.5.1(στ) • Επικύρωση διεργασιών
+</footer>
+
+</div>
+<div id="termModal" class="term-modal-overlay" onclick="if(event.target === this) closeTermModal()">
+  <div class="term-modal-box">
+    <div id="termModalTitle" class="term-modal-title"></div>
+    <div id="termModalBody" class="term-modal-body"></div>
+    <div class="term-modal-footer"><button type="button" class="term-modal-close" onclick="closeTermModal()">Κλείσιμο</button></div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll(".tab-button").forEach(button => {
+  button.addEventListener("click", () => {
+    const target = button.dataset.tab;
+
+    document.querySelectorAll(".tab-button").forEach(item => {
+      item.classList.toggle("active", item === button);
+    });
+
+    document.querySelectorAll(".tab-panel").forEach(panel => {
+      panel.classList.toggle("active", panel.id === target);
+    });
+  });
+});
+function smoothScrollToTop(duration) {
+  const start = window.scrollY || window.pageYOffset;
+  const startTime = performance.now();
+
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3); // Απαλή επιβράδυνση στο τέλος
+    window.scrollTo(0, start * (1 - ease));
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+document.querySelectorAll('.tab-button').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    setTimeout(function() {
+      smoothScrollToTop(650); // 650ms = βελούδινη κύλιση (βάλτε 800 για ακόμα πιο αργή)
+    }, 10);
+  });
+});
+function toggleTrapAnswer(id, btn) {
+  const box = document.getElementById(id);
+  if (box.style.display === 'block') {
+    box.style.display = 'none';
+    btn.textContent = '👁 Εμφάνιση Απάντησης';
+  } else {
+    box.style.display = 'block';
+    btn.textContent = '🙈 Απόκρυψη Απάντησης';
+  }
+}
+function openTermModal(title, text) {
+  document.getElementById('termModalTitle').textContent = title;
+  document.getElementById('termModalBody').innerHTML = text;
+  document.getElementById('termModal').style.display = 'flex';
+}
+function closeTermModal() { document.getElementById('termModal').style.display = 'none'; }
+
+</script>
+
+</body>
+</html>
