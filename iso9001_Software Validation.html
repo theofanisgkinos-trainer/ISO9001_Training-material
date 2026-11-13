@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Cheat Sheet: Software Validation & Audit Checklist (ISO 9001:2026, 7.1.5)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 850px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: auto;
+        }
+        h1 {
+            color: #003366;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 10px;
+            font-size: 24px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #005580;
+            border-bottom: 2px solid #e6f2ff;
+            padding-bottom: 5px;
+            font-size: 18px;
+            margin-top: 30px;
+        }
+        .highlight-box {
+            background-color: #e6f2ff;
+            border-left: 5px solid #005580;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .highlight-box strong {
+            color: #003366;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .question-block {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .question-title {
+            font-weight: bold;
+            color: #d9534f;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .answer-good {
+            color: #2b7a1d;
+            margin-left: 15px;
+            margin-bottom: 5px;
+        }
+        .answer-bad {
+            color: #a94442;
+            margin-left: 15px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Οδηγός Επιθεώρησης<br><small style="font-size:16px; color:#555;">Software Validation &amp; Audit Checklist (ISO 9001:2026 — Παράγραφος 7.1.5.2)</small></h1>
+
+    <div class="highlight-box">
+        <strong>Ορισμός Software Validation (Επικύρωση Λογισμικού):</strong><br>
+        Είναι η διαδικασία επιβεβαίωσης ότι ένα λογισμικό που χρησιμοποιείται για την παρακολούθηση ή μέτρηση απαιτήσεων, εκτελεί σωστά, αξιόπιστα και επαναλήψιμα τη λειτουργία για την οποία σχεδιάστηκε, πριν από την πρώτη χρήση του (και μετά από κάθε αλλαγή/update).
+    </div>
+
+    <h2>1. Πώς Γίνεται στην Πράξη το Software Validation (Μεθοδολογία)</h2>
+    <ul>
+        <li><strong>Δοκιμές με «Γνωστά Δεδομένα» (Test Cases / Negative Testing):</strong> Εισαγωγή εσκεμμένα λανθασμένων ή οριακών στοιχείων στο λογισμικό για να επιβεβαιωθεί ότι το σύστημα θα τα εντοπίσει, θα τα απορρίψει ή θα βγάλει σφάλμα (error).</li>
+        <li><strong>Παράλληλος Έλεγχος (Parallel Testing):</strong> Εκτέλεση της ίδιας μέτρησης/ελέγχου ταυτόχρονα στο λογισμικό και χειροκίνητα (ή μέσω άλλης δοκιμασμένης μεθόδου, π.χ. Excel) και σύγκριση των αποτελεσμάτων για ταυτοποίηση.</li>
+        <li><strong>Αρχειοθέτηση (Documentation):</strong> Καταγραφή των αποτελεσμάτων των δοκιμών σε ένα Validation Report (ποιος δοκίμασε, πότε, τι εισήγαγε, ποιο ήταν το αποτέλεσμα).</li>
+    </ul>
+
+    <h2>2. The Software Validation Acid Test (Checklist Επιθεώρησης)</h2>
+    <p style="font-style: italic; color: #555;">4 Ερωτήσεις για τον Επιθεωρητή για τον εντοπισμό Μη Συμμορφώσεων:</p>
+
+    <div class="question-block">
+        <div class="question-title">Ερώτηση 1: «Πού ορίζονται οι κανόνες/παράμετροι που χρησιμοποιεί το λογισμικό για να εγκρίνει ή να απορρίψει το προϊόν/υπηρεσία;»</div>
+        <div class="answer-good"><strong>✓ Σωστή Απάντηση:</strong> «Ορίζονται με ακρίβεια στο έγγραφο προδιαγραφών [X] και είναι κλειδωμένες στο μενού ρυθμίσεων βάσει της τεχνικής οδηγίας [Υ].»</div>
+        <div class="answer-bad"><strong>✗ Red Flag:</strong> «Το ρυθμίσαμε κάποτε προφορικά με τον προγραμματιστή και από τότε δουλεύει αυτόματα.»</div>
+    </div>
+
+    <div class="question-block">
+        <div class="question-title">Ερώτηση 2: «Πώς αποδεικνύετε ότι το λογισμικό όντως "πιάνει" τα σφάλματα; Μπορείτε να μου δείξετε το πιο πρόσφατο αρχείο δοκιμής (Test Log);»</div>
+        <div class="answer-good"><strong>✓ Σωστή Απάντηση:</strong> Παρουσίαση ψηφιακού ή υπογεγραμμένου Test Report που αποδεικνύει ότι εισήχθησαν επίτηδες λάθος στοιχεία και το σύστημα έβγαλε block/error.</div>
+        <div class="answer-bad"><strong>✗ Red Flag:</strong> «Δεν κρατάμε αρχείο δοκιμών. Το είδαμε στην οθόνη ότι λειτουργούσε σωστά όταν το πρωτοεγκαταστήσαμε.»</div>
+    </div>
+
+    <div class="question-block">
+        <div class="question-title">Ερώτηση 3: «Μετά από την τελευταία αναβάθμιση (update/patch) του λογισμικού, πώς βεβαιωθήκατε ότι οι μετρήσεις και τα κριτήρια ελέγχου δεν αλλοιώθηκαν;»</div>
+        <div class="answer-good"><strong>✓ Σωστή Απάντηση:</strong> «Κάθε φορά που γίνεται update από τον πάροχο, τρέχουμε μια επαναληπτική δοκιμή (regression test) με standard δεδομένα πριν το δώσουμε στην παραγωγή και το καταγράφουμε εδώ.»</div>
+        <div class="answer-bad"><strong>✗ Red Flag:</strong> «Οι αναβαθμίσεις γίνονται αυτόματα από το cloud, δεν αλλάζει κάτι στις μετρήσεις μας.»</div>
+    </div>
+
+    <div class="question-block">
+        <div class="question-title">Ερώτηση 4: «Ποιος έχει δικαίωμα να αλλάξει τα κριτήρια ελέγχου ή τον κώδικα του λογισμικού και πώς κλειδώνει αυτή η πρόσβαση;»</div>
+        <div class="answer-good"><strong>✓ Σωστή Απάντηση:</strong> «Μόνο ο Διαχειριστής (Admin) του ΙΤ με ειδικό κωδικό πρόσβασης. Κάθε αλλαγή καταγράφεται αυτόματα στο Audit Trail του συστήματος (παράγραφος 7.1.5.2β).»</div>
+        <div class="answer-bad"><strong>✗ Red Flag:</strong> «Όλοι οι χειριστές έχουν πρόσβαση στις ρυθμίσεις για να τις προσαρμόζουν ανάλογα με τον όγκο της δουλειάς.»</div>
+    </div>
+
+    <div class="footer">
+        Σεμινάριο Εκπαίδευσης Επιθεωρητών ISO 9001 — Εκπαιδευτικό Υλικό
+    </div>
+</div>
+
+</body>
+</html>
