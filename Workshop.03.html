@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop 7.1.5 – Πόροι Παρακολούθησης & Μέτρησης</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --accent: #0284c7;
+      --bg: #f1f5f9;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --border: #cbd5e1;
+      --error: #dc2626;
+      --error-bg: #fef2f2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.6;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    input, textarea {
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: #ffffff;
+      padding: 28px 32px;
+    }
+
+    .badge-top {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    header h1 { margin: 0 0 6px 0; font-size: 1.65rem; font-weight: 700; }
+    header p { margin: 0; opacity: 0.9; font-size: 0.95rem; }
+
+    .content { padding: 28px 32px; }
+
+    .team-box {
+      background: var(--primary-light);
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .team-box label { font-weight: 700; color: var(--primary); font-size: 1.05rem; }
+
+    .team-box input {
+      flex: 1;
+      min-width: 240px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #ffffff;
+    }
+
+    .scenario-box {
+      background: #f8fafc;
+      border-left: 5px solid var(--primary);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .scenario-box h3 { margin-top: 0; margin-bottom: 12px; color: var(--primary); font-size: 1.2rem; }
+    .scenario-box p { margin-top: 0; margin-bottom: 12px; }
+    .scenario-box ul { margin: 8px 0 0 0; padding-left: 22px; }
+    .scenario-box li { margin-bottom: 6px; }
+
+    .quote-highlight {
+      background: #ffffff;
+      border: 1px dashed #94a3b8;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-style: italic;
+      color: #334155;
+      margin: 12px 0;
+    }
+
+    .instructions-lead { font-weight: 600; color: var(--text-main); margin-bottom: 20px; font-size: 1.05rem; }
+
+    .question-block {
+      margin-bottom: 26px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .question-block:last-of-type { border-bottom: none; margin-bottom: 10px; }
+    .question-title { font-weight: 700; color: var(--primary); font-size: 1.08rem; margin-bottom: 10px; }
+    .answer-label { display: block; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; font-size: 0.95rem; }
+
+    textarea {
+      width: 100%;
+      min-height: 115px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    textarea:focus, input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .field-error { border: 2px solid var(--error) !important; background-color: var(--error-bg) !important; }
+
+    .error-banner {
+      display: none;
+      background-color: var(--error-bg);
+      color: var(--error);
+      border: 1px solid #fecaca;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .actions { text-align: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+    }
+
+    .btn-print:hover { background-color: #172554; }
+
+    footer {
+      background: #f8fafc;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .container { box-shadow: none; border: none; max-width: 100%; }
+      header { background: #1e3a8a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .actions, .error-banner { display: none !important; }
+      textarea { border: 1px solid #94a3b8; min-height: auto; overflow: visible; }
+      .question-block { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="badge-top">Εκπαιδευτικό Υλικό • Workshop 3• Παράγραφος 7.1.5</div>
+    <h1>ISO 9001: Πόροι Παρακολούθησης &amp; Μέτρησης</h1>
+    <p>Μελέτη Περιστατικού — Κέντρο Δια Βίου Μάθησης &amp; Ξένων Γλωσσών «LinguaPro»</p>
+  </header>
+
+  <div class="content">
+    <div class="team-box">
+      <label for="teamName">👥 ΟΜΑΔΑ (Όνομα / Αριθμός &amp; Μέλη):</label>
+      <input type="text" id="teamName" class="required-field" placeholder="Π.χ. Ομάδα 2">
+    </div>
+
+    <div class="scenario-box">
+      <h3>🏢 Δεδομένα Περιστατικού ("LinguaPro")</h3>
+      <p>
+        Ο επιθεωρούμενος Οργανισμός είναι ένα Ιδιωτικό Κέντρο Ξένων Γλωσσών και Δια Βίου Μάθησης που διεξάγει κατατακτήριες εξετάσεις και εξετάσεις πιστοποίησης γλωσσομάθειας (επιπέδων Β2 και C2).
+      </p>
+      <p>
+        Κατά την επιθεώρηση στο τμήμα αξιολόγησης προφορικού λόγου (Speaking), ο Υπεύθυνος Σπουδών εξηγεί πώς επαληθεύεται η συμμόρφωση της εκπαιδευτικής υπηρεσίας πριν εκδοθεί η βεβαίωση επιτυχίας:
+      </p>
+      <div class="quote-highlight">
+        «Έχουμε δύο εξεταστές. Κάθε εξεταστής συνομιλεί με τον υποψήφιο για 15 λεπτά και στη συνέχεια βαθμολογεί την επίδοσή του από το 1 έως το 20, βάσει της πολυετούς διδακτικής του εμπειρίας. Επειδή δεν χρησιμοποιούμε χρονόμετρα ή κάποιο φυσικό όργανο μέτρησης, η παράγραφος 7.1.5 του ISO 9001 δεν έχει εφαρμογή σε εμάς.»
+      </div>
+      <p>Κατά τη δειγματοληψία αρχείων αξιολόγησης, ο επιθεωρητής διαπιστώνει τα εξής αντικειμενικά στοιχεία:</p>
+      <ul>
+        <li>Δεν υπάρχει τυποποιημένος οδηγός βαθμολόγησης (scoring rubric) με συγκεκριμένα κριτήρια (π.χ. γραμματική, λεξιλόγιο, ευφράδεια).</li>
+        <li>Για το ίδιο επίπεδο υποψηφίων, ο Εξεταστής Α αποδίδει συστηματικά βαθμολογίες 16–19, ενώ ο Εξεταστής Β αποδίδει βαθμολογίες 10–13.</li>
+        <li>Δεν διενεργείται καμία περιοδική ανασκόπηση ή διακρίβωση (calibration) της βαθμολογικής συνέπειας μεταξύ των εξεταστών.</li>
+      </ul>
+    </div>
+
+    <p class="instructions-lead">
+      Απαντήστε στα παρακάτω ζητούμενα της εργασίας, λαμβάνοντας υπόψη τα δεδομένα του περιστατικού και τις απαιτήσεις του προτύπου:
+    </p>
+
+    <div class="question-block">
+      <div class="question-title">Ζητούμενο 1: Είναι ορθός ο ισχυρισμός του Υπεύθυνου Σπουδών ότι η παράγραφος 7.1.5 δεν εφαρμόζεται επειδή δεν χρησιμοποιούνται φυσικά όργανα μέτρησης; Αιτιολογήστε την απάντησή σας.</div>
+      <label class="answer-label" for="ans1">✍ Η απάντηση της ομάδας:</label>
+      <textarea id="ans1" class="required-field" placeholder="Καταγράψτε εδώ την τεκμηριωμένη απάντησή σας..."></textarea>
+    </div>
+    <div class="question-block">
+      <div class="question-title">Ζητούμενο 2: Ποιος είναι ο «πόρος παρακολούθησης και μέτρησης» στη συγκεκριμένη διεργασία παροχής υπηρεσίας και ποια η διάκριση μεταξύ των εδαφίων 7.1.5.1 και 7.1.5.2;</div>
+      <label class="answer-label" for="ans2">✍ Η απάντηση της ομάδας:</label>
+      <textarea id="ans2" class="required-field" placeholder="Καταγράψτε εδώ την τεκμηριωμένη απάντησή σας..."></textarea>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">Ζητούμενο 3: Υφίσταται Μη Συμμόρφωση; Εάν ναι, διατυπώστε πλήρως το εύρημα επιθεώρησης (Απαίτηση Προτύπου + Αντικειμενική Απόδειξη + Αστοχία).</div>
+      <label class="answer-label" for="ans3">✍ Η απάντηση της ομάδας:</label>
+      <textarea id="ans3" class="required-field" placeholder="Καταγράψτε εδώ τη διατύπωση του ευρήματος..."></textarea>
+    </div>
+
+    <div id="errorBanner" class="error-banner">
+      ⚠️ Παρακαλούμε συμπληρώστε το όνομα/αριθμό της ομάδας καθώς και όλα τα πεδία απαντήσεων πριν προχωρήσετε στην αποθήκευση/εκτύπωση!
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn-print" onclick="validateAndPrint()">
+        Αποθήκευση &amp; 💾 Λήψη Workshop (PDF)
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας ISO 9001
+  </footer>
+</div>
+
+<script>
+  // 1. Αποκλεισμός δεξιού κλικ
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // 2. Αποκλεισμός copy / cut εκτός των πεδίων απάντησης
+  document.addEventListener('copy', function(e) {
+    const activeTag = document.activeElement.tagName;
+    if (activeTag !== 'INPUT' && activeTag !== 'TEXTAREA') {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('cut', function(e) {
+    const activeTag = document.activeElement.tagName;
+    if (activeTag !== 'INPUT' && activeTag !== 'TEXTAREA') {
+      e.preventDefault();
+    }
+  });
+
+  // 3. Αποκλεισμός συντομεύσεων αντιγραφής, αποθήκευσης και προβολής κώδικα
+  document.addEventListener('keydown', function(e) {
+    const activeTag = document.activeElement.tagName;
+    const isTypingField = (activeTag === 'INPUT' || activeTag === 'TEXTAREA');
+
+    if (e.ctrlKey || e.metaKey) {
+      const key = e.key.toLowerCase();
+      if (key === 'u' || key === 's') {
+        e.preventDefault();
+      }
+      if (!isTypingField && (key === 'c' || key === 'x' || key === 'a')) {
+        e.preventDefault();
+      }
+    }
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+  });
+
+  // 4. Έλεγχος συμπλήρωσης πεδίων πριν την εκτύπωση
+  function validateAndPrint() {
+    const fields = document.querySelectorAll('.required-field');
+    const errorBanner = document.getElementById('errorBanner');
+    let allFilled = true;
+    let firstEmptyField = null;
+
+    fields.forEach(function(field) {
+      if (field.value.trim() === '') {
+        field.classList.add('field-error');
+        allFilled = false;
+        if (!firstEmptyField) {
+          firstEmptyField = field;
+        }
+      } else {
+        field.classList.remove('field-error');
+      }
+    });
+
+    if (!allFilled) {
+      errorBanner.style.display = 'block';
+      if (firstEmptyField) {
+        firstEmptyField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstEmptyField.focus();
+      }
+      return;
+    }
+
+    errorBanner.style.display = 'none';
+
+    document.querySelectorAll('textarea').forEach(function(ta) {
+      ta.style.height = 'auto';
+      ta.style.height = (ta.scrollHeight + 10) + 'px';
+    });
+
+    window.print();
+  }
+
+  // Αφαίρεση κόκκινου πλαισίου μόλις ο χρήστης αρχίσει να γράφει
+  document.querySelectorAll('.required-field').forEach(function(field) {
+    field.addEventListener('input', function() {
+      if (this.value.trim() !== '') {
+        this.classList.remove('field-error');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

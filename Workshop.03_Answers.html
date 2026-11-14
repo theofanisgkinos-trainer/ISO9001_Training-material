@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop 7.1.5 – Ενδεικτικές Απαντήσεις Εισηγητή</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --accent: #0284c7;
+      --success: #065f46;
+      --success-bg: #ecfdf5;
+      --success-border: #6ee7b7;
+      --bg: #f1f5f9;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --border: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.6;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: #ffffff;
+      padding: 28px 32px;
+    }
+
+    .badge-top {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    header h1 { margin: 0 0 6px 0; font-size: 1.65rem; font-weight: 700; }
+    header p { margin: 0; opacity: 0.9; font-size: 0.95rem; }
+
+    .content { padding: 28px 32px; }
+
+    .instructor-banner {
+      background: var(--primary-light);
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .scenario-box {
+      background: #f8fafc;
+      border-left: 5px solid var(--primary);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .scenario-box h3 { margin-top: 0; margin-bottom: 12px; color: var(--primary); font-size: 1.2rem; }
+    .scenario-box p { margin-top: 0; margin-bottom: 12px; }
+    .scenario-box ul { margin: 8px 0 0 0; padding-left: 22px; }
+    .scenario-box li { margin-bottom: 6px; }
+
+    .quote-highlight {
+      background: #ffffff;
+      border: 1px dashed #94a3b8;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-style: italic;
+      color: #334155;
+      margin: 12px 0;
+    }
+
+    .question-block {
+      margin-bottom: 26px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .question-block:last-of-type { border-bottom: none; margin-bottom: 10px; }
+    .question-title { font-weight: 700; color: var(--primary); font-size: 1.08rem; margin-bottom: 12px; }
+
+    .model-answer {
+      background-color: var(--success-bg);
+      border-left: 4px solid var(--success);
+      border-top: 1px solid var(--success-border);
+      border-right: 1px solid var(--success-border);
+      border-bottom: 1px solid var(--success-border);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      color: #064e3b;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .model-answer-header {
+      font-weight: 700;
+      color: var(--success);
+      margin-bottom: 8px;
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .model-answer ul {
+      margin: 8px 0 0 0;
+      padding-left: 20px;
+    }
+
+    .model-answer li {
+      margin-bottom: 6px;
+    }
+
+    .finding-callout {
+      background: #ffffff;
+      border: 1px solid #a7f3d0;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-top: 10px;
+      color: #1e293b;
+    }
+
+    .actions { text-align: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+    }
+
+    .btn-print:hover { background-color: #172554; }
+
+    footer {
+      background: #f8fafc;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .container { box-shadow: none; border: none; max-width: 100%; }
+      header, .model-answer {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .actions { display: none !important; }
+      .question-block { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="badge-top">Εκπαιδευτικό Υλικό • Λύσεις Workshop 3 • Παράγραφος 7.1.5</div>
+    <h1>ISO 9001: Πόροι Παρακολούθησης &amp; Μέτρησης</h1>
+    <p>Ενδεικτικές Απαντήσεις — Μελέτη Περιστατικού «LinguaPro»</p>
+  </header>
+
+  <div class="content">
+    <div class="instructor-banner">
+      🎓 ΕΝΔΕΙΚΤΙΚΕΣ ΑΠΑΝΤΗΣΕΙΣ (ANSWER KEY)
+    </div>
+
+    <div class="scenario-box">
+      <h3>🏢 Δεδομένα Περιστατικού ("LinguaPro")</h3>
+      <p>
+        Ο επιθεωρούμενος Οργανισμός είναι ένα Ιδιωτικό Κέντρο Ξένων Γλωσσών και Δια Βίου Μάθησης που διεξάγει κατατακτήριες εξετάσεις και εξετάσεις πιστοποίησης γλωσσομάθειας (επιπέδων Β2 και C2).
+      </p>
+      <p>
+        Κατά την επιθεώρηση στο τμήμα αξιολόγησης προφορικού λόγου (Speaking), ο Υπεύθυνος Σπουδών εξηγεί πώς επαληθεύεται η συμμόρφωση της εκπαιδευτικής υπηρεσίας πριν εκδοθεί η βεβαίωση επιτυχίας:
+      </p>
+      <div class="quote-highlight">
+        «Έχουμε δύο εξεταστές. Κάθε εξεταστής συνομιλεί με τον υποψήφιο για 15 λεπτά και στη συνέχεια βαθμολογεί την επίδοσή του από το 1 έως το 20, βάσει της πολυετούς διδακτικής του εμπειρίας. Επειδή δεν χρησιμοποιούμε χρονόμετρα ή κάποιο φυσικό όργανο μέτρησης, η παράγραφος 7.1.5 του ISO 9001 δεν έχει εφαρμογή σε εμάς.»
+      </div>
+      <p>Κατά τη δειγματοληψία αρχείων αξιολόγησης, ο επιθεωρητής διαπιστώνει τα εξής αντικειμενικά στοιχεία:</p>
+      <ul>
+        <li>Δεν υπάρχει τυποποιημένος οδηγός βαθμολόγησης (scoring rubric) με συγκεκριμένα κριτήρια (π.χ. γραμματική, λεξιλόγιο, ευφράδεια).</li>
+        <li>Για το ίδιο επίπεδο υποψηφίων, ο Εξεταστής Α αποδίδει συστηματικά βαθμολογίες 16–19, ενώ ο Εξεταστής Β αποδίδει βαθμολογίες 10–13.</li>
+        <li>Δεν διενεργείται καμία περιοδική ανασκόπηση ή διακρίβωση (calibration) της βαθμολογικής συνέπειας μεταξύ των εξεταστών.</li>
+      </ul>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">Ζητούμενο 1: Είναι ορθός ο ισχυρισμός του Υπεύθυνου Σπουδών ότι η παράγραφος 7.1.5 δεν εφαρμόζεται επειδή δεν χρησιμοποιούνται φυσικά όργανα μέτρησης; Αιτιολογήστε την απάντησή σας.</div>
+      <div class="model-answer">
+        <span class="model-answer-header">✅ Ενδεικτική Απάντηση:</span>
+        <strong>Όχι, ο ισχυρισμός είναι λανθασμένος.</strong> Σύμφωνα με την παράγραφο <strong>7.1.5.1</strong> του ISO 9001 (καθώς και την καθοδήγηση του ISO 9001 Auditing Practices Group), η απαίτηση περί πόρων παρακολούθησης και μέτρησης δεν περιορίζεται σε φυσικά όργανα μέτρησης (όπως ζυγαριές ή θερμόμετρα), αλλά καλύπτει <strong>κάθε πόρο/εργαλείο που χρησιμοποιείται για την επαλήθευση της συμμόρφωσης του προϊόντος ή της υπηρεσίας</strong> με τις καθορισμένες απαιτήσεις (συνδεόμενο άμεσα με την παρ. 8.6 – Αποδέσμευση υπηρεσιών). Στην προκειμένη περίπτωση, η βαθμολόγηση της προφορικής εξέτασης αποτελεί το κρίσιμο στάδιο επαλήθευσης πριν την έκδοση της βεβαίωσης επιτυχίας.
+      </div>
+    </div>
+    <div class="question-block">
+      <div class="question-title">Ζητούμενο 2: Ποιος είναι ο «πόρος παρακολούθησης και μέτρησης» στη συγκεκριμένη διεργασία παροχής υπηρεσίας και ποια η διάκριση μεταξύ των εδαφίων 7.1.5.1 και 7.1.5.2;</div>
+      <div class="model-answer">
+        <span class="model-answer-header">✅ Ενδεικτική Απάντηση:</span>
+        <strong>Ο Πόρος Παρακολούθησης &amp; Μέτρησης:</strong> Στη συγκεκριμένη διεργασία, ο πόρος παρακολούθησης και μέτρησης είναι το <strong>έντυπο/σύστημα αξιολόγησης (scoring rubric με σαφή κριτήρια βαθμολόγησης)</strong> σε συνδυασμό με τη <strong>μεθοδολογία βαθμολόγησης</strong> που εφαρμόζουν οι εξεταστές για να επαληθεύσουν αν ο υποψήφιος πληροί τις απαιτήσεις του επιπέδου (Β2/C2).
+        <br><br>
+        <strong>Διάκριση 7.1.5.1 vs 7.1.5.2:</strong>
+        <ul>
+          <li><strong>Παρ. 7.1.5.1 (Γενικά – Καταλληλότητα πόρων):</strong> Έχει πλήρη εφαρμογή. Απαιτεί οι πόροι παρακολούθησης και μέτρησης να είναι <em>κατάλληλοι</em> για τον συγκεκριμένο τύπο δραστηριότητας και να <em>διατηρούνται</em> ώστε να διασφαλίζεται η συνεχής καταλληλότητά τους (δηλαδή όλοι οι εξεταστές να αξιολογούν με τον ίδιο αντικειμενικό «πήχη» και να διατηρούνται τεκμηριωμένες πληροφορίες καταλληλότητας).</li>
+          <li><strong>Παρ. 7.1.5.2 (Ιχνηλασιμότητα μέτρησης):</strong> <strong>Δεν εφαρμόζεται</strong> στη συγκεκριμένη δραστηριότητα, καθώς αφορά φυσικά μεγέθη (π.χ. μάζα, θερμοκρασία, μήκος) όπου απαιτείται βαθμονόμηση/επαλήθευση σε συγκεκριμένα χρονικά διαστήματα έναντι διεθνών ή εθνικών προτύπων μέτρησης (SI).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="question-block">
+      <div class="question-title">Ζητούμενο 3: Υφίσταται Μη Συμμόρφωση; Εάν ναι, διατυπώστε πλήρως το εύρημα επιθεώρησης (Απαίτηση Προτύπου + Αντικειμενική Απόδειξη + Αστοχία).</div>
+      <div class="model-answer">
+        <span class="model-answer-header">✅ Ενδεικτική Απάντηση:</span>
+        <strong>Ναι, υφίσταται Μη Συμμόρφωση ως προς την παράγραφο 7.1.5.1 του ISO 9001.</strong>
+        <div class="finding-callout">
+          <strong>Προτεινόμενη Διατύπωση Ευρήματος (Μη Συμμόρφωση – Παρ. 7.1.5.1):</strong><br>
+          <em>«Ο οργανισμός δεν έχει διασφαλίσει ότι οι πόροι παρακολούθησης και μέτρησης που χρησιμοποιούνται για την επαλήθευση της συμμόρφωσης της παρεχόμενης υπηρεσίας (κριτήρια και μέθοδος αξιολόγησης προφορικού λόγου) είναι κατάλληλοι για τη συγκεκριμένη δραστηριότητα και διατηρούνται ώστε να διασφαλίζεται η συνεχής καταλληλότητά τους. Συγκεκριμένα, κατά τη δειγματοληψία αρχείων αξιολόγησης προφορικών εξετάσεων (επιπέδων Β2 και C2), διαπιστώθηκε απουσία τυποποιημένων κριτηρίων βαθμολόγησης (rubrics) και μηχανισμού διασφάλισης της συνέπειας/αξιοπιστίας μεταξύ των εξεταστών, με αποτέλεσμα συστηματικές αποκλίσεις στη βαθμολόγηση υποψηφίων του ιδίου επιπέδου (Εξεταστής Α: 16–19, Εξεταστής Β: 10–13).»</em>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn-print" onclick="window.print()">
+        Αποθήκευση &amp; 💾 Λήψη Λύσεων Workshop (PDF)
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας ISO 9001
+  </footer>
+</div>
+
+<script>
+  // Αποκλεισμός δεξιού κλικ, copy, cut και συντομεύσεων κώδικα
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('copy', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('cut', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey || e.metaKey) {
+      const key = e.key.toLowerCase();
+      if (key === 'c' || key === 'x' || key === 'a' || key === 'u' || key === 's') {
+        e.preventDefault();
+      }
+    }
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+  });
+</script>
+
+</body>
+</html>
