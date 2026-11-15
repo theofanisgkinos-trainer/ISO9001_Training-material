@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISO 9001:2026 - Παράγραφος 8.4 | Οδηγός Επιθεωρητή</title>
+<style>
+  :root {
+    --primary: #0f172a;
+    --accent: #0284c7;
+    --accent-light: #e0f2fe;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --success: #059669;
+    --success-bg: #ecfdf5;
+    --warning: #d97706;
+    --warning-bg: #fffbeb;
+    --danger: #dc2626;
+    --danger-bg: #fef2f2;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+    .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+    border: 1px solid var(--border);
+  }
+  header {
+    background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 28px 32px;
+    border-radius: 0 0 12px 12px;
+  }
+
+
+  .badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: #e0f2fe;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  header p {
+    color: #cbd5e1;
+    font-size: 0.98rem;
+  }
+
+  .tabs {
+    display: flex;
+    background: #f1f5f9;
+    border-bottom: 1px solid var(--border);
+    padding: 0 16px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    background: transparent;
+    border: none;
+    padding: 16px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tab-btn:hover {
+    color: var(--primary);
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    background: var(--card-bg);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .tab-content {
+    display: none;
+    padding: 32px;
+    animation: fadeIn 0.25s ease;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    color: var(--primary);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-light);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .clause-tag {
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+  }
+
+  ul.clean-list {
+    list-style: none;
+  }
+
+  ul.clean-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 0.94rem;
+  }
+
+  ul.clean-list li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .highlight-box {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+  }
+
+  .tip-box {
+    background: var(--warning-bg);
+    border-left: 4px solid var(--warning);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 20px;
+  }
+
+  .tip-title {
+    font-weight: 700;
+    color: #92400e;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 0.92rem;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  th {
+    background: #f1f5f9;
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  .case-scenario {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 24px;
+  }
+
+  .case-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .pill {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #e2e8f0;
+    color: var(--primary);
+  }
+
+  .reveal-btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s;
+  }
+
+  .reveal-btn:hover {
+    background: var(--accent);
+  }
+
+  .solution-box {
+    display: none;
+    margin-top: 16px;
+    padding: 18px;
+    border-radius: 8px;
+    background: var(--success-bg);
+    border: 1px solid #a7f3d0;
+  }
+
+  .solution-box.visible {
+    display: block;
+  }
+
+  .nc-badge {
+    display: inline-block;
+    background: var(--danger);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+
+  footer {
+    background: #f1f5f9;
+    padding: 14px 32px;
+    font-size: 0.84rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid var(--border);
+  }
+/* Προστασία κειμένου στην οθόνη */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Κυλιόμενη (sticky) μπάρα καρτελών */
+.tabs {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    align-items: center;
+}
+
+/* Κουμπί εκτύπωσης στη μπάρα */
+.print-btn {
+    margin-left: auto;
+    padding: 0.65rem 1.1rem;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+.print-btn:hover {
+    background: #0f172a;
+}
+
+/* Τίτλος καρτέλας (κρυφός στην οθόνη, ορατός ΜΟΝΟ στην εκτύπωση) */
+.print-tab-title {
+    display: none;
+}
+
+@media print {
+    .tabs, .reveal-btn, .print-tab-title {
+        display: none !important;
+    }
+    .tab-content.active {
+        display: block !important;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="badge">Σεμινάριο Επιθεωρητών ΣΔΠ • ISO 9001:2026</div>
+    <h1>Παράγραφος 8.4 – Έλεγχος εξωτερικά παρεχόμενων διεργασιών, προϊόντων και υπηρεσιών</h1>
+    <p>Ολοκληρωμένος οδηγός απαιτήσεων, μεθοδολογία επιθεώρησης και πρακτικά σενάρια (Case Studies)</p>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab-btn active" onclick="openTab(event, 'tab-req')">1. Τι απαιτεί το Πρότυπο (8.4.1 – 8.4.3)</button>
+    <button class="tab-btn" onclick="openTab(event, 'tab-audit')">2. Τι ελέγχει ο Επιθεωρητής</button>
+    <button class="tab-btn" onclick="openTab(event, 'tab-cases')">3. Case Studies</button>
+    <button class="print-btn" onclick="window.print()">🖨️ Εκτύπωση Καρτέλας</button>
+</nav>
+
+<h2 id="print-tab-title" class="print-tab-title">1. Τι απαιτεί το Πρότυπο (8.4.1 – 8.4.3)</h2>
+  <!-- ΚΑΡΤΕΛΑ 1: ΑΠΑΙΤΗΣΕΙΣ -->
+  <section id="tab-req" class="tab-content active">
+    <h2>Η ουσία της Παραγράφου 8.4</h2>
+    <div class="highlight-box">
+      <strong>Κεντρική Αρχή:</strong> Ο Οργανισμός <em>δεν μπορεί να μεταβιβάσει την ευθύνη</em> της συμμόρφωσης στον προμηθευτή ή υπεργολάβο του. Ό,τι αγοράζεται ή ανατίθεται εξωτερικά (outsourcing) παραμένει υπό την ευθύνη του ΣΔΠ του Οργανισμού.
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <h3>Γενικά &amp; Αξιολόγηση</h3>
+          <span class="clause-tag">8.4.1</span>
+        </div>
+        <ul class="clean-list">
+          <li><strong>Πεδίο εφαρμογής:</strong> Εφαρμόζεται όταν εξωτερικά προϊόντα/υπηρεσίες ενσωματώνονται στα δικά μας, παρέχονται απευθείας στον πελάτη εκ μέρους μας, ή όταν μια διεργασία (ή μέρος της) ανατίθεται εξωτερικά.</li>
+          <li><strong>Κριτήρια 4 Σταδίων:</strong> Ο Οργανισμός πρέπει να καθορίζει και να εφαρμόζει κριτήρια για: <em>Αξιολόγηση</em>, <em>Επιλογή</em>, <em>Παρακολούθηση Επιδόσεων</em> και <em>Επαναξιολόγηση</em>.</li>
+          <li><strong>Τεκμηριωμένη πληροφορία:</strong> Υποχρεωτική διατήρηση αρχείων για τις δραστηριότητες αξιολόγησης και τις αναγκαίες ενέργειες που προκύπτουν.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Τύπος &amp; Έκταση Ελέγχου</h3>
+          <span class="clause-tag">8.4.2</span>
+        </div>
+        <ul class="clean-list">
+          <li><strong>Αναλογικότητα (Risk-based):</strong> Ο έλεγχος εξαρτάται από την πιθανή επίπτωση στην ικανότητα του Οργανισμού να ικανοποιεί σταθερά τις απαιτήσεις (πελάτη και νομοθεσίας) και από την αποτελεσματικότητα των ελέγχων του ίδιου του παρόχου.</li>
+          <li><strong>Διπλός έλεγχος στο Outsourcing:</strong> Οι εξωτερικά παρεχόμενες διεργασίες παραμένουν <em>εντός</em> του ΣΔΠ. Πρέπει να ελέγχονται τόσο ο πάροχος όσο και η παραγόμενη έξοδος.</li>
+          <li><strong>Επαλήθευση:</strong> Καθορισμός δραστηριοτήτων επαλήθευσης (π.χ. ποιοτικός έλεγχος παραλαβής, επιθεώρηση 2ου μέρους) ώστε να διασφαλίζεται η συμμόρφωση.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h3>Πληροφορίες προς τους Εξωτερικούς Παρόχους</h3>
+        <span class="clause-tag">8.4.3</span>
+      </div>
+      <p style="font-size:0.94rem; margin-bottom:12px;">Πριν την κοινοποίηση στον πάροχο, ο Οργανισμός διασφαλίζει την <strong>επάρκεια</strong> των απαιτήσεων. Πρέπει να επικοινωνεί σαφώς:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Κατηγορία Απαίτησης</th>
+            <th>Τι πρέπει να γνωστοποιείται στον πάροχο</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>α) Αντικείμενο</strong></td>
+            <td>Τα προς παροχή προϊόντα, υπηρεσίες ή διεργασίες (ακριβείς τεχνικές προδιαγραφές, εκδόσεις σχεδίων).</td>
+          </tr>
+          <tr>
+            <td><strong>β) Εγκρίσεις</strong></td>
+            <td>Τι απαιτεί έγκριση πριν προχωρήσει: προϊόντα/υπηρεσίες, μέθοδοι, διεργασίες, εξοπλισμός ή η αποδέσμευση προϊόντων.</td>
+          </tr>
+          <tr>
+            <td><strong>γ) Ικανότητα προσωπικού</strong></td>
+            <td>Απαιτούμενη ικανότητα ή ειδικά προσόντα/πιστοποιήσεις του προσωπικού του παρόχου (<strong>όπου εφαρμόζεται!</strong>)</td>
+          </tr>
+          <tr>
+            <td><strong>δ) Αλληλεπίδραση</strong></td>
+            <td>Πώς επικοινωνεί και συνεργάζεται ο πάροχος με τον Οργανισμό (π.χ. διαχείριση αποκλίσεων, αλλαγών).</td>
+          </tr>
+          <tr>
+            <td><strong>ε) Έλεγχος &amp; Παρακολούθηση</strong></td>
+            <td>Πώς ο Οργανισμός θα ελέγχει και θα παρακολουθεί την επίδοση του παρόχου (KPIs, SLAs).</td>
+          </tr>
+          <tr>
+            <td><strong>στ) Επαλήθευση στις εγκαταστάσεις</strong></td>
+            <td>Δραστηριότητες επαλήθευσης ή επικύρωσης που σκοπεύει να εκτελέσει ο Οργανισμός (ή ο πελάτης του) στον χώρο του παρόχου.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ΚΑΡΤΕΛΑ 2: ΟΔΗΓΟΣ ΕΠΙΘΕΩΡΗΤΗ -->
+  <section id="tab-audit" class="tab-content">
+    <h2>Μεθοδολογία Επιθεώρησης Παρακολούθησης Προμηθειών &amp; Outsourcing</h2>
+    <p style="margin-bottom:18px; color:var(--muted);">Ο επιθεωρητής δεν ελέγχει απλώς μια «Λίστα Εγκεκριμένων Προμηθευτών». Ακολουθεί το ίχνος ρίσκου από την παραγγελία έως την παράδοση.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:24%;">Σημείο Ελέγχου</th>
+          <th style="width:42%;">Τι αναζητά ο Επιθεωρητής (Evidence)</th>
+          <th style="width:34%;">Συχνά Ευρήματα / Παγίδες</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Κατηγοριοποίηση &amp; Κριτήρια (8.4.1)</strong></td>
+          <td>Διαχωρίζονται οι κρίσιμοι προμηθευτές (π.χ. α' ύλες, υπεργολάβοι, εργαστήρια διακρίβωσης) από τους ήσσονος σημασίας (π.χ. γραφική ύλη); Υπάρχουν αντικειμενικά κριτήρια εισόδου και επαναξιολόγησης;</td>
+          <td>Όλοι οι προμηθευτές αξιολογούνται με το ίδιο «τυφλό» ερωτηματολόγιο ή μπαίνουν στη λίστα χωρίς καμία αρχική αξιολόγηση («επειδή μας τον σύστησαν»).</td>
+        </tr>
+        <tr>
+          <td><strong>2. Από την Επαναξιολόγηση στη Δράση (8.4.1)</strong></td>
+          <td>Δειγματοληψία προμηθευτών με κακές επιδόσεις (καθυστερήσεις, επιστροφές, μη συμμορφώσεις). Τι έγινε στην ετήσια επαναξιολόγηση; Ελήφθησαν διορθωτικές ενέργειες ή απλώς βαθμολογήθηκαν χαμηλά χωρίς συνέπειες;</td>
+          <td>Προμηθευτής με 5 μη συμμορφώσεις μέσα στο έτος παραμένει «Εγκεκριμένος» χωρίς κανένα πλάνο δράσης ή αυξημένο έλεγχο παραλαβής.</td>
+        </tr>
+        <tr>
+          <td><strong>3. Εκτίμηση Ρίσκου &amp; Έλεγχοι (8.4.2)</strong></td>
+          <td>Αντιστοιχούν οι έλεγχοι παραλαβής (π.χ. πιστοποιητικά ανάλυσης CoA, δειγματοληπτικοί έλεγχοι, SLA reviews) στην κρισιμότητα του προμηθευτή;</td>
+          <td>Παραλαβή κρίσιμων εξαρτημάτων μόνο με «έλεγχο ποσότητας και δελτίου αποστολής» χωρίς ποιοτική επαλήθευση.</td>
+        </tr>
+        <tr>
+          <td><strong>4. Πληρότητα Εντολών Αγοράς (8.4.3)</strong></td>
+          <td>Δειγματοληψία 3-5 εντολών αγοράς (POs) ή συμβάσεων υπεργολαβίας. Αναφέρονται σαφώς οι προδιαγραφές, οι εκδόσεις σχεδίων, τα πιστοποιητικά που απαιτούνται και οι όροι έγκρισης;</td>
+          <td>Εντολές αγοράς που γράφουν γενικά «Προμήθεια πρώτης ύλης όπως προηγούμενη φορά» χωρίς κωδικό, αναθεώρηση προδιαγραφής ή απαίτηση πιστοποιητικού.</td>
+        </tr>
+        <tr>
+          <td><strong>5. Outsourced Διεργασίες (8.4.1 - 8.4.2)</strong></td>
+          <td>Εντοπισμός διεργασιών που εκτελούνται έξω (π.χ. βαφή, θερμική κατεργασία, μεταφορές, IT cloud/hosting, εξωτερική αποθήκευση). Πώς ελέγχεται η ίδια η διεργασία και όχι μόνο το τελικό προϊόν;</td>
+          <td>Ο Οργανισμός θεωρεί ότι «αφού το κάνει υπεργολάβος, δεν αφορά το δικό μας ISO». Απουσία ελέγχου παραμέτρων της εξωτερικής διεργασίας.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <span class="tip-title">Extra Tips για τον Επιθεωρητή στην τάξη &amp; στο πεδίο:</span>
+      <ul class="clean-list" style="margin-bottom:0;">
+        <li><strong>Ξεκινήστε ανάποδα:</strong> Ζητήστε το αρχείο <em>Μη Συμμορφώσεων Παραλαβής ή Παραπόνων Πελατών</em>. Βρείτε ένα πρόβλημα που οφείλεται σε προμηθευτή και τραβήξτε το νήμα προς τα πίσω: Τι έγραφε η παραγγελία (8.4.3); Πώς ελέγχθηκε στην παραλαβή (8.4.2); Πώς επηρέασε την αξιολόγησή του (8.4.1);</li>
+        <li><strong>Μην ξεχνάτε τους «αόρατους» παρόχους:</strong> Εργαστήρια διακρίβωσης εξοπλισμού (7.1.5), εταιρείες logistics/μεταφορών, πάροχοι cloud/λογισμικού και εξωτερικοί σύμβουλοι/εκπαιδευτές εμπίπτουν στην 8.4 αν επηρεάζουν την ποιότητα!</li>
+<li><strong>Προσοχή:</strong> Το πρότυπο <strong>δεν απαιτεί</strong> τεκμηριωμένο Κατάλογο Εγκεκριμένων Προμηθευτών. Υποχρεωτική είναι η διατήρηση αρχείων για τις δραστηριότητες αξιολόγησης / επαναξιολόγησης και τις αναγκαίες ενέργειες που προκύπτουν.</li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ΚΑΡΤΕΛΑ 3: CASE STUDIES -->
+  <section id="tab-cases" class="tab-content">
+    <h2>Πρακτικά Case Studies</h2>
+    <p style="margin-bottom:20px; color:var(--muted);">Διαβάστε τα παρακάτω πραγματικά σενάρια επιθεώρησης, εντοπίστε τα αντικειμενικά ευρήματα και αποφασίστε σε ποια υποπαράγραφο της 8.4 τεκμηριώνεται η μη συμμόρφωση.</p>
+
+    <!-- CASE 1 -->
+    <div class="case-scenario">
+      <div class="case-meta">
+        <span class="pill">Case Study #1</span>
+        <span class="pill">Κλάδος: Βιομηχανία Μεταλλικών Κατασκευών</span>
+        <span class="pill">Θέμα: Outsourcing &amp; Εντολές Αγοράς</span>
+      </div>
+      <h3>Το Σενάριο:</h3>
+      <p>Κατά την επιθεώρηση σε εταιρεία κατασκευής μεταλλικών εξαρτημάτων ακριβείας, ο επιθεωρητής διαπιστώνει ότι το στάδιο της <strong>ηλεκτροστατικής βαφής</strong> εκτελείται εξ ολοκλήρου από εξωτερικό συνεργάτη (υπεργολάβο). Ο Υπεύθυνος Παραγωγής αναφέρει: <em>«Είναι παλιός συνεργάτης 10 ετών, ξέρει τη δουλειά του. Του στέλνουμε τα κομμάτια με ένα απλό Δελτίο Αποστολής που γράφει "Για βαφή RAL 9005" και όταν γυρίζουν κοιτάμε οπτικά αν γυαλίζουν»</em>. Από το αρχείο παραπόνων προκύπτει ότι 2 παρτίδες επιστράφηκαν από πελάτη λόγω αποκόλλησης χρώματος (ανεπαρκές πάχος βαφής &amp; προετοιμασίας).</p>
+      <button class="reveal-btn" onclick="toggleSolution('sol-1')">Εμφάνιση Ανάλυσης Επιθεωρητή</button>
+      <div id="sol-1" class="solution-box">
+        <span class="nc-badge">Μη Συμμόρφωση • 8.4.2 &amp; 8.4.3</span>
+        <ul class="clean-list" style="margin-bottom:0;">
+          <li><strong>Παράβαση 8.4.3 (α, β, ε):</strong> Η εντολή προς τον υπεργολάβο περιορίζεται στον κωδικό χρώματος (RAL 9005) χωρίς να κοινοποιούνται οι τεχνικές προδιαγραφές προετοιμασίας επιφάνειας, το ελάχιστο πάχος βαφής (σε microns) και τα κριτήρια αποδοχής/αποδέσμευσης.</li>
+          <li><strong>Παράβαση 8.4.2 (α, γ):</strong> Η βαφή αποτελεί <em>εξωτερικά παρεχόμενη διεργασία</em> (special process) που επηρεάζει άμεσα την ποιότητα του τελικού προϊόντος. Ο απλός οπτικός έλεγχος κατά την επιστροφή δεν επαρκεί για να επαληθεύσει την αντοχή/πάχος της βαφής, ούτε εφαρμόζεται έλεγχος στις παραμέτρους της διεργασίας του υπεργολάβου.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case-scenario">
+      <div class="case-meta">
+        <span class="pill">Case Study #2</span>
+        <span class="pill">Κλάδος: Εταιρεία Παροχής Υπηρεσιών Πληροφορικής &amp; Υποστήριξης</span>
+        <span class="pill">Θέμα: Αξιολόγηση &amp; Επαναξιολόγηση Παρόχων</span>
+      </div>
+      <h3>Το Σενάριο:</h3>
+      <p>Μια εταιρεία ανάπτυξης λογισμικού φιλοξενεί τις εφαρμογές των πελατών της σε εξωτερικό πάροχο Cloud Infrastructure και χρησιμοποιεί εξωτερικούς συνεργάτες (freelancers) για εξειδικευμένο UI/UX design. Στον φάκελο προμηθευτών, ο επιθεωρητής βλέπει ότι ο πάροχος Cloud έχει αξιολογηθεί βάσει της διεθνούς φήμης του, αλλά <strong>δεν παρακολουθείται το SLA διαθεσιμότητας</strong> (παρότι υπήρξαν 3 διακοπές λειτουργίας εντός του έτους). Επίσης, για 4 νέους freelancers που εργάστηκαν σε έργα πελατών το τελευταίο εξάμηνο, δεν υπάρχει κανένα αρχείο αρχικής αξιολόγησης των προσόντων τους (8.4.1), καθώς προσλήφθηκαν «επειγόντως» από τον Project Manager.</p>
+      <button class="reveal-btn" onclick="toggleSolution('sol-2')">Εμφάνιση Ανάλυσης Επιθεωρητή</button>
+      <div id="sol-2" class="solution-box">
+        <span class="nc-badge">Μη Συμμόρφωση • 8.4.1</span>
+        <ul class="clean-list" style="margin-bottom:0;">
+          <li><strong>Παράβαση 8.4.1 (Αξιολόγηση &amp; Επιλογή):</strong> Δεν εφαρμόστηκαν τα καθορισμένα κριτήρια αξιολόγησης και επιλογής πριν την ανάθεση έργου στους 4 εξωτερικούς συνεργάτες (freelancers), ούτε τηρήθηκε η απαιτούμενη τεκμηριωμένη πληροφορία.</li>
+          <li><strong>Παράβαση 8.4.1 (Παρακολούθηση Επιδόσεων):</strong> Παρότι ο πάροχος Cloud είναι κρίσιμος για την παροχή της υπηρεσίας στον πελάτη, δεν παρακολουθείται συστηματικά η επίδοσή του (SLA/διαθεσιμότητα) ούτε ελήφθησαν ενέργειες μετά τις 3 διακοπές λειτουργίας.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Εκπαιδευτικό Υλικό Επιθεωρητών • ISO 9001:2026</span>
+    <span>Κεφάλαιο 8: Λειτουργία • Ενότητα 8.4</span>
+  </footer>
+</div>
+
+<script>
+        function openTab(evt, tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        
+        const activeTab = document.getElementById(tabId);
+        activeTab.classList.add('active');
+        evt.currentTarget.classList.add('active');
+
+        
+        // Ομαλή κύλιση ακριβώς στην αρχή της νέας καρτέλας (κάτω από την μπάρα)
+        const tabsHeight = document.querySelector('.tabs').offsetHeight;
+        const targetPosition = activeTab.getBoundingClientRect().top + window.scrollY - tabsHeight;
+        
+        window.scrollTo({
+            top: targetPosition > 0 ? targetPosition : 0,
+            behavior: 'smooth'
+        });
+    }
+
+
+    function toggleSolution(id) {
+        const el = document.getElementById(id);
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // Κλείδωμα δεξιού κλικ και συντομεύσεων αντιγραφής (Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+A)
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+        if ((e.ctrlKey || e.metaKey) && ['c', 'u', 's', 'a', 'x'].includes(e.key.toLowerCase())) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>
