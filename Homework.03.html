@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework 3: Κεφάλαιο 7 – Υποστήριξη (Παρ. 7.1 – 7.4)</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --accent: #0284c7;
+      --bg: #f1f5f9;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --border: #cbd5e1;
+      --error: #dc2626;
+      --error-bg: #fef2f2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.6;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    input, textarea {
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: #ffffff;
+      padding: 28px 32px;
+    }
+
+    .badge-top {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    header h1 { margin: 0 0 6px 0; font-size: 1.65rem; font-weight: 700; }
+    header p { margin: 0; opacity: 0.92; font-size: 0.96rem; }
+
+    .content { padding: 28px 32px; }
+
+    .student-box {
+      background: var(--primary-light);
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .student-box label { font-weight: 700; color: var(--primary); font-size: 1.02rem; }
+
+    .student-box input {
+      flex: 1;
+      min-width: 250px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #ffffff;
+    }
+
+    .intro-box {
+      background: #f8fafc;
+      border-left: 5px solid var(--primary);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+
+    .intro-box h3 { margin: 0 0 8px 0; color: var(--primary); font-size: 1.15rem; }
+    .intro-box p { margin: 0 0 8px 0; }
+    .intro-box p:last-child { margin-bottom: 0; }
+
+    .case-block {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin-bottom: 28px;
+    }
+
+    .case-block h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 1.18rem;
+    }
+
+    .case-block p { margin-top: 0; margin-bottom: 12px; }
+    .case-block ol, .case-block ul { margin: 8px 0 14px 0; padding-left: 22px; }
+    .case-block li { margin-bottom: 8px; }
+
+    .question-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.05rem;
+      margin-top: 16px;
+      margin-bottom: 10px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .answer-label {
+      display: block;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    textarea:focus, input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .field-error { border: 2px solid var(--error) !important; background-color: var(--error-bg) !important; }
+
+    .error-banner {
+      display: none;
+      background-color: var(--error-bg);
+      color: var(--error);
+      border: 1px solid #fecaca;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .actions { text-align: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+    }
+
+    .btn-print:hover { background-color: #172554; }
+
+    footer {
+      background: #f8fafc;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .container { box-shadow: none; border: none; max-width: 100%; }
+      header { background: #1e3a8a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .actions, .error-banner { display: none !important; }
+      textarea { border: 1px solid #94a3b8; min-height: auto; overflow: visible; }
+      .case-block { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="badge-top">Εκπαιδευτικό Υλικό • Homework 3 • Κεφάλαιο 7 (Παρ. 7.1 – 7.4)</div>
+    <h1>ISO 9001:2026 — Επιθεώρηση Διεργασιών Υποστήριξης</h1>
+    <p>Μελέτη Περίπτωσης — «THERMOPACK Α.Β.Ε.Ε.»</p>
+  </header>
+
+  <div class="content">
+    <div class="student-box">
+      <label for="studentName">👤 ΟΝΟΜΑΤΕΠΩΝΥΜΟ ΕΚΠΑΙΔΕΥΟΜΕΝΟΥ:</label>
+      <input type="text" id="studentName" class="required-field" placeholder="Συμπληρώστε το ονοματεπώνυμό σας...">
+    </div>
+
+    <div class="intro-box">
+      <h3>🏢 Γενικά Δεδομένα Οργανισμού &amp; Οδηγίες Εργασίας</h3>
+      <p>
+        <strong>Επιθεωρούμενος Οργανισμός:</strong> «THERMOPACK Α.Β.Ε.Ε.» (Βιομηχανία παραγωγής ισοθερμικών συσκευασιών ακριβείας για τη φαρμακοβιομηχανία, πιστοποιημένη κατά ISO 9001:2026).
+      </p>
+      <p>
+        <strong>Οδηγία:</strong> Σε όλες τις παρακάτω περιπτώσεις, ο Οργανισμός διαθέτει τυπικά αρχεία και εύλογες αιτιολογίες. Αξιολογήστε κριτικά τα αντικειμενικά στοιχεία, εντοπίστε πού υφίσταται πραγματική <strong>Μη Συμμόρφωση</strong>, πού υφίσταται <strong>Συμμόρφωση</strong> και ποια <strong>επιπλέον αποδεικτικά στοιχεία (audit trails)</strong> οφείλει να αναζητήσει ο επιθεωρητής.
+      </p>
+    </div>
+
+    <!-- ΠΕΡΙΠΤΩΣΗ Α -->
+    <div class="case-block">
+      <h3>Περίπτωση Α: Υποδομή (ICT), Ανθρώπινοι Πόροι &amp; Περιβάλλον Λειτουργίας (Παρ. 7.1.2, 7.1.3 &amp; 7.1.4)</h3>
+      <p>
+        Ο Υπεύθυνος Παραγωγής παρουσιάζει στον επιθεωρητή το ετήσιο πρόγραμμα συντήρησης των γραμμών χύτευσης, το οποίο εκτελείται 100% εντός χρονοδιαγράμματος από πιστοποιημένους τεχνικούς. Κατά την επίσκεψη στο τμήμα Προγραμματισμού Παραγωγής και Ποιοτικού Ελέγχου, ο επιθεωρητής διαπιστώνει ότι:
+      </p>
+      <ol>
+        <li>Εδώ και 6 μήνες, λόγω αύξησης των παραγγελιών κατά 40%, το τμήμα Ποιοτικού Ελέγχου λειτουργεί με το ίδιο προσωπικό (2 ελεγκτές), με αποτέλεσμα οι υπάλληλοι να εργάζονται συστηματικά 9 ώρες ημερησίως. Στο αρχείο παραπόνων καταγράφονται 4 πρόσφατες αποστολές με εσφαλμένες ετικέτες ιχνηλασιμότητας, οι οποίες είχαν εγκριθεί από τους εν λόγω ελεγκτές κατά τις τελευταίες ώρες της βάρδιας.</li>
+        <li>Επειδή το κεντρικό ERP της εταιρείας καθυστερεί να ενημερωθεί με τις επείγουσες αλλαγές παραγγελιών, ο προϊστάμενος προγραμματισμού έχει δημιουργήσει ένα δικό του αρχείο Excel στον τοπικό υπολογιστή του, το οποίο στέλνει μέσω προσωπικού λογαριασμού Viber στους εργοδηγούς.</li>
+      </ol>
+      <div class="question-title">Ζητούμενο Α: Αξιολογήστε τη συμμόρφωση ως προς τις παραγράφους 7.1.2, 7.1.3 και 7.1.4 (απορρίπτοντας τυχόν επιφανειακές ερμηνείες περί «τήρησης πλάνου συντήρησης»).</div>
+      <label class="answer-label" for="ansA">✍ Η απάντησή σας:</label>
+      <textarea id="ansA" class="required-field" placeholder="Καταγράψτε εδώ την τεκμηριωμένη απάντησή σας για την Περίπτωση Α..."></textarea>
+    </div>
+    <!-- ΠΕΡΙΠΤΩΣΗ Β -->
+    <div class="case-block">
+      <h3>Περίπτωση Β: Οργανωσιακή Γνώση, Ικανότητα &amp; Επίγνωση (Παρ. 7.1.6, 7.2 &amp; 7.3)</h3>
+      <p>
+        Η εταιρεία εγκατέστησε πριν από 4 μήνες μια νέα αυτοματοποιημένη γραμμή συγκόλλησης πολυμερών. Στον φάκελο εκπαίδευσης υπάρχουν: (α) βεβαιώσεις παρακολούθησης 16ωρου σεμιναρίου από τον κατασκευαστή του μηχανήματος για τους 3 χειριστές, και (β) γραπτό τεστ πολλαπλών επιλογών (MCQ) στο οποίο και οι 3 χειριστές βαθμολογήθηκαν με &gt;90% αμέσως μετά το σεμινάριο. Κατά την επιτόπια παρατήρηση της γραμμής, ο επιθεωρητής διαπιστώνει ότι:
+      </p>
+      <ol>
+        <li>Όταν εμφανίζεται μια σπάνια αυξομείωση στην υγρασία της πρώτης ύλης, ο χειριστής Α (με 15ετή εμπειρία) ρυθμίζει χειροκίνητα την πίεση κατά -0,4 bar βάσει της «εμπειρίας» του, ενώ οι χειριστές Β και Γ (νεοπροσληφθέντες) αφήνουν τις εργοστασιακές ρυθμίσεις, με αποτέλεσμα να παράγονται 8% ελαττωματικά τεμάχια στη βάρδιά τους.</li>
+        <li>Όταν ο επιθεωρητής ρωτά τον χειριστή Β ποια είναι η επίδραση των ελαττωματικών συγκολλήσεων στο τελικό προϊόν, εκείνος απαντά: <em>«Δεν υπάρχει πρόβλημα, τα εντοπίζει ο τελικός έλεγχος στο τέλος της γραμμής και τα πετάμε στην ανακύκλωση, οπότε ο πελάτης δεν επηρεάζεται»</em>.</li>
+      </ol>
+      <div class="question-title">Ζητούμενο Β: Εντοπίστε τις συστημικές αστοχίες ως προς τις παραγράφους 7.1.6, 7.2 και 7.3, εξηγώντας γιατί το γραπτό τεστ εκπαίδευσης και ο τελικός έλεγχος δεν καλύπτουν τις απαιτήσεις του προτύπου.</div>
+      <label class="answer-label" for="ansB">✍ Η απάντησή σας:</label>
+      <textarea id="ansB" class="required-field" placeholder="Καταγράψτε εδώ την τεκμηριωμένη απάντησή σας για την Περίπτωση Β..."></textarea>
+    </div>
+
+    <!-- ΠΕΡΙΠΤΩΣΗ Γ -->
+    <div class="case-block">
+      <h3>Περίπτωση Γ: Εσωτερική &amp; Εξωτερική Επικοινωνία σε Σύνθετο Περιβάλλον (Παρ. 7.4)</h3>
+      <p>
+        Ο Οργανισμός διαθέτει αναλυτικό «Πίνακα Επικοινωνίας» στο Εγχειρίδιο Ποιότητας, όπου ορίζονται επακριβώς το <em>Τι, Πότε, Με ποιον, Πώς και Ποιος</em>. Κατά την επιθεώρηση προκύπτουν τα εξής δύο στοιχεία:
+      </p>
+      <ol>
+        <li><strong>Εσωτερικά:</strong> Η εταιρεία εξάγει προϊόντα στην Ε.Ε. και στις Η.Π.Α. Πριν από 2 μήνες άλλαξε η ευρωπαϊκή νομοθεσία σήμανσης ανακυκλώσιμων υλικών. Το Τμήμα Κανονιστικής Συμμόρφωσης ενημέρωσε εγκαίρως με email το Τμήμα Σχεδιασμού και την Παραγωγή. Ωστόσο, κανείς δεν ενημέρωσε το Τμήμα Προμηθειών (Αγορών), το οποίο συνέχισε να παραγγέλνει προεκτυπωμένα φιλμ συσκευασίας από τον εξωτερικό προμηθευτή με την παλαιά σήμανση (δημιουργώντας απόθεμα αξίας 25.000€ προς απόρριψη).</li>
+        <li><strong>Εξωτερικά:</strong> Στην ετήσια Έκθεση Βιωσιμότητας (ESG Report) που δημοσιεύτηκε στην ιστοσελίδα της εταιρείας, αναφέρεται ότι <em>«100% των πρώτων υλών μας προέρχεται από πιστοποιημένους ανακυκλωμένους πόρους μηδενικού ανθρακικού αποτυπώματος»</em>. Από τα τιμολόγια αγορών προκύπτει ότι το 35% των πρώτων υλών είναι παρθένο πολυμερές, επειδή οι προδιαγραφές των φαρμακευτικών πελατών απαγορεύουν το ανακυκλωμένο υλικό. Ο Διευθυντής Ποιότητας δηλώνει ότι η έκθεση συντάχθηκε από το Τμήμα Εταιρικής Επικοινωνίας και δεν αποτελεί έγγραφο του ΣΔΠ.</li>
+      </ol>
+      <div class="question-title">Ζητούμενο Γ: Τεκμηριώστε τις Μη Συμμορφώσεις (και τυχόν διασυνδέσεις με άλλες παραγράφους του ISO 9001:2026) τόσο για το εσωτερικό όσο και για το εξωτερικό σκέλος.</div>
+      <label class="answer-label" for="ansC">✍ Η απάντησή σας:</label>
+      <textarea id="ansC" class="required-field" placeholder="Καταγράψτε εδώ την τεκμηριωμένη απάντησή σας για την Περίπτωση Γ..."></textarea>
+    </div>
+
+    <div id="errorBanner" class="error-banner">
+      ⚠️ Παρακαλούμε συμπληρώστε το ονοματεπώνυμό σας καθώς και όλα τα πεδία απαντήσεων πριν προχωρήσετε στην αποθήκευση/εκτύπωση!
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn-print" onclick="validateAndPrint()">
+        Αποθήκευση &amp; 💾 Λήψη Εργασίας (PDF)
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    Σεμινάριο Επιθεωρητών Συστημάτων Διαχείρισης Ποιότητας ISO 9001:2026
+  </footer>
+</div>
+
+<script>
+  // 1. Αποκλεισμός δεξιού κλικ
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // 2. Αποκλεισμός copy / cut εκτός των πεδίων συμπλήρωσης
+  document.addEventListener('copy', function(e) {
+    const activeTag = document.activeElement.tagName;
+    if (activeTag !== 'INPUT' && activeTag !== 'TEXTAREA') {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('cut', function(e) {
+    const activeTag = document.activeElement.tagName;
+    if (activeTag !== 'INPUT' && activeTag !== 'TEXTAREA') {
+      e.preventDefault();
+    }
+  });
+
+  // 3. Αποκλεισμός συντομεύσεων αντιγραφής, αποθήκευσης και προβολής κώδικα
+  document.addEventListener('keydown', function(e) {
+    const activeTag = document.activeElement.tagName;
+    const isTypingField = (activeTag === 'INPUT' || activeTag === 'TEXTAREA');
+
+    if (e.ctrlKey || e.metaKey) {
+      const key = e.key.toLowerCase();
+      if (key === 'u' || key === 's') {
+        e.preventDefault();
+      }
+      if (!isTypingField && (key === 'c' || key === 'x' || key === 'a')) {
+        e.preventDefault();
+      }
+    }
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+  });
+
+  // 4. Έλεγχος υποχρεωτικών πεδίων πριν την εκτύπωση
+  function validateAndPrint() {
+    const fields = document.querySelectorAll('.required-field');
+    const errorBanner = document.getElementById('errorBanner');
+    let allFilled = true;
+    let firstEmptyField = null;
+
+    fields.forEach(function(field) {
+      if (field.value.trim() === '') {
+        field.classList.add('field-error');
+        allFilled = false;
+        if (!firstEmptyField) {
+          firstEmptyField = field;
+        }
+      } else {
+        field.classList.remove('field-error');
+      }
+    });
+
+    if (!allFilled) {
+      errorBanner.style.display = 'block';
+      if (firstEmptyField) {
+        firstEmptyField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstEmptyField.focus();
+      }
+      return;
+    }
+
+    errorBanner.style.display = 'none';
+
+    document.querySelectorAll('textarea').forEach(function(ta) {
+      ta.style.height = 'auto';
+      ta.style.height = (ta.scrollHeight + 10) + 'px';
+    });
+
+    window.print();
+  }
+
+  // Αφαίρεση κόκκινου πλαισίου κατά τη συμπλήρωση
+  document.querySelectorAll('.required-field').forEach(function(field) {
+    field.addEventListener('input', function() {
+      if (this.value.trim() !== '') {
+        this.classList.remove('field-error');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
