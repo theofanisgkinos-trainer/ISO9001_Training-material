@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Οδηγός Επιθεώρησης ISO 9001:2026 – Παρ. 7.4 Επικοινωνία</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --accent: #0284c7;
+      --amber: #b45309;
+      --amber-bg: #fffbeb;
+      --amber-border: #fde68a;
+      --success: #065f46;
+      --success-bg: #ecfdf5;
+      --success-border: #6ee7b7;
+      --bg: #f1f5f9;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --border: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.6;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: #ffffff;
+      padding: 28px 34px;
+      border-radius: 13px 13px 0 0;
+    }
+
+    .badge-top {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    header h1 { margin: 0 0 6px 0; font-size: 1.7rem; font-weight: 700; }
+    header p { margin: 0; opacity: 0.92; font-size: 1rem; }
+
+    /* Κυλιόμενη Μπάρα Καρτελών */
+    .tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background-color: #e2e8f0;
+      border-bottom: 2px solid var(--primary);
+      padding: 0 20px;
+      gap: 4px;
+    }
+
+    .tabs-nav.is-floating {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 960px;
+      z-index: 999;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 13px 16px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 8px 8px 0 0;
+      margin-top: 8px;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover { background-color: rgba(255, 255, 255, 0.6); color: var(--primary); }
+    .tab-btn.active { background-color: #ffffff; color: var(--primary); box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05); }
+
+    .btn-print-tab {
+      margin-left: auto;
+      background-color: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-print-tab:hover { background-color: #172554; }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .content { padding: 28px 34px; }
+
+    .golden-rule {
+      background: var(--amber-bg);
+      border-left: 5px solid var(--amber);
+      border-top: 1px solid var(--amber-border);
+      border-right: 1px solid var(--amber-border);
+      border-bottom: 1px solid var(--amber-border);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin-bottom: 26px;
+    }
+
+    .golden-rule-title { font-weight: 700; color: var(--amber); font-size: 1.06rem; margin-bottom: 6px; display: block; }
+
+    h2.section-title {
+      color: var(--primary);
+      font-size: 1.22rem;
+      margin-top: 0;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .card-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+
+    .card-box.accent { border-top-color: var(--accent); }
+    .card-box h3 { margin: 0 0 6px 0; color: var(--primary); font-size: 1.08rem; }
+    .card-box p { margin: 0; font-size: 0.95rem; }
+
+    table { width: 100%; border-collapse: collapse; margin-bottom: 26px; font-size: 0.94rem; }
+    th { background-color: var(--primary); color: #ffffff; text-align: left; padding: 12px 14px; font-weight: 600; }
+    td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:nth-child(even) td { background-color: #f8fafc; }
+
+    .tip-red-box {
+      background-color: #fef2f2;
+      border-left: 5px solid #dc2626;
+      border-top: 1px solid #fecaca;
+      border-right: 1px solid #fecaca;
+      border-bottom: 1px solid #fecaca;
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin-bottom: 24px;
+    }
+
+    .tip-red-title { font-weight: 700; color: #b91c1c; font-size: 1.05rem; display: block; margin-bottom: 6px; }
+    .tip-red-box p { margin: 0; color: #7f1d1d; font-size: 0.96rem; }
+
+    .scenario-box {
+      background: var(--primary-light);
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+
+    .scenario-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--primary); font-size: 1.15rem; }
+
+    .finding-box {
+      background: var(--success-bg);
+      border-left: 5px solid var(--success);
+      border-top: 1px solid var(--success-border);
+      border-right: 1px solid var(--success-border);
+      border-bottom: 1px solid var(--success-border);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin-bottom: 24px;
+      color: #064e3b;
+    }
+
+    footer {
+      background: #f8fafc;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      border-radius: 0 0 13px 13px;
+    }
+
+    .print-tab-title { display: none; }
+
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .container { box-shadow: none; border: none; max-width: 100%; }
+      header, th, .golden-rule, .tip-red-box, .scenario-box, .finding-box {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .tabs-nav, .tabs-nav.is-floating { display: none !important; position: static !important; }
+      .tab-panel { display: none !important; }
+      .tab-panel.active { display: block !important; }
+      .content { padding: 20px 0; }
+      .print-tab-title {
+        display: block !important;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--primary);
+        border-bottom: 2px solid var(--primary);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="badge-top">📑Οδηγός Επιθεώρησης ISO 9001:2026 • Παράγραφος 7.4</div>
+    <h1>Επικοινωνία (Internal &amp; External Communication)</h1>
+    <p>Από τις 5 βασικές απαιτήσεις έως τον έλεγχο των δημόσιων δεσμεύσεων του Οργανισμού</p>
+  </header>
+
+  <div class="tabs-nav" id="tabsNav">
+    <button type="button" class="tab-btn active" onclick="openTab('tab-req', this)">
+      📋 1. Απαιτήσεις &amp; Οργανισμός
+    </button>
+    <button type="button" class="tab-btn" onclick="openTab('tab-audit', this)">
+      🔍 2. Οδηγός Επιθεωρητή
+    </button>
+    <button type="button" class="tab-btn" onclick="openTab('tab-web', this)">
+      🌐 3. Παγίδα Ιστοσελίδας
+    </button>
+    <button type="button" class="btn-print-tab" onclick="window.print()">
+      🖨️ Εκτύπωση Καρτέλας
+    </button>
+  </div>
+  <!-- 1Η ΚΑΡΤΕΛΑ: ΑΠΑΙΤΗΣΕΙΣ & ΟΡΓΑΝΙΣΜΟΣ -->
+  <div id="tab-req" class="tab-panel active">
+    <div class="content">
+      <div class="print-tab-title">📋 1. Απαιτήσεις Προτύπου &amp; Τι Πρέπει να Κάνει ο Οργανισμός</div>
+
+      <div class="golden-rule">
+        <span class="golden-rule-title">💡 Η Ουσία πίσω από τις 5 Ερωτήσεις (ISO 9001:2026)</span>
+        Η παράγραφος 7.4 παραμένει ουσιαστικά αμετάβλητη στη νέα έκδοση ISO 9001:2026. Το πρότυπο ζητά από τον Οργανισμό να καθορίσει τις εσωτερικές και εξωτερικές επικοινωνίες που σχετίζονται με το ΣΔΠ (<strong>Τι, Πότε, Με ποιον, Πώς, Ποιος</strong>), <strong>χωρίς να απαιτεί υποχρεωτικά τεκμηριωμένη πληροφορία</strong>. Στόχος δεν είναι ένας γραφειοκρατικός «Πίνακας Επικοινωνίας» για τα μάτια του επιθεωρητή, αλλά η διασφάλιση ότι <strong>η κρίσιμη πληροφορία φτάνει έγκαιρα στον σωστό άνθρωπο ώστε να αποφεύγονται λάθη</strong>.
+      </div>
+
+      <h2 class="section-title">🎯 Οι 5 Βασικοί Άξονες που Καθορίζει ο Οργανισμός</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 24%;">Παράμετρος Προτύπου</th>
+            <th style="width: 76%;">Πρακτική Εφαρμογή από τον Οργανισμό</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Τι θα επικοινωνηθεί</strong><br><em>(What)</em></td>
+            <td>Πολιτική Ποιότητας, στόχοι ποιότητας, αλλαγές σε προδιαγραφές/διαδικασίες, αποτελέσματα επιθεωρήσεων, μη συμμορφώσεις, κίνδυνοι και ευκαιρίες βελτίωσης.</td>
+          </tr>
+          <tr>
+            <td><strong>2. Πότε</strong><br><em>(When)</em></td>
+            <td><strong>Προληπτικά και έγκαιρα</strong> (π.χ. πριν ξεκινήσει η νυχτερινή βάρδια την παραγωγή μιας τροποποιημένης παραγγελίας, πριν την αποστολή στον πελάτη), και όχι κατόπιν εορτής.</td>
+          </tr>
+          <tr>
+            <td><strong>3. Με ποιον</strong><br><em>(With whom)</em></td>
+            <td>Όλα τα εσωτερικά επίπεδα (διοίκηση, γραφεία, βάρδιες παραγωγής, τηλεργαζόμενοι) αλλά και εξωτερικά μέρη (πελάτες, προμηθευτές, εξωτερικοί τεχνικοί, ρυθμιστικές αρχές, κοινωνία).</td>
+          </tr>
+          <tr>
+            <td><strong>4. Πώς</strong><br><em>(How)</em></td>
+            <td>Μέσω <strong>κατάλληλων και προσβάσιμων καναλιών</strong>. Ένα email προς χειριστές γραμμής παραγωγής που δεν διαθέτουν εταιρικό υπολογιστή είναι αναποτελεσματικό κανάλι επικοινωνίας.</td>
+          </tr>
+          <tr>
+            <td><strong>5. Ποιος επικοινωνεί</strong><br><em>(Who communicates)</em></td>
+            <td>Ξεκάθαρη αρμοδιότητα για το ποιος δίνει οδηγίες, ποιος εγκρίνει κρίσιμα μηνύματα, ποιος ενημερώνει τον πελάτη για καθυστερήσεις και ποιος εκπροσωπεί την εταιρεία σε κρίσεις.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title">🔗 Σύνδεση της 7.4 με τις Ενισχυμένες Απαιτήσεις του ISO 9001:2026</h2>
+
+      <div class="comparison-grid">
+        <div class="card-box">
+          <h3>5.1 &amp; 7.3 • Κουλτούρα Ποιότητας &amp; Επίγνωση</h3>
+          <p>
+            Στο ISO 9001:2026 δίνεται έμφαση στην <strong>κουλτούρα ποιότητας και την ηθική συμπεριφορά</strong>. Η 7.4 είναι το αμφίδρομο «όχημα» ώστε να κατεβαίνουν οι αξίες από τη διοίκηση, αλλά και να ανεβαίνουν προβληματισμοί (bottom-up) χωρίς φόβο.
+          </p>
+        </div>
+
+        <div class="card-box accent">
+          <h3>6.3 • Σχεδιασμός Αλλαγών</h3>
+          <p>
+            Η διαχείριση αλλαγών ενισχύθηκε στη νέα έκδοση. Κάθε αλλαγή σε έργο, διεργασία ή εξοπλισμό απαιτεί τεκμηριωμένη επικοινωνία στους εμπλεκόμενους πριν εφαρμοστεί.
+          </p>
+        </div>
+
+        <div class="card-box">
+          <h3>8.2.1 &amp; 8.4.3 • Πελάτες &amp; Προμηθευτές</h3>
+          <p>
+            Η 7.4 θέτει το γενικό πλαίσιο, ενώ οι 8.2.1 και 8.4.3 εξειδικεύουν τι πρέπει να γνωστοποιείται σε πελάτες (αλλαγές παραγγελιών, παράπονα) και εξωτερικούς παρόχους (προδιαγραφές, κριτήρια αξιολόγησης).
+          </p>
+        </div>
+
+        <div class="card-box accent">
+          <h3>4.2 &amp; 9.3 • Ενδιαφερόμενα Μέρη &amp; Διοίκηση</h3>
+          <p>
+            Η εταιρεία οφείλει να τηρεί τις επικοινωνιακές της υποχρεώσεις προς ρυθμιστικές αρχές, μετόχους και κοινωνία (ESG/δημόσιες δηλώσεις) και να τροφοδοτεί με στοιχεία την Ανασκόπηση Διοίκησης.
+          </p>
+        </div>
+      </div>
+
+      <div class="tip-red-box" style="margin-bottom: 0;">
+        <span class="tip-red-title">⚠️ Κλασικό Λάθος Οργανισμών (Γραφειοκρατία vs Ουσία)</span>
+        <p>
+          Πολλές εταιρείες φτιάχνουν έναν εντυπωσιακό «Πίνακα Επικοινωνίας» στο εγχειρίδιο ποιότητας, αλλά στην πράξη η <strong>νυχτερινή βάρδια δεν μαθαίνει εγκαίρως τις αλλαγές προδιαγραφών</strong> ή το <strong>τμήμα Marketing δημοσιεύει υπηρεσίες στο site χωρίς έγκριση από την Παραγωγή/Ποιότητα</strong>. Το ISO 9001:2026 ελέγχει την αποτελεσματικότητα της ροής πληροφοριών, όχι το χαρτί!
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- 2Η ΚΑΡΤΕΛΑ: ΟΔΗΓΟΣ ΕΠΙΘΕΩΡΗΤΗ -->
+  <div id="tab-audit" class="tab-panel">
+    <div class="content">
+      <div class="print-tab-title">🔍 2. Οδηγός Επιθεωρητή (Audit Checklist &amp; Διασταυρώσεις)</div>
+
+      <div class="golden-rule">
+        <span class="golden-rule-title">🧭 Η Στρατηγική του Επιθεωρητή στην 7.4</span>
+        Επειδή η παρ. 7.4 <strong>δεν απαιτεί υποχρεωτική διαδικασία ή αρχείο</strong>, ο επιθεωρητής δεν ζητά «Διαδικασία Επικοινωνίας». Αντίθετα, την ελέγχει <strong>διατμηματικά / οριζόντια</strong>: παίρνει μια πρόσφατη αλλαγή (παρ. 6.3), ένα παράπονο (παρ. 8.2.1) ή μια αστοχία (παρ. 10.2) και ακολουθεί το ίχνος για να δει <strong>αν, πότε και πώς ενημερώθηκαν όλοι οι εμπλεκόμενοι</strong>.
+      </div>
+
+      <h2 class="section-title">✅ Checklist Ελέγχου Εσωτερικής Επικοινωνίας (5 Ερωτήματα)</h2>
+
+            <table>
+        <thead>
+          <tr>
+            <th style="width: 24%;">Παράμετρος Προτύπου</th>
+            <th style="width: 76%;">Ερωτήματα Επαλήθευσης για τον Επιθεωρητή</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Τι θα επικοινωνηθεί</strong><br><em>(What)</em></td>
+            <td>«Πώς τεκμηριώνετε ότι το προσωπικό γνωρίζει τους στόχους ποιότητας του τμήματός του, τα ευρήματα των εσωτερικών επιθεωρήσεων και τις μη συμμορφώσεις που επηρεάζουν την εργασία του;»</td>
+          </tr>
+          <tr>
+            <td><strong>Πότε</strong><br><em>(When)</em></td>
+            <td>«Σε ποιο χρονικό σημείο κοινοποιείται μια αλλαγή προδιαγραφής ή διαδικασίας; Μπορείτε να μου δείξετε ένα παράδειγμα ενημέρωσης που έγινε πριν από την έναρξη της παραγωγής ή της βάρδιας;»</td>
+          </tr>
+          <tr>
+            <td><strong>Με ποιον</strong><br><em>(With whom)</em></td>
+            <td>«Πώς διασφαλίζετε ότι οι κρίσιμες πληροφορίες φτάνουν σε όλες τις ομάδες εργαζομένων, συμπεριλαμβανομένων των νυχτερινών βαρδιών, των τηλεργαζομένων και των εξωτερικών συνεργατών;»</td>
+          </tr>
+          <tr>
+            <td><strong>Πώς</strong><br><em>(How)</em></td>
+            <td>«Ποιο κανάλι χρησιμοποιείτε για τους εργαζομένους που δεν διαθέτουν εταιρικό υπολογιστή ή email και πώς επιβεβαιώνετε ότι το μήνυμα έγινε κατανοητό;»</td>
+          </tr>
+          <tr>
+            <td><strong>Ποιος επικοινωνεί</strong><br><em>(Who)</em></td>
+            <td>«Ποιος έχει την επίσημη αρμοδιότητα να εγκρίνει αλλαγές οδηγιών, να ενημερώσει τον πελάτη για καθυστέρηση παράδοσης ή να διαχειριστεί μια επείγουσα κοινοποίηση;»</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h2 class="section-title">🌐 Εξωτερική Επικοινωνία προς Λοιπά Ενδιαφερόμενα Μέρη (Σύνδεση 7.4 &amp; 4.2)</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 24%;">Ενδιαφερόμενο Μέρος</th>
+            <th style="width: 44%;">Τι ελέγχει ο Επιθεωρητής (7.4)</th>
+            <th style="width: 32%;">Τεχνική Τεκμηρίωση Ευρημάτων</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Ρυθμιστικές &amp; Εποπτικές Αρχές</strong></td>
+            <td>Αν υπάρχει καθορισμένο κανάλι και υπεύθυνος για την υποβολή υποχρεωτικών αναφορών, αδειών ή κοινοποίηση συμβάντων (π.χ. ανάκληση προϊόντος).</td>
+            <td><strong>7.4</strong> (έλλειψη μηχανισμού) &amp; <strong>8.2.2 / 8.7</strong> (μη συμμόρφωση με νομικές απαιτήσεις ή έλεγχο ΜΣ προϊόντων).</td>
+          </tr>
+          <tr>
+            <td><strong>Εξωτερικοί Πάροχοι / Προμηθευτές</strong></td>
+            <td>Αν οι απαιτήσεις ποιότητας, οι αλλαγές προδιαγραφών και τα κριτήρια αξιολόγησης επικοινωνούνται ξεκάθαρα και εγκαίρως πριν την εκτέλεση.</td>
+            <td><strong>8.4.3</strong> (Πληροφορίες για παρόχους) &amp; <strong>7.4</strong> (απουσία ελέγχου ότι το μήνυμα παρελήφθη και έγινε κατανοητό).</td>
+          </tr>
+          <tr>
+            <td><strong>Τοπική Κοινωνία / ΜΜΕ / Δημόσια Εικόνα</strong></td>
+            <td>Πώς διαχειρίζεται ο Οργανισμός δημόσιες δηλώσεις (π.χ. ESG, βιωσιμότητα, κρίσεις) και ποιος έχει την εξουσιοδότηση να μιλήσει εκ μέρους της εταιρείας.</td>
+            <td><strong>7.4</strong> (ποιος επικοινωνεί) &amp; <strong>5.1</strong> (ηθική συμπεριφορά και κουλτούρα ποιότητας, αποφυγή <em>greenwashing</em>).</td>
+          </tr>
+          <tr>
+            <td><strong>Μέτοχοι / Ιδιοκτήτες / Μητρική Εταιρεία</strong></td>
+            <td>Αν υπάρχει δομημένη αναφορά (reporting) για την απόδοση του ΣΔΠ, τους κινδύνους, τις ευκαιρίες και τους πόρους.</td>
+            <td><strong>7.4</strong> &amp; <strong>9.3</strong> (Ανασκόπηση από τη Διοίκηση).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-red-box">
+        <span class="tip-red-title">⚠️ Κρίσιμη Ερώτηση</span>
+        <p>
+          <strong>«Αν αύριο γίνει μια σοβαρή αστοχία που αφορά το κοινό ή μια εποπτική αρχή, ποιος παίρνει τηλέφωνο, ποιον παίρνει, τι λέει και ποιος εγκρίνει το μήνυμα;»</strong>. Αν η απάντηση είναι <em>«θα το δούμε τότε»</em>, υπάρχει ξεκάθαρο κενό στην 7.4!
+        </p>
+      </div>
+
+      <div class="scenario-box" style="margin-bottom: 0;">
+        <h3>🎯 3 Επιπλέον Ερωτήσεις Πεδίου (Audit Trails)</h3>
+        <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+          <li style="margin-bottom: 8px;"><strong>Για Αλλαγές (6.3 + 7.4):</strong> <em>«Δείξτε μου την τελευταία αλλαγή σε προδιαγραφή πελάτη ή τεχνικό σχέδιο. Πώς και πότε ενημερώθηκε η αποθήκη και η νυχτερινή βάρδια;»</em></li>
+          <li style="margin-bottom: 8px;"><strong>Για Αμφίδρομη Ροή (5.1 + 7.4):</strong> <em>«Αν ένας χειριστής εντοπίσει πρόβλημα ποιότητας στη γραμμή, ποιο είναι το κανάλι για να το αναφέρει στη διοίκηση και πώς ενημερώνεται για την έκβαση;»</em></li>
+          <li style="margin-bottom: 0;"><strong>Για Εξωτερικούς Συνεργάτες (7.4):</strong> <em>«Πώς επικοινωνούνται οι απαιτήσεις ποιότητας και ασφάλειας στους εξωτερικούς οδηγούς/μεταφορείς πριν αναλάβουν δρομολόγιο;»</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 3Η ΚΑΡΤΕΛΑ: ΠΑΓΙΔΑ ΙΣΤΟΣΕΛΙΔΑΣ & ΕΞΩΤΕΡΙΚΗ ΕΠΙΚΟΙΝΩΝΙΑ -->
+  <div id="tab-web" class="tab-panel">
+    <div class="content">
+      <div class="print-tab-title">🌐 3. Η Παγίδα της Ιστοσελίδας &amp; Δημόσιες Δεσμεύσεις</div>
+
+      <div class="golden-rule">
+        <span class="golden-rule-title">⚖️ Το Marketing &amp; το Site ΔΕΝ είναι εκτός ΣΔΠ!</span>
+        Όταν ένας Οργανισμός δηλώνει δημόσια (στην ιστοσελίδα, σε μπροσούρες ή στα social media) ότι προσφέρει μια εξειδικευμένη υπηρεσία ή τηρεί συγκεκριμένες προδιαγραφές και στην πράξη δεν το εφαρμόζει, <strong>υφίσταται ξεκάθαρη Μη Συμμόρφωση</strong>. Οι δημόσιες δηλώσεις αποτελούν επίσημες δεσμεύσεις που ελέγχονται κανονικά.
+      </div>
+
+      <h2 class="section-title">🏛️ Τεχνική Τεκμηρίωση Ευρημάτων (Η Ιεραρχία των Ευρημάτων)</h2>
+
+            <div class="comparison-grid">
+        <div class="card-box">
+          <h3>1. Παρ. 8.2.2 (β) • Ισχυρισμοί (Claims)</h3>
+          <p>
+            <strong>Κύρια απαίτηση συμμόρφωσης:</strong> Το πρότυπο απαιτεί ρητά ο Οργανισμός να διασφαλίζει ότι <em>μπορεί να ανταποκριθεί στους ισχυρισμούς που διατυπώνει για τα προϊόντα και τις υπηρεσίες που προσφέρει</em>. Εάν οι δημόσιες δηλώσεις δεν ανταποκρίνονται στην παρεχόμενη υπηρεσία, στοιχειοθετείται άμεση παραβίαση της παρ. 8.2.2 (β).
+          </p>
+        </div>
+
+        <div class="card-box accent">
+          <h3>2. Παρ. 7.4 • Έλεγχος Εξωτερικής Επικοινωνίας</h3>
+          <p>
+            Η μη συμμόρφωση τεκμηριώνεται στην παρ. 7.4 όταν ο Οργανισμός τροποποιεί ή καταργεί μια υπηρεσία, χωρίς να διαθέτει μηχανισμό ελέγχου και επικαιροποίησης των εξωτερικών μέσων επικοινωνίας (καθορισμός υπευθύνου έγκρισης περιεχομένου).
+          </p>
+        </div>
+
+        <div class="card-box">
+          <h3>3. Παρ. 8.2.1 • Επικοινωνία με Πελάτες</h3>
+          <p>
+            Αφορά την παροχή ακριβών πληροφοριών σχετικά με τα προϊόντα και τις υπηρεσίες. Όταν οι δημοσιευμένες πληροφορίες είναι ανακριβείς ή μη επικαιροποιημένες, παραβιάζεται η απαίτηση επικοινωνίας με τους πελάτες.
+          </p>
+        </div>
+      </div>
+
+
+      <h2 class="section-title">🎯 Εκπαιδευτικό Παράδειγμα: Stage 1 (Desktop) vs Stage 2 (On-Site)</h2>
+
+      <div class="scenario-box">
+        <h3>🏢 Περίπτωση: «24ωρη Τεχνική Υποστήριξη»</h3>
+        <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+          <li style="margin-bottom: 6px;"><strong>Stage 1 (Προετοιμασία Επιθεωρητή):</strong> Ο επιθεωρητής επισκέπτεται την ιστοσελίδα πριν την επίσκεψη και βλέπει τον ισχυρισμό: <em>«Παρέχουμε 24ωρη τεχνική υποστήριξη με χρόνο απόκρισης 2 ωρών»</em>.</li>
+          <li style="margin-bottom: 6px;"><strong>Stage 2 (Επιτόπια Επαλήθευση):</strong> Ο επιθεωρητής ζητά αρχεία νυχτερινών κλήσεων και πρόγραμμα βαρδιών. Αποδεικνύεται ότι η εταιρεία λειτουργεί αποκλειστικά <strong>09:00 – 17:00</strong>.</li>
+          <li style="margin-bottom: 0;"><strong>Διατύπωση Μη Συμμόρφωσης:</strong> <em>«Στην επίσημη ιστοσελίδα του Οργανισμού δηλώνεται η παροχή 24ωρης τεχνικής υποστήριξης, ενώ στην πράξη η λειτουργία περιορίζεται σε 8ωρη βάση. Ο Οργανισμός δεν διασφαλίζει ότι μπορεί να ανταποκριθεί στους ισχυρισμούς που κάνει για τις υπηρεσίες του (8.2.2) και δεν ελέγχει την ακρίβεια της εξωτερικής του επικοινωνίας (7.4).»</em></li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">📓Case Study: «TechLogix Α.Ε.»</h2>
+
+      <div class="tip-red-box">
+        <span class="tip-red-title">📌 Το Σενάριο (Logistics &amp; Ψυχρή Αλυσίδα)</span>
+        <p style="margin-bottom: 8px;">
+          Στην αρχική σελίδα της «TechLogix Α.Ε.» αναγράφεται: <em>«Πιστοποιημένη Ψυχρή Αλυσίδα: Εγγυόμαστε αδιάλειπτη παρακολούθηση θερμοκρασίας σε πραγματικό χρόνο (24/7) με αυτόματη ειδοποίηση του πελάτη μέσω SMS σε περίπτωση απόκλισης.»</em>
+        </p>
+        <p style="margin: 0;">
+          <strong>Η Πραγματικότητα:</strong> Το σύστημα SMS καταργήθηκε πριν 6 μήνες λόγω κόστους. Πλέον, αν υπάρξει νυχτερινή απόκλιση, ο υπεύθυνος αποθήκης στέλνει απλό email στις 08:00 το πρωί. Η δικαιολογία του Υπεύθυνου Ποιότητας: <em>«Το banner το έφτιαξε εξωτερική εταιρεία marketing πέρυσι, το site είναι απλώς διαφήμιση, δεν αφορά το ISO»</em>.
+        </p>
+      </div>
+
+      <div class="finding-box" style="margin-bottom: 0;">
+        <strong>✅ Αποτίμηση:</strong>
+        <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+          <li style="margin-bottom: 6px;"><strong>Απόρριψη δικαιολογίας:</strong> Ο εξωτερικός συνεργάτης marketing αποτελεί εξωτερικό πάροχο διεργασίας (8.4) και οι δηλώσεις του site δεσμεύουν τον Οργανισμό.</li>
+          <li style="margin-bottom: 6px;"><strong>Παρ. 8.2.2 (β):</strong> Αδυναμία ανταπόκρισης στον δημόσιο ισχυρισμό περί αυτόματης 24/7 SMS ειδοποίησης.</li>
+          <li style="margin-bottom: 0;"><strong>Παρ. 7.4 &amp; 8.2.1:</strong> Απουσία ελέγχου και επικαιροποίησης της εξωτερικής επικοινωνίας μετά την αλλαγή της διαδικασίας ειδοποίησης (από SMS σε πρωινό email), με αποτέλεσμα ανακριβή πληροφόρηση προς τους πελάτες.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Υλικό Εκπαίδευσης Επιθεωρητών ISO 9001:2026 • Παράγραφος 7.4 Επικοινωνία
+  </footer>
+</div>
+
+<script>
+  // 1. Αποκλεισμός δεξιού κλικ, αντιγραφής και συντομεύσεων κώδικα
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('copy', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('cut', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey || e.metaKey) {
+      const key = e.key.toLowerCase();
+      if (key === 'c' || key === 'x' || key === 'a' || key === 'u' || key === 's') {
+        e.preventDefault();
+      }
+    }
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+  });
+
+  // 2. Εναλλαγή Καρτελών (Tabs) με ομαλή κύληση στην αρχή της νέας καρτέλας
+  function openTab(tabId, btn) {
+    document.querySelectorAll('.tab-panel').forEach(function(panel) {
+      panel.classList.remove('active');
+    });
+    document.querySelectorAll('.tab-btn').forEach(function(button) {
+      button.classList.remove('active');
+    });
+
+    const targetPanel = document.getElementById(tabId);
+    if (targetPanel) {
+      targetPanel.classList.add('active');
+    }
+    if (btn) {
+      btn.classList.add('active');
+    }
+
+    const header = document.querySelector('header');
+    const targetY = header ? header.offsetHeight : 0;
+    window.scrollTo({ top: targetY, behavior: 'smooth' });
+  }
+
+  // 3. Κυλιόμενη μπάρα καρτελών (Floating Tabs)
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    const tabsBar = document.getElementById('tabsNav');
+    if (header && tabsBar) {
+      if (window.scrollY >= header.offsetHeight) {
+        tabsBar.classList.add('is-floating');
+      } else {
+        tabsBar.classList.remove('is-floating');
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
